@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NR NTN 機能強化の要約</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+	    border:1px solid #333;
+
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>NR NTN 機能強化の要約</h1>
+  
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>説明</th>
+    </tr>
+    <tr>
+      <td>概要</td>
+      <td>Rel-18における非地上ネットワーク(NTN)の機能強化をカバー。Rel-17でのNTNソリューションに対する拡張機能。</td>
+    </tr>
+    <tr>
+      <td>アップリンク強化</td>
+      <td>
+        <ul>
+          <li>Msg4 HARQ-ACKのPUCCH反復
+            <ul>
+              <li>1,2,4,8回の反復をサポート</li>
+              <li>単一値または複数値を構成可能
+                <ul>
+                  <li>単一値の場合、その値が反復数</li>
+                  <li>複数値の場合、DCI format 1_0のDAIフィールドで指示</li>
+                </ul>
+              </li>
+              <li>既存の反復スロットカウント機構を適用</li>
+              <li>既存のMsg4 HARQ-ACK用PUCCH周波数ホッピング機構を適用</li>
+              <li>RSRPしきい値に基づく能力報告
+                <ul>
+                  <li>しきい値が構成され、測定RSRPがしきい値を下回る場合のみ能力報告</li>
+                  <li>しきい値が構成されない場合は常に能力報告</li>
+                </ul>
+              </li>
+              <li>専用PUCCH資源が割り当てられるまで同じ反復数を使用</li>
+            </ul>
+          </li>
+          <li>NTN特化のPUSCH DMRS バンドリング
+            <ul>
+              <li>伝送遅延変動に対する位相連続性維持</li>
+              <li>UEとULタイミング同期基準点間の伝送遅延変動の影響を考慮</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>FR2-NTNサポート</td>
+      <td>
+        <ul>
+          <li>17.3-20.2 GHz (DL)、27.5-30.0 GHz (UL)の新バンド導入
+            <ul>
+              <li>n512 (27.5-30.0 GHz UL, 17.3-20.2 GHz DL): CEPT ECC Decision適用</li>
+              <li>n511 (28.35-30.0 GHz UL, 17.3-20.2 GHz DL): 米国FCC規制適用</li>
+              <li>n510 (27.5-28.35 GHz UL, 17.3-20.2 GHz DL): 米国地球局運用用</li>
+            </ul>
+          </li>
+          <li>固定/移動VSATのクラス・タイプ定義
+            <ul>
+              <li>GSO/LEO、機械式/電子式アンテナ種別</li>
+              <li>単一ビームのみサポートを想定</li>
+            </ul>
+          </li>
+          <li>その他FR2-NTN固有の制御
+            <ul>
+              <li>Rel-17と同じK_offsetおよびK_MAC値範囲を使用</li>
+              <li>15 kHzを参照SCとしてK_offsetおよびK_MACを示す</li>
+              <li>VSAT用機械式ビームスイッチングに対応するため、追加のMACCE TCIディレイを導入しない</li>
+              <li>セルサーチ手順でケースDおよびケースEを使用してFDD動作を許可</li>
+              <li>TA報告の粒度は、K_offsetに使用された参照SCSと同じ</li>
+              <li>PRACHの構成にTS 38.211の表6.3.3.2-4を使用</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>UE位置検証</td>
+      <td>
+        <ul>
+          <li>単一衛星視界下でのマルチRTTによるUE位置検証をサポート
+            <ul>
+              <li>位置検証の目標精度は10km (3GPP TR 38.882に準拠)</li>
+              <li>以下の測定値を報告
+                <ul>
+                  <li>gNB受信-送信時間差 (ULタイミング同期基準点)</li>
+                  <li>UE受信-送信時間差</li>
+                  <li>UE受信-送信時間差サブフレームオフセット</li>
+                  <li>DLタイミングドリフト</li>
+                </ul>
+              </li>
+              <li>報告される支援情報
+                <ul>
+                  <li>測定時の詳細な衛星位置・速度 (エフェメリス情報)</li>
+                  <li>共通TAパラメータ (ta-Common, ta-CommonDrift, ta-CommonDriftVariant, 時刻)</li>
+                </ul>
+              </li>
+              <li>UE機能はオプション、手続きはCNからトリガー</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>モビリティ管理強化</td>
+      <td>
+        <ul>
+          <li>衛星間・gNB間・RATアクセス間のモビリティ
+            <ul>
+              <li>NTN⇒TN
+                <ul>
+                  <li>新しいSIB25でTN範囲と周波数情報をブロードキャスト</li>
+                  <li>UEは範囲外ならTN測定をスキップでき、電力節約可能</li>
+                </ul>
+              </li>
+              <li>TN⇒NTN
+                <ul>
+                  <li>TNセルがSIB19で隣接NTN衛星の軌道情報をブロードキャスト</li>
+                  <li>UEは軌道情報を使ってNTNにアクセス可能</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>RACHレスハンドオーバー
+            <ul>
+              <li>ハンドオーバー時のRACH手順を回避してシグナリングを軽減</li>
+              <li>gNB間ハンドオーバー、および給電切替/衛星切替でサポート</li>
+            </ul>
+          </li>
+          <li>条件付きハンドオーバー
+            <ul>
+              <li>時間ベースのトリガー条件をサポート (既存機能)</li>
+              <li>位置ベースのトリガー条件をサポート
+                <ul>
+                  <li>移動する地球固定セルの参照位置をセル再選択手順で更新</li>
+                  <li>新しいCondEventD2イベントで、ソース/ターゲットセルの参照位置と距離しきい値を含む</li>
+                </ul>
+              </li>
+              <li>時間ベースの条件付きハンドオーバーをRACHレスハンドオーバーと組み合わせ可能</li>
+            </ul>
+          </li>
+          <li>衛星切替時の再同期機能 
+            <ul>
+              <li>ハードおよびソフト切替の両方をサポート</li>
+              <li>L3モビリティ手順を実行せず、同じPCIを維持</li>  
+              <li>同じSSB周波数と同じgNBを前提</li>
+              <li>ソフト切替ではソース/ターゲット衛星のSSBが時間的に重ならない限り、両方に接続する必要なし</li>
+              <li>条件付きハンドオーバーと同時に構成可能</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>30MHz CBWサポート</td>
+      <td>
+        <ul>
+          <li>FR1のn256、n255でCBWを30MHzまでサポート
+            <ul>
+              <li>RF要件のみ規定 (第5章 運用周波数帯とチャネル構成)</li>
+              <li>その他の要件はRel-17から規定予定</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+```
+
+このHTMLでは、各機能項目の詳細な説明を行いました。CSSはシンプルなスタイルを適用しているだけです。
