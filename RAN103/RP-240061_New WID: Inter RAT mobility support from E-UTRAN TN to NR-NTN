@@ -1,0 +1,116 @@
+RP-240061
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新規作業項目: E-UTRANからNR-NTNへのInterRAT モビリティサポート</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>新規作業項目: E-UTRANからNR-NTNへのInterRAT モビリティサポート</h1>
+  
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>説明</th>
+    </tr>
+    <tr>
+      <td>背景</td>
+      <td>Rel-17およびRel-18では、NR NTNとNR TNの間のモビリティがサポートされたが、E-UTRAN TNとNR NTN間のモビリティはまだ定義されていない。</td>
+    </tr>
+    <tr>
+      <td>目的</td>
+      <td>
+        <ul>
+          <li>次の前提条件:
+            <ul>
+              <li>GSO (静止軌道) およびNGSO (非静止軌道)</li>
+              <li>地球固定トラッキングエリア。NGSOでは準地球固定セル&地球移動セル</li>
+              <li>GNSS機能を持つUE</li>
+              <li>NR-NTNはFDDモードを想定</li>
+              <li>優先的にNTN-FR1バンドを対象</li>
+            </ul>
+          </li>
+          <li>コアパートの目的:
+            <ul>
+              <li>E-UTRAN TNからNR NTNへのアイドルモード移動性 (新SIBを使用) [RAN2]</li>
+              <li>E-UTRAN TNからNR NTNへの接続モード移動性およびハンドオーバー手順 [RAN2, RAN3]</li>
+              <li>関連するRRMコア要件の規定 [RAN4]</li>
+            </ul>
+          </li>
+          <li>パフォーマンスパートの目的:
+            <ul>
+              <li>上記の手順に必要なRRMパフォーマンス要件の規定 [RAN4]</li>
+            </ul>
+          </li>
+          <li>NR TNとNR NTN間の既存モビリティ手順を最大限再利用</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>関連作業項目</td>
+      <td>
+        <ul>
+          <li>FS_NR_nonterr_nw: チャネルモデルの利用</li>
+          <li>FS_NR_NTN_solutions: 本作業項目はここで特定された解決策を活用</li>
+          <li>5GSAT_ARCH: QoS管理やIDソリューションを検討可能</li>
+          <li>NR_NTN_solution、NR_NTN_enh、NR_NTN_CBW_30MHz、NR_NTN_LSband: 本作業項目はこれらを基礎とする</li>
+          <li>NR_NTN_Ph3: 本作業項目と調整が必要かもしれない</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>新規仕様書</td>
+      <td>新規仕様書は特に規定されていない</td>
+    </tr>
+    <tr>
+      <td>影響を受ける既存仕様書</td>
+      <td>
+        <ul>
+          <li>36.300, 36.306, 36.331, 36.133, 36.413 (コアパート向け改訂が必要)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>ラポータ</td>
+      <td>未定</td>
+    </tr>
+    <tr>
+      <td>リーダーシップ</td>
+      <td>
+        <ul>
+          <li>主: RAN2</li>
+          <li>従: RAN3, RAN4</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>サポート企業</td>
+      <td>Thales, CATT, Rakuten Mobile, Airbus, OQ technology, Omnispace, Inmarsat, Viasat, ESA, TNO, TTP, Cobham Satcom, CeWIT, Fraunhofer IIS, Fraunhofer HHI, Hispasat, Novamint, Ligado, Gilat, JSAT, Deutsche Telekom, Transsion Holdings</td>
+    </tr>
+  </table>
+</body>
+</html>
