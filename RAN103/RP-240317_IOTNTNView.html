@@ -1,0 +1,48 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">Rel-19におけるIoT-NTN拡張に関する見解</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG RAN Meeting #103 RP-240317<br>著者: Xiaomi</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">背景</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>RAN#102全体会議で、IoT-NTNアップリンク容量拡張についての目標が承認された。</li>
+        <li>NR-NTN PUSCHの容量拡張では、初期アクセス時のMsg3 PUSCHにOCC多重化が適用されないことは明確である。</li>
+        <li>IoT-NTNアップリンク容量拡張については、アイドル状態やインアクティブ状態でのNPUSCHフォーマット1や、接続状態でのMsg3 NPUSCHフォーマット1に、OCC多重化を適用すべきかどうかに混乱がある。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">提案</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>アイドル状態やインアクティブ状態でのNPUSCHフォーマット1や、接続状態でのMsg3 NPUSCHフォーマット1には、OCC多重化が適用されないことを明確化する。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Rel-19におけるIoT-NTNアップリンク容量拡張の目標修正案</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>アップリンクの容量拡張をサポート</li>
+        <ul style="margin: 0; padding-left: 20px;">
+          <li>3.75kHzまたは15kHzのサブキャリアで、直交カバーコード（OCC）を介して複数のUE（最大4つまで、または既存のULおよびDLシグナリングで許可される最大数）を多重化する拡張を検討し、有益な場合は規定する（RAN1、RAN2）</li>
+          <li>15kHzSCSのマルチトーンサポートも検討すべき</li>
+          <li>注意事項：劣化の影響を考慮すること、インアクティブ状態やアイドル状態のMsg3 NPUSCHフォーマット1およびNPUSCHフォーマット1の拡張は対象外とする</li>
+        </ul>
+        <li>EDTトランザクションを完了するために必要なアップリンクおよびダウンリンクシグナリングを削減する以下の拡張を検討し、有益な場合は規定する（RAN2）</li>
+        <ul style="margin: 0; padding-left: 20px;">
+          <li>msg1/RARなしでのMsg3送信</li>
+          <li>msg4/RRCEarlyDataCompleteの効率的な配信（オーバーヘッドの削減）</li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+</table>
