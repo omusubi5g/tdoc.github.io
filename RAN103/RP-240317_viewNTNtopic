@@ -1,0 +1,48 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">Rel-19 NTNトピックの範囲に関する見解</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG RAN Meeting #103 RP-240380<br>著者: Samsung</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">RAN議長からのベースライン目標</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>RAN議長とRAN4議長は、最近、RAN4 Rel-19パッケージ（非スペクトル提案）の要約をRP-240019で共有した。</li>
+        <li>要約では、RAN4のNTN進化が1つのプロジェクトとして、3つのトピック（NTN用HPUE、NGSO用NTNテスト、NTN用5MHz未満のNRチャネル帯域幅）がリストアップされている。</li>
+        <li>いくつかの議論すべき点、特に黄色でハイライトされた部分があることに気づいた。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">NTN中心のRAN4トピックの観察と提案</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p><strong>HPUE for NTN</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>PC 2、PC 1.5、PC 1を含む複数のPCがNR NTN UEとIoT NTN UEで検討されており、すべて共存性の検討作業が必要。</li>
+        <li>既存のRAN4仕様では、PC 1とPC 1.5は、TN FR1 FDD帯域でハンドヘルドUEタイプをサポートしていない。IoTデバイスについては、PC3のみがTN動作用に規定されている。</li>
+      </ul>
+      <p>提案1: PC 1とPC 1.5については、Rel-19ではハンドヘルド以外のUEデバイスタイプのみに焦点を当てる<br>
+         提案2: 初期段階では、NTN FR2帯域の高出力UEは検討しない</p>
+      
+      <p><strong>NTN testing for NGSO</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>RAN4 RF/RRM/Demod要件は、UEがドップラーシフトと時間遅延を事前補償することを前提に規定されている。RAN4のコアおよびパフォーマンス要件の観点から、これらの要件は、ゼロ/非ゼロのドップラー/遅延条件の両方に適用可能。</li>
+        <li>同様のHST復調要件として、衛星の移動によるドップラーシフトと時間シフトの時間変化を伴うNTN UEのパフォーマンスを検証するために、新しい復調テストケースをTR 38.811のモデルを参照して導入できる。</li>
+      </ul>
+      <p>提案3: NGSOテストによるコア要件への影響はない（UE RFとRRMの両方のコア要件）</p>
+
+      <p><strong>NR Channel BW less than 5 MHz (NTN)</strong></p> 
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>PBCHと制御チャネルのパフォーマンスは、3MHz CHBWのPBCH RBを限定的な伝送帯域幅でパンクチャすることで低下する。</li>
+        <li>NTN動作の3MHz CHBWをサポートするための実現可能性分析は、これまで行われていない。</li>
+      </ul>
+      <p>提案4: RAN1への影響がないと仮定して、NTNによる5MHz未満の動作の実現可能性を確認するためのリンクバジェット分析が必要</p>
+    </td>
+  </tr>
+</table>
