@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>10 GHz超の周波数帯におけるNTNの規制状況</title>
+ <style>
+   body {
+     font-family: Arial, sans-serif;
+     margin: 20px;
+   }
+   h1 {
+     text-align: center;
+   }
+   table {
+     border-collapse: collapse;
+     width: 100%;
+   }
+   th, td {
+     border: 1px solid #ddd;
+     padding: 8px;
+     text-align: left;
+   }
+   th {
+     background-color: #f2f2f2;
+   }
+ </style>
+</head>
+<body>
+ <h1>10 GHz超の周波数帯におけるNTNの規制状況</h1>
+
+ <h2>Ka帯 17.7 - 30.0 GHz</h2>
+ <p>リリース18の仕様では、WRC-19に従ってITU-Rの範囲内でKa帯の導入要件およびユースケースがカバーされています。WRC-23ではKa帯における非GSO ESIM(移動型VSAT)が追加されました。</p>
+
+ <h2>Ku帯 10.7 - 14.5 GHz</h2>
+ <p>EutelsatグループはKu帯で5G NR NTNサービスを提供する新たな衛星コンステレーションの打ち上げを計画しており、2028年に商用サービスを開始する予定です。リリース19ではKu帯のサポートが追加される予定です。</p>
+
+ <h3>Ku帯および隣接サービスの周波数範囲</h3>
+ <table>
+   <tr>
+     <th>サービス</th>
+     <th>周波数範囲</th>
+     <th>備考</th>
+   </tr>
+   <tr>
+     <td>電波天文、地球探査衛星(受動)サービス</td>
+     <td>10.6 - 10.7 GHz</td>
+     <td>10.7 GHz以下の受動帯域</td>
+   </tr>
+   <tr>
+     <td>Ku帯ダウンリンク</td>
+     <td>10.7 - 12.75 GHz (地域1および3)<br>10.7 - 12.7 GHz (地域2)</td>
+     <td>Ku帯ダウンリンク範囲の上限</td>
+   </tr>
+   <tr>
+     <td>Ku帯アップリンク1</td>
+     <td>12.75 - 13.25 GHz</td>
+     <td>WRC-23で衛星向けに確認済み</td>
+   </tr>
+   <tr>
+     <td>Ku帯アップリンク2</td>
+     <td>13.75 - 14.0 GHz</td>
+     <td>小型アンテナで最小サイズ要件あり</td>
+   </tr>
+   <tr>
+     <td>Ku帯アップリンク3</td>
+     <td>14.0 - 14.5 GHz</td>
+     <td>より小型のアンテナが可能</td>
+   </tr>
+   <tr>
+     <td>将来のIMT検討帯域</td>
+     <td>14.8 - 15.35 GHz</td>
+     <td>WRC-27の議題</td>
+   </tr>
+ </table>
+
+ <h3>FR2-NTNにおける衛星運用帯域</h3>
+ <table>
+   <tr>
+     <th>運用帯域</th>
+     <th>アップリンク(UL)運用帯域<br>SAN受信/UE送信</th>
+     <th>ダウンリンク(DL)運用帯域<br>SAN送信/UE受信</th>
+     <th>複信方式</th>
+   </tr>
+   <tr>
+     <td>Nxxa</td>
+     <td>12750 MHz - 13250 MHz<sup>6</sup></td>
+     <td>10700 MHz - 12750 MHz<sup>4</sup></td>
+     <td>FDD</td>
+   </tr>
+   <tr>
+     <td>Nxxb</td>
+     <td>13750 MHz - 14000 MHz<sup>5</sup></td>
+     <td>10700 MHz - 12750 MHz<sup>4</sup></td>
+     <td>FDD</td>
+   </tr>
+   <tr>
+     <td>Nxxc</td>
+     <td>14000 MHz - 14500 MHz</td>
+     <td>10700 MHz - 12750 MHz<sup>4</sup></td>
+     <td>FDD</td>
+   </tr>
+ </table>
+
+ <p><sup>4</sup> 割り当てられたダウンリンク周波数範囲は、地域2では12700 MHzまで、地域1および3では12750 MHzまで拡張されています。</p>
+ <p><sup>5</sup> 13750-14000 MHzにおけるVSAT-NGSOの運用に対する現行の最小アンテナサイズ4.5mは、WRC-27で見直しの議題となっており、GSOのサイズ1.2mに合わせられる可能性があります。</p>
+ <p><sup>6</sup> 地域2では12.70-12.75 GHzが地球から宇宙への送信に使用可能なため、アップリンク範囲を12.70 GHzから13.25 GHzまで拡張できます。</p>
+
+ <p>指向性VSATユーザ端末を用いる全てのFR2-NTN帯域において、無線通信規則第22.2条が適用される場合、GSOは NGSOから保護を要求できるため、GEOアーク保護が適用されます。</p>
+</body>
+</html>
