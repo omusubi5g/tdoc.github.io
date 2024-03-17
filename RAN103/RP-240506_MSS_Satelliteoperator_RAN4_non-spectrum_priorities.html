@@ -1,0 +1,116 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">リリース19におけるNTN進化のためのMSS衛星事業者RAN4主導の非スペクトル優先事項</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG RAN Meeting #103 RP-240506<br>著者: Inmarsat, Viasat, Omnispace, Hughes/EchoStar, Terrestar Solutions, Ligado Networks</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">NR NTN 事業者の優先事項</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ol style="margin: 0; padding-left: 20px;">
+        <li>NR 5MHz 未満 - 既存の非 3GPP サービスの文脈での NR NTN 展開を可能にし、EIRP 制限のある衛星をサポートし、周波数再利用効率を最大化するために、NTN バンドでも NR_FR1_lessthan_5MHz_BW ですでに規定されている 3MHz チャネル BW と 12 PRB 送信のサポートを少なくとも有効にする。</li>
+        <li>NR NTN 用 HPUE - すべての FR1 NTN バンドについて、FDD HPUE の既存の TN 仮定を再利用して、PC2 (+26 dBm)、PC 1.5 (+29 dBm)、PC1 (31 dBm) をサポートする。</li>
+        <li>NTN-NTN イントラ SAN キャリアアグリゲーション (CA) - 同じ SAN 内の異なる NTN 周波数ブロック間 (例: イントラバンドおよびインターバンドL + S) で BW を集約し、ユーザーごとのスループットを改善することに焦点を当てる。</li>
+        <li>断片化スペクトルのより良いサポート - より大きなシステム帯域幅で、既存のレガシーサービスが 5G NR チャネル割り当てを中断し、5G NR NTN サービスがスケジュールされる状況に対応するため。</li>
+        <li>NR NTN 用 4RX - 受信性能を改善し、最大 4 つの L バンドおよび S バンドアンテナに対応できるデバイスの TN 仕様および要件に NR NTN UE を合わせるため。</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">IoT NTN 事業者の優先事項</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ol style="margin: 0; padding-left: 20px;">
+        <li>IoT NTN 用 HPUE - 特に NB-IoT NTN を含むすべての FR1 IoT NTN バンドについて、PC2 (+26 dBm) と PC1 (31 dBm) をサポートする。</li>
+        <li>同じ SAN での NR NTN を備えたインバンド NB-IoT NTN - 現在、地上ネットワークでは Rel-16 以降、5G NR キャリア内での NB-IoT の展開がすでにサポートされており、スペクトル使用効率と展開の柔軟性を大幅に改善するのに役立っている。これは NTN にとって重要な欠落機能であり、手の届く果実である。</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">NR NTN 5MHz 未満</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>背景:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>初期の NR NTN 展開では、既存の非 3GPP 衛星サービスと共存する必要がある。</li>
+        <li>さらに、衛星はまだ電力が限られており、主に EIRP に制限される。</li>
+        <li>必要な最小 BW の削減は、既存のサービスの周りでの早期 NR NTN 展開、EIRP 制限のある衛星資産のサポート、周波数リソース管理と再利用の容易化に役立つ。</li>
+      </ul>
+      <p>提案:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>NR NTN バンド n255、n256、n254、および今後の拡張 L バンド [n253] に対して、12 および 15 PRB 動作と新しい 3MHz NR チャネル BW のサポートを指定する。</li>
+        <li>12 PRB と 15 PRB のサポートには、3MHz より大きいシステム/チャネル BW での展開を含める必要がある。</li>
+        <li>最低限、PSS/SSS と PBCH パンクチャへのこれ以上の影響なしに、12 PRB まで低減するというTNの既存の仮定を再利用する。</li>
+        <li>パンクチャリングによる最大 5dB の PBCH リンクバジェット損失が特定されている。</li>
+        <li>NTN のリンクバジェット損失を明確にし、PBCH パフォーマンス損失を回復するための技術を検討する。</li>
+        <li>特定の物理層チャネル (PSS/SSS への影響なし) に対して、さらなる低減が達成できるかどうかを検討する。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">NR NTN 用 HPUE サポート</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>背景:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>現在の NTN システムは、特に現実的なアンテナ利得の仮定 (例: -5.5 dBi 利得) を考慮すると、厳しいリンクバジェットのため、UL でカバレッジと容量の両方に課題がある。</li>
+        <li>カバレッジを改善する現在のソリューションは、主に繰り返しに基づいており、システム容量に深刻な影響を与える。</li>
+        <li>この問題は、RAN#97 およびその後の RAN#99 で提起され、Rel-19 に延期された。</li>
+        <li>衛星 UE 送信規制では、ハンドヘルド型端末 (衛星電話など) に対して最大 15dBW、非ハンドヘルドに対してはさらに高い UL 送信電力が許可されている。3GPP は、現在の衛星規制の枠組み内で許可されているものとより良く一致させるべきである。</li>
+        <li>この機能がないと、今後の NR NTN 展開における多くのユースケースが大幅に制限される。</li>
+      </ul>
+      <p>目的:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>NTN 参照バンド n255、n256、n254、および今後の拡張 L バンド [n253] を考慮して:</li>
+        <ul style="margin: 0; padding-left: 20px;">
+          <li>NR NTN UE の場合: スマートフォンのフォームファクターでは PC2 (+26 dBm)、非スマートフォンのフォームファクターでは少なくとも PC1.5 (+29 dBm) と PC1 (+31 dBm) のサポートを指定する。</li>
+          <li>必要に応じて、スマートフォンアプリケーションの比吸収率 (SAR) を制御するためのデューティサイクルに関連する側面を検討する。</li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">IoT NTN 用 HPUE サポート</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>背景:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>現在の NTN システムは、特に現実的なアンテナ利得の仮定 (例: -5.5 dBi 利得) を考慮すると、厳しいリンクバジェットのため、UL でカバレッジと容量の両方に課題がある。</li>
+        <li>カバレッジを改善する現在のソリューションは、主に繰り返しに基づいており、システム容量に深刻な影響を与える。</li>
+        <li>この問題は、RAN#97 およびその後の RAN#99 で提起され、Rel-19 に延期された。</li>
+        <li>衛星 UE 送信規制では、ハンドヘルド型端末 (衛星電話など) に対して最大 15dBW、非ハンドヘルドに対してはさらに高い送信電力が許可されている。3GPP は、現在の衛星規制の枠組み内で許可されているものとより良く一致させるべきである。</li>
+        <li>この機能がないことは、NB-IoT で開始されている進行中の NTN 展開とユースケースを現在大幅に制限している。</li>
+      </ul>
+      <p>目的:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>NTN 参照バンド 255、256、254、および 253 を考慮して:</li>
+        <ul style="margin: 0; padding-left: 20px;">
+          <li>eMTC IoT NTN UE (Cat M1) の場合: スマートフォンのフォームファクターでは UE 電力クラス 2 (+26 dBm)、非スマートフォンのフォームファクターでは少なくとも電力クラス 1.5 (+29 dBm) と UE 電力クラス 1 (+31 dBm) のサポートを指定する。</li>
+          <li>NB-IoT NTN UE (Cat NB1、NB2) の場合: MOP +26 dBm の新しい UE 電力クラスと MOP +31 dBm の新しい電力クラスのサポートを指定する。</li>
+          <li>必要に応じて、スマートフォンアプリケーションの比吸収率 (SAR) を制御するためのデューティサイクルに関連する側面を検討する (NB-IoT はスマートフォンに使用される可能性がある)。</li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">NR と同じ SAN でのインバンド NB-IoT NTN</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>背景:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>現在、地上ネットワークでは Rel-16 以降、5G NR キャリア内での NB-IoT の展開がすでにサポートされており、スペクトル使用効率と展開の柔軟性を大幅に改善するのに役立っている。NTN NB-IoT の成長をサポートするには、NTN-NR 運用によるネットワーク展開をさらに改善し、奨励する必要がある。</li>
+        <li>これは NTN にとって重要な欠落機能であり、手の届く果実である。</li>
+      </ul>
+      <p>目的:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>NR ガードバンドでの NB-IoT 運用については、TR 37.824 の結論を再利用することが基本的な前提であり、ここではインバンド展開と同じように扱われる。RF 要件は規定されない。</li>
+        <li>NB-IoT と NR の共存に関する前提条件に変更はない (TR 37.824)。</li>
+        <li>すでに RAN4#110 アテネで議論された。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">NTN-NTN イントラ SAN キャリアアグリゲーション (CA)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>背景:</p>
+      <ul style="margin: 0; padding-left:
