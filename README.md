@@ -7,3 +7,4 @@
 - [RP-240318 Views on NTN enhancements in Rel-19](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240318_NRNTNview.html)
 - [RP-240380 Views on NTN topic](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240380_viewNTNtopic.html)
 - [RP-240506 MSS Satellite operator RAN4 non-spectrum priorities for NTN Evolution in Release 19](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240506_MSS_Satelliteoperator_RAN4_non-spectrum_priorities.html)
+- [RP-240846 New WID: Inter RAT mobility support from E-UTRAN TN to NR-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240846.html)
