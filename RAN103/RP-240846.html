@@ -1,0 +1,95 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">New WID: Inter RAT mobility support from E-UTRAN TN to NR-NTN</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG RAN Meeting #103 RP-240846<br>Source: Thales, CATT</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Justification</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>Rel-17とRel-18で、NR NTN - NR NTNモビリティ、NR TN - NR NTN、およびNR NTN - NR TNモビリティ向けのいくつかのソリューションが定義された。</li>
+        <li>ただし、E-UTRA TNとNR NTNの間のモビリティ、およびその逆はまだ定義されていない。</li>
+        <li>現在および予測されるTN展開とUEの機能に基づいて、アイドルモードのモビリティサポートのためにE-UTRA TNとNR NTNの間のモビリティを定義することも価値がある。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Objective</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>このワークアイテムは、以下の仮定に基づいて、E-UTRA TNからNR NTNへのアイドルモードモビリティを指定することを目的としている。</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>GSO（Geo Synchronous Orbit）およびNGSO（Non-Geo Synchronous Orbit）。NGSOには低軌道（LEO）と中軌道（MEO）が含まれる。</li>
+        <li>地球固定トラッキングエリア。NGSOの準地球固定および地球移動セル</li>
+        <li>GNSS（Global Navigation Satellite Systems）機能を持つUE</li>
+        <li>NR-NTNのFDDモード</li>
+        <li>NTN-FR1バンドが優先的に考慮される</li>
+        <li>関連する場合、HAPS（High Altitude Platform Station）およびATG（Air To Ground）シナリオをサポートするための暗黙的な互換性</li>
+      </ul>
+      <p>このワークアイテムは、以下の目的のサポートを指定することを目的としている。</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>E-UTRA TNからNR NTNへのセル再選択に基づくアイドルモードモビリティ。E-UTRA TNは、システム情報ブロックでNR NTNネイバーセルの衛星情報を提供する。[RAN2]</li>
+      </ul>
+      <p>注:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>ソリューションは、IoT-NTN用に導入された既存のシグナリングと、NR TNとNR NTN間のモビリティ手順を最大限再利用するものとする。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Expected Output and Time scale</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>Impacted existing TS/TR:</p>
+      <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+          <th style="border: 1px solid #ddd; padding: 4px;">TS/TR No.</th>
+          <th style="border: 1px solid #ddd; padding: 4px;">Description of change</th>
+          <th style="border: 1px solid #ddd; padding: 4px;">Target completion plenary#</th>
+          <th style="border: 1px solid #ddd; padding: 4px;">Remarks</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 4px;">36.300</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">RAN#109</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">Core part</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 4px;">36.306</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) radio access capabilities</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">RAN#109</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">Core part</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 4px;">36.331</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Resource Control (RRC); Protocol specification</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">RAN#109</td>
+          <td style="border: 1px solid #ddd; padding: 4px;">Core part</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Work item Rapporteur(s)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>Ronteix-Jacquet, Flavien, flavien.ronteix-jacquet@thalesaleniaspace.com</li>
+        <li>Xiao XIAO, xiaoxiao@catt.cn</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Work item leadership</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">RAN2</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Supporting Individual Members</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      Thales, CATT, Rakuten Mobile, Airbus, OQ technology, Omnispace, Inmarsat, Viasat, ESA, TNO, TTP, Cobham Satcom, CeWIT, Fraunhofer IIS, Fraunhofer HHI, Hispasat, Novamint, Ligado, Gilat, JSAT, Deutsche Telekom, Transsion Holdings, ETRI, Telit, ZTE, Samsung, EchoStar, Xiaomi, Inter Digital, Firstnet
+    </td>
+  </tr>
+</table>
