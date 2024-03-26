@@ -1,0 +1,78 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">New WID: Enhanced requirements and test methodology for NR and IoT NTN</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG RAN Meeting #103 RP-240857<br>Source: RAN4 chair (Huawei)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Justification</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      本ワークアイテムは、NR-NTN周波数レンジ1（FR1-NTN）およびLTEバンドの周波数レンジにおける、NR-NTN（Non-Terrestrial Networks）およびIoT-NTN（NB-IoTおよびeMTCベースのNTN）の要件とテスト方法の拡張を目的としており、以下の作業領域が含まれる。<br>
+      - NTN用の高電力UE（HPUE）<br>
+      - 非静止衛星軌道（NGSO）用のNTNテスト<br>
+      - NR-NTN用の5MHz未満
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Objective</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <strong>Core part:</strong><br>
+      NRおよびIoT NTNの要件とテスト方法の拡張におけるコアパートの目的は以下の通り。<br>
+      <strong>NTN用の高電力UE（HPUE）</strong><br>
+      - 上記のバンド例と対応する電力クラスについて、TR 38.863に基づく共存分析を実施<br>
+      - NR-NTN（Non-Terrestrial Networks）およびIoT-NTN（NB-IoTおよびeMTCベースのNTN）の高電力UE（HPUE）を、FR1-NTNバンドと対応するLTE NTNバンドについて、シングルアップリンク（UL）キャリアシナリオ用に規定<br>
+      <strong>NTN用の5MHz未満</strong><br>
+      - FR1-NTNバンドのNR-NTN（NRベースの非地上ネットワーク）用に、5MHz未満のチャネル帯域幅のシステムパラメータを規定<br>
+      - FR1-NTNバンドのNR-NTNについて、5MHz未満用に必要なSAN RFコア要件を規定<br>
+      - FR1-NTNバンドのNR-NTN用の5MHz未満について、必要なNR-NTN UE RFコア要件を規定<br>
+      - FR1-NTNバンドのNR-NTN用の5MHz未満について、必要なRRMコア要件を規定<br>
+      - 上記の目的をサポートするために必要なシグナリングを規定<br>
+      <br>
+      <strong>Performance part:</strong><br>
+      NRおよびIoT NTNの要件とテスト方法の拡張におけるパフォーマンスパートの目的は以下の通り。<br>
+      <strong>NGSO用のNTNテスト</strong><br>
+      - FR1-NTNバンドと対応するLTEバンドにおける、NR-NTNおよびIoT-NTN用の、ドップラーと遅延シフトが変化するTEエミュレートチャネルモデルを規定<br>
+      - FR1-NTNバンドと対応するLTEバンドにおけるNGSO用のNR-NTNおよびIoT-NTNについて、上記のチャネルモデルに基づき、ULタイミングのUE RRMパフォーマンステストを規定<br>
+      - FR1-NTNバンドと対応するLTEバンドにおけるNGSO用のNR-NTNおよびIoT-NTNについて、上記のチャネルモデルに基づき、PDSCHのUE復調パフォーマンス要件を規定<br>
+      - TEエミュレートチャネルモデルでのテストの適用性を規定<br>
+      <strong>NTN用の5MHz未満</strong><br>
+      - FR1-NTNバンドのNR-NTN用の5MHz未満について、SANに必要な適合要件を規定<br>
+      - FR1-NTNバンドのNR-NTN用の5MHz未満について、必要なRRMパフォーマンス要件とテストケースを規定<br>
+      - FR1-NTNバンドのNR-NTN用の5MHz未満について、必要な復調パフォーマンス要件を規定
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Expected Output and Time scale</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <strong>Impacted existing TS/TR:</strong><br>
+      Core part:<br>
+      - 38.101-5, 38.133, 38.108, 38.306, 38.331 (Target: RAN#109)<br>
+      - 36.102, 36.133, 36.108, 36.306, 36.331 (Target: RAN#109)<br>
+      Perf. part:<br>  
+      - 38.101-5, 38.133, 38.181 (Target: RAN#111)<br>
+      - 36.102, 36.133, 36.181 (Target: RAN#111)
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Work item Rapporteur(s)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      - Tang, Runsen (runsen.tang@samsung.com)<br>
+      - Zhang, Juan (zhangjuan8@xiaomi.com)
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Work item leadership</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">RAN WG4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Supporting Individual Members</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      Airbus, Apple, CAICT, CATT, China Telecom, China Unicom, CMCC, Deutsche Telekom, EchoStar, Ericsson, ESA, Fraunhofer HHI, Fraunhofer IIS, Gatehouse, HiSilicon, Huawei, Inmarsat, Intel, Keysight, LG Electronic, MediaTek Inc, New H3C, Nokia, NOVAMINT, OPPO, Qualcomm, SAICT, Samsung, Sanechips, Sateliot, Skyworks Solutions Inc, Sony, Spreadstrum, Thales, Viasat, Vivo, Xiaomi, ZTE
+    </td>
+  </tr>
+</table>
