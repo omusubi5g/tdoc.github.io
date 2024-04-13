@@ -1,0 +1,50 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">IoT NTN phase 3 scope</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG-RAN WG2 #125bis R2-2403641<br>Source: Ericsson</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Introduction</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      NR用のIoT NTNに関する第3のWIDが[1]で合意された。本寄書では、IoT NTNの目的と必要な検討事項、新規仕様について概要を提供する。ワークアイテム[1]の目標は以下の通り。<br>
+      - 再生ペイロードとしてフルeNBを搭載するStore&Forward (S&F)衛星運用のサポート<br>
+      - アップリンク容量の拡張のサポート<br>
+      - Early Data Transmission (EDT)トランザクションを完了するために必要なアップリンクおよびダウンリンクシグナリングを削減するための拡張の検討と規定
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Objective of Store and forward</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      この目的は、NTNペイロード上にフルeNBを搭載する、すなわち再生アーキテクチャを前提としている。<br>
+      1. Store and forwardは再生ペイロードを前提としており、NR NTNの再生ペイロードに関する作業を再利用できる。<br>
+      2. IoT NTNの再生ペイロードは、NR NTNの再生ペイロードのソリューションを待つことができる。<br>
+      store and forwardでは、再生ペイロードに加えて、一部のアーキテクチャ更新が必要になる可能性がある。SA2とCT1の検討を待ってから、RAN2でこの目的を扱うべきである。
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Objective Uplink capacity enhancements</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      この目的は、有益な場合に検討し規定する必要がある。<br>
+      <strong>UE multiplexing using orthogonal cover codes [RAN1, RAN2, RAN4]</strong><br>
+      - RAN2は、UE多重化に関するRAN1の検討結果を待つ。<br>
+      <strong>Early Data Transmission [RAN2]</strong><br>  
+      - RAN2は、Msg1とRARの送信なしでEDTを行うためのターゲットシナリオと、EDT Msg4のオーバーヘッド削減について明確にする必要がある。
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Conclusion</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      前述の議論に基づき、以下を提案する。<br>
+      提案1: IoT NTNの再生ペイロードは、NR NTNの再生ペイロードのソリューションを待つことができる。<br>
+      提案2: RAN2は、store and forward目的を扱う前に、SA2でのアーキテクチャ検討の結果を待つ。<br>
+      提案3: RAN2は、UE多重化に関するRAN1の検討結果を待つ。<br>
+      提案4: RAN2は、Msg1とRARの送信なしでEDTを行うためのターゲットシナリオと、EDT Msg4のオーバーヘッド削減について明確にする。
+    </td>
+  </tr>
+</table>
