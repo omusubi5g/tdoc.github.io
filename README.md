@@ -12,4 +12,5 @@
 - [RP-240857 New WID: Enhanced requirements and test methodology for NR and IoT NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240857.html)
 
 # RAN2 #125bis
-- [R2-2403274 Discussion on Store and Forward support for IoT NTN Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/RP-2403274.html)
+- [R2-2403274 Discussion on Store and Forward support for IoT NTN Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403274.html)
+- [R2-2403641 IoT NTN phase 3 scope](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403641.html)
