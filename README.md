@@ -10,3 +10,6 @@
 - [RP-240784 New WID on UE Conformance - IoT NTN enhancements plus CT1 aspects](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240784.html)
 - [RP-240846 New WID: Inter RAT mobility support from E-UTRAN TN to NR-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240846.html)
 - [RP-240857 New WID: Enhanced requirements and test methodology for NR and IoT NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240857.html)
+
+# RAN2 #125bis
+- [R2-2403274 Discussion on Store and Forward support for IoT NTN Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/RP-2403274.html)
