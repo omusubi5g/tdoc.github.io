@@ -1,0 +1,51 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">Discussion on Store and Forward support for IoT NTN Phase 3</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG-RAN WG3 Meeting #125bis R2-2403274<br>Source: THALES</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Introduction</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      Rel-19におけるNR NTN EvolutionのWIの正当化と目的では、NB-IoTでStore and Forward動作をサポートすることの利点を強調している。<br>
+      再生ペイロードを使用したStore and Forward (S&F)衛星運用のサポートに特に関連する利点は以下の通り。<br>
+      - S&F運用により、遅延を許容する非リアルタイムのIoT NTNサービスを、衛星が通過する地域で提供できる。NTNゲートウェイインフラは不要。<br>
+      - 不連続カバレッジのサポートとともに、S&F運用のサポートは、IoT NTNサービスの費用対効果の高い展開を容易にし、(1)疎なLEO constellation、(2)縮小された地上セグメントインフラストラクチャで即時の運用サービスを可能にするための鍵となる。<br>
+      - S&Fのサポートにより、3GPP IoT NTNソリューションは、大規模な衛星IoT向けの他の非3GPPソリューションと同等になる。これらのソリューションは、S&Fサービスをネイティブにサポートしている。<br>
+      再生ペイロードとしてフルeNBを搭載するStore&Forward (S&F)衛星運用のサポート。<br>
+      - 遅延を許容するサービス用のS&F運用をサポートするために、E-UTRAN（ネットワークとUE）に必要な拡張を定義する。[RAN3, RAN2]<br>
+        - 少なくとも、必要に応じて、特にフィーダーリンクの切り替えに対処するために、S1プロトコルに関連する必要な拡張を指定する。[RAN3]
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Discussion</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <strong>Regenerative payload support in the TS 36.300</strong><br>
+      Store and Forward動作には、NTNペイロードにeNBを搭載する必要がある。Rel-19では、再生ペイロードアーキテクチャを定義しており、NR NTNと IoT NTNの間で再生ペイロードアーキテクチャを整合させることが興味深い。<br>
+      1. IoT NTNの再生ペイロードアーキテクチャの定義をNR NTNと整合させる。<br>
+      <strong>Store and Forward</strong><br>
+      Store and Forwardは、衛星が常に地上局に接続されていなくてもUEにネットワークサービスを自律的に提供する方法として定義されている。<br>
+      [2]で実施された検討では、Store and Forwardの4つのユースケースが説明されている。<br>
+      また、[3]ではStore and Forward動作に関連する要件のリストも定義されている。<br>
+      2. 以下の要件は、RAN2のStore and Forward作業で考慮されるべきである。<br>
+      - フィーダーリンクが利用できない場合、衛星にデータを保存し、衛星と地上セグメント間のフィーダーリンクが利用可能になったら、データを転送する。<br>
+      - 衛星アクセスを備えた5Gシステムは、S&F衛星運用が適用されているかどうかをUEに通知できなければならない。<br>
+      - オペレーターのポリシーに従って、S&F衛星運用をサポートする衛星アクセスを備えた5Gシステムは、ISLを介して、保存されたデータを衛星から別の衛星（地上ネットワークへの利用可能なフィーダーリンクを持つ衛星など）に転送できなければならない。
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">Conclusion</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      1. IoT NTNの再生ペイロードアーキテクチャの定義をNR NTNと整合させる。<br>
+      2. 以下の要件は、RAN2のStore and Forward作業で考慮されるべきである。<br>
+      - フィーダーリンクが利用できない場合、衛星にデータを保存し、衛星と地上セグメント間のフィーダーリンクが利用可能になったら、データを転送する。<br>
+      - 衛星アクセスを備えた5Gシステムは、S&F衛星運用が適用されているかどうかをUEに通知できなければならない。<br>
+      - オペレーターのポリシーに従って、S&F衛星運用をサポートする衛星アクセスを備えた5Gシステムは、ISLを介して、保存されたデータを衛星から別の衛星（地上ネットワークへの利用可能なフィーダーリンクを持つ衛星など）に転送できなければならない。
+    </td>
+  </tr>
+</table>
