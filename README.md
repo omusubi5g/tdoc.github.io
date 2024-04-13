@@ -1,4 +1,4 @@
-##3GPP寄書要約サイト
+## 気になった3GPP寄書の要約を載せています
 
 # RAN103
 - [RP-240060 Summary for NR NTN (Non-Terrestrial Networks) enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240060_Summary_NTNenh.html)
