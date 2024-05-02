@@ -19,4 +19,5 @@
 
 ## RAN2 #125bis
 - [R2-2403274 Discussion on Store and Forward support for IoT NTN Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403274.html)
+- [R2-2403641 Regenerative NTN payload support in NR NTN Evolution](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403641.html)
 - [R2-2403641 IoT NTN phase 3 scope](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403641.html)
