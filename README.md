@@ -20,6 +20,7 @@
 - [RP-240857 New WID: Enhanced requirements and test methodology for NR and IoT NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240857.html)
 
 ## RAN1 #116bis
+- [R1-2403666 Session notes for 9.11 Non-Terrestrial Networks (NTN) for NR Phase 3 and Internet of Things (IoT) Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403666.html)
 - [R1-2403719 FL Summary #2 for IoT-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403719.html)
 
 ## RAN2 #125bis
