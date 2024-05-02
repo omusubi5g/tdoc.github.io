@@ -1,0 +1,224 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>R1-2403719 IoTNTNFLS2.docx</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 1em;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #222;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: 2em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 1.6em;
+      margin-top: 1em;
+    }
+    h3 {
+      font-size: 1.2em;
+      margin-top: 0.8em;
+    }
+    p, ul, ol, table {
+      margin-bottom: 1em;
+    }
+    ul, ol {
+      padding-left: 1.5em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .proposal {
+      background-color: #f0f8ff;
+      border: 1px solid #add8e6;
+      padding: 1em;
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>R1-2403719 IoTNTNFLS2.docx</h1>
+  
+  <h2>1 はじめに</h2>
+  <p>これはIoT-NTNワークアイテムの2つ目のFeature Lead Summary (FLS)です。目的は4月18日木曜日のオフライン/オンラインディスカッションの準備のためです。更新されたテキストは[FL2T]のマークが付いており、更新された質問は[FL2Q]のマークが付いています。</p>
+
+  <h2>2 WIDの目的</h2>
+  <ul>
+    <li>アップリンクの容量強化のサポート
+      <ul>
+        <li>NPUSCH format 1とNPRACHの単一の3.75 kHzまたは15 kHzサブキャリアにおいて、直交カバーコード（OCC）を介した複数UE（例：最大4またはUL/DLシグナリングで許可される最大数のいずれか小さい方）の多重化の検討と仕様化（有益な場合）</li>
+        <li>15 kHz SCSのマルチトーンサポートも検討すべき</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>3 以前の合意事項</h2>
+  <p>RAN1#116アテネで合意されたこと:</p>
+  <ul>
+    <li>3.75kHzと15kHz SCSの両方のシングルトーンNPUSCH format 1送信では、以下のOCCスキームがRAN1でさらに検討される:
+      <ul>
+        <li>シンボルレベル、スロットレベル、繰り返しレベル、RVレベルで広がる時間領域OCC</li>
+      </ul>
+    </li>
+    <li>マルチトーンNPUSCH format 1送信では、以下のOCCスキームがRAN1でさらに検討される:
+      <ul>
+        <li>シンボルレベル、スロットレベル、繰り返しレベル、RVレベルで広がる時間領域OCC</li>
+        <li>シンボル内プリDFT拡散OCC</li>
+      </ul>  
+    </li>
+    <li>NPUSCH format 1の検討には以下の評価前提条件が使用される（表の詳細は省略）</li>
+  </ul>
+
+  <p>これまでRAN1#116bis changshahで合意されたこと:</p>
+  <ul>
+    <li>NPUSCH評価前提条件について、DMRS設定を以下のように更新する:
+      <ul>
+        <li>ベースライン評価では、3.75kHzはスロット当たりOS#4、15kHzはスロット当たりOS#3</li>
+        <li>OCC評価では、提案者次第</li>  
+      </ul>
+    </li>
+    <li>少なくとも以下のNPRACH OCCスキームがRAN1で検討される:
+      <ul>
+        <li>シンボルグループ内OCC</li>
+        <li>シンボルグループ間OCC</li>
+        <li>繰り返し間OCC</li>
+      </ul>
+    </li>
+    <li>NPRACH OCCの検討ではNPRACHフォーマット2は検討しない。</li>
+    <li>NPRACHのOCC検討には以下の評価前提条件が使用される（表の詳細は省略）</li>
+    <li>3.75kHz SCSのNPUSCH format 1を使用するUEと15kHz SCSのNPUSCH format 1を使用する別のUEの間でのOCC多重化はサポートされない。</li>
+  </ul>
+   
+  <h2>4 NPUSCH</h2>
+  <h3>4.1 Tdocsで提起された課題の全体的な要約</h3>
+  <p>入力寄書で企業が提起した課題の全体的な要約は以下の通り:</p>
+  <ul>
+    <li>DMRSの多重化方式:
+      <ul>
+        <li>CDM[HW]</li>
+        <li>TDM[HW] - CDMよりも優れた性能[HW]</li>
+        <li>OCCをサポートするためのDMRSシンボル数の増加[LGE]</li>
+      </ul>
+    </li>
+    <li>シングルトーンOCC性能
+      <ul>
+        <li>RV/繰り返しレベルOCCは性能不良[HW]</li> 
+        <li>シンボルレベルとスロットレベルOCCは同等の性能[HW,ZTE]</li>
+      </ul>
+    </li>
+    <li>マルチトーンOCC性能  
+      <ul>
+        <li>RV/繰り返しレベルOCCは性能不良[HW]</li>
+        <li>シンボル、スロット、N_slotレベルOCCはOCC2で同等の性能[HW]</li>
+        <li>OCC4ではFOエラーが多くなるため、OCC2よりも損失が大きい[Xiaomi]</li>
+        <li>OCCスキームによって集約スループットが高くなる[HW,ZTE]</li>
+      </ul>
+    </li>  
+    <li>3.75kHzと15kHzのOCC多重化
+      <ul>
+        <li>サポートしない: eNBでの分離が困難/複雑[Len]</li>  
+      </ul>
+    </li>
+    <li>OCCの基本ユニット長の設定
+      <ul>
+        <li>値Xで設定可能[Len]</li>
+      </ul>  
+    </li>
+    <li>OCCシーケンスのシグナリング
+      <ul>
+        <li>DCI、半静的(RRC)、またはC-RNTIベース</li>
+      </ul>
+    </li>
+    <li>OCCシーケンスの種類  
+      <ul>
+        <li>DFTコード[ZTE,Apple] - TS38.211のPUCCHフォーマット1から[ZTE]</li>
+        <li>Walshコード[CATT,Apple]</li>
+        <li>どのOCCシーケンスを使用するかを決定する前に、OCCの長さを決定すべき[FL]</li>
+      </ul>
+    </li>
+    <li>OCCサイズ
+      <ul>
+        <li>最大4[Apple] - OCC4より大きい場合、NPDCCHシグナリングがボトルネックになる[Apple]</li>
+        <li>最大2[Ericsson] - OCC4の位相シフトが大きすぎる[Ericsson]</li> 
+      </ul>
+    </li>
+    <li>NPUSCHに対するOCCスキームの見解
+      <ul>
+        <li>シンボルレベル - PhyCHマッピングの再定義が必要[ZTE,Apple,QC]、FOとTOに対して弾力的[ZTE,QC]、コードレートに影響[vivo,OPPO,Sharp]、DMRS問題[Apple,Sharp,QC]、3.75kHzではOCC2[Ericsson]</li>
+        <li>スロットレベル - PhyCHマッピングの再定義が必要[ZTE]、FOとTOに対して弾力的だがシンボルレベルほどではない[ZTE]、受け入れ可能な性能[Xiaomi,CATT]、実装が簡単(複雑さが少ない)[CATT]、15kHzではOCC2[Ericsson]</li>
+        <li>繰り返しレベル - 仕様への影響が小さい[ZTE,Sharp]、FOとTOのために性能が悪い[ZTE]、長すぎる時間スパンのために性能が悪い[Spreadtrum]</li>
+        <li>RVレベル - FOとTOのために性能が悪い[ZTE]、長すぎる時間スパンのために性能が悪い[Spreadtrum,Sharp]、デコード遅延[Apple]</li>
+        <li>シンボル内プリDFT拡散 - 仕様変更が大[ZTE]、多重化効果はOCCを行わずにUEに小さな量の周波数リソースを割り当てるだけで達成可能[ZTE]、コードレートが上がる[vivo]、電力ブースティングゲイン[vivo]、時間領域スキームのみ検討[Xiaomi,Nokia,ETRI]、マルチキャリアスキームは検討しない[Sharp,MTK]</li>
+      </ul>  
+    </li>
+    <li>評価前提条件
+      <ul>
+        <li>小さなデータとVoIPを評価で検討[CMCC]</li>
+        <li>DMRSの位置のエラーを考慮するために、NPUSCH評価前提条件を更新[ETRI]</li> 
+        <li>セル内の潜在的なパスロス差を考慮して、電力アンバランスは5.1dBとすべき[ETRI]</li>
+      </ul>
+    </li>
+    <li>セグメント  
+      <ul>
+        <li>OCC動作に対するULセグメントの影響を検討[spreadtrum,LGE,Nokia,Ericsson] - セグメント間で位相の連続性が失われる[spreadtrum,LGE]、セグメントギャップ内のドロップシンボルにOCCが及ぶ場合、全セグメントがドロップされる、そうでないと部分的なOCCユニットから直交性が失われる[Nokia]</li>
+      </ul>
+    </li>
+    <li>NPUSCH OCCが機能すべき他の機能（コネクテッドモードの動的グラント以外）
+      <ul>  
+        <li>IDLE/INACTIVE（EDTを含む）[Xiaomi] - XiaomiはOCCが現在のWIDでこれらのケースに適用されるかどうか不明</li>
+        <li>EDT[QC]</li>
+        <li>PUR[QC]</li>
+        <li>RACHレスEDT(Rel-19)[QC]</li>
+      </ul>  
+    </li>
+    <li>レガシーUEとの互換性と共存[Nokia]</li>
+    <li>NPRACH周期性 - OCCを用いたNPUSCHはNPRACH周期性内に収まるべき[Ericsson]</li>
+    <li>NPUSCHスケジューリング遅延の奇数[Ericsson] - NPUSCHのスケジューリング機会を増やすため、NPDCCHは奇数のサブフレームオフセットをシグナリングできるべき[Ericsson]</li> 
+  </ul>
+
+  <h3>4.2 評価前提条件の更新</h3>
+  <p>ETRIはRAN1#116アテネ会合で合意された評価前提条件におけるNPUSCHのDMRSシンボル位置が正しくないことを指摘。この節を以下のように更新することを提案:</p>
+
+  <div class="proposal">
+    <p><strong>提案4.2-1</strong></p>
+    <p>NPUSCH評価前提条件について、DMRS設定を以下のように更新する:</p>
+    <table>
+      <tr>
+        <th>DMRS設定</th>
+        <th>ベースライン評価</th>
+        <th>ベースライン評価</th>
+      </tr>
+      <tr>  
+        <td></td>
+        <td>3.75kHzはスロット当たりOS#<del>3</del><ins>4</ins></td>
+        <td>15kHzはスロット当たりOS#<del>4</del><ins>3</ins></td>
+      </tr>
+      <tr>
+        <td></td>  
+        <td>15kHzはスロット当たりOS#<del>4</del><ins>3</ins></td>
+        <td>OCC評価では提案者次第</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>OCC評価では提案者次第</td>
+        <td></
