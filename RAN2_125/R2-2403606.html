@@ -1,0 +1,198 @@
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #0066cc;
+}
+
+h2 {
+  color: #0066cc;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #0066cc;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+ul {
+  margin-top: 0;
+}
+</style>
+</head>
+<body>
+
+<h1>3GPP TSG-RAN WG2 Meeting #125bis</h1>
+
+<p><strong>寄書番号:</strong> R2-2403606</p>
+<p><strong>タイトル:</strong> Regenerative NTN payload support in NR NTN Evolution</p>
+<p><strong>著者:</strong> THALES, CATT, Huawei, ZTE, Inmarsat, Viasat</p>
+
+<h2>1. Introduction</h2>
+<table>
+  <tr>
+    <th>要点</th>
+    <th>詳細</th>
+  </tr>
+  <tr>
+    <td>リリース19の非地上ネットワーク(NTN)の進化における再生ペイロードサポートの目的</td>
+    <td>
+      <ul>
+        <li>NTN車両上の5Gシステム機能(再生ペイロード)を備えた非地上ネットワークアーキテクチャのサポート</li>
+        <li>リリース17と18で規定されたトランスペアレントペイロードに加えて、新しいアーキテクチャオプションを提供し、NTNの展開をより柔軟にする</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>再生ペイロードの利点</td>
+    <td>
+      <ul>
+        <li>Uuにおける無線リソース処理の利点</li>
+        <li>ISLを介したgNB間の無線リソース調整の利点</li>
+        <li>ISLの有無にかかわらず、2つのUE間およびUEとネットワーク間のリアルタイム接続をサポートするために必要</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>本寄書の目的</td>
+    <td>リリース19のTS 38.300への再生ペイロードの実装を提案</td>
+  </tr>
+</table>
+
+<h2>2. Discussion</h2>
+<table>
+  <tr>
+    <th>要点</th>
+    <th>詳細</th>
+  </tr>
+  <tr>
+    <td>再生ペイロードの機能</td>
+    <td>
+      <ul>
+        <li>信号の変調/復調</li>
+        <li>誤り訂正</li>
+        <li>スケジューリング</li>
+        <li>ルーティング</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>再生ペイロードアーキテクチャの利点 (ユーザ向け)</td>
+    <td>
+      <ul>
+        <li>NTNゲートウェイのない領域でも遅延に敏感なサービスをサポート可能</li>
+        <li>ユーザプレーンとコントロールプレーンの遅延を削減</li>
+        <li>コンステレーション内のUE間通信をサポート</li>
+        <li>オンボードのエッジコンピューティングをサポート</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>再生ペイロードアーキテクチャの利点 (オペレータ向け)</td>
+    <td>
+      <ul>
+        <li>地上セグメントの展開の柔軟性向上</li>
+        <li>フィーダーリンク容量の使用効率を改善</li>
+        <li>特定の国の規制・主権要件を満たすためのトラフィックのルーティングの柔軟性</li>
+        <li>国ごとに異なるオペレーターが運用する複数のコアネットワークのサポート</li>
+        <li>サービスリンク上の無線インターフェースリソースの効率を改善</li>
+        <li>アクセスとバックホールサービスを同時に提供する機能</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>過去の非地上ネットワークアーキテクチャの検討</td>
+    <td>
+      <ul>
+        <li>リリース15: トランスペアレントオプションと再生オプションが検討された</li>
+        <li>リリース16: 透過ペイロードと再生ペイロードの両方が検討されたが、複雑さのためリリース17では透過ペイロードのみが規範化された</li>
+        <li>リリース19: RAN#102で合意されたように、再生ペイロードの導入が目的</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>リリース19で想定される再生ペイロードアーキテクチャ</td>
+    <td>ISLを備えたオンボードgNBによる再生ペイロードアーキテクチャ</td>
+  </tr>
+  <tr>
+    <td>再生ペイロードアーキテクチャがインターフェースに与える影響</td>
+    <td>
+      <ul>
+        <li>NR-Uu: サービスリンクが簡素化される (共通TAとkmacが0になる)</li>
+        <li>NG: 主な課題は長いフィーダーリンク遅延とLEOでの頻繁なパス切り替え</li>
+        <li>Xn: NGと同様の課題に加え、ISL遅延の影響も受ける</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h2>3. Text Proposal for TS 38.300</h2>
+<table>
+  <tr>
+    <th>変更箇所</th>
+    <th>変更内容</th>
+  </tr>
+  <tr>
+    <td>16.14.1節</td>
+    <td>
+      <ul>
+        <li>トランスペアレントペイロードと再生ペイロードのアーキテクチャ図を追加</li>
+        <li>リリース19ではオンボードgNBのみがサポートされることを明記</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>16.14.2.1節</td>
+    <td>再生ペイロードでは、共通TAとkmacが0になることを追記</td>
+  </tr>
+  <tr>
+    <td>16.14.2.2節</td>
+    <td>トランスペアレントペイロードと再生ペイロードの両方で、サービスリンクの瞬時ドップラーシフトの事前補償をUEが行うことを追記</td>
+  </tr>
+  <tr>
+    <td>16.14.4節, 16.14.6節</td>
+    <td>スイッチオーバーとNGインターフェースに関連する更新はRAN3からの入力を待つ</td>
+  </tr>
+  <tr>
+    <td>付録B.4</td>
+    <td>非地上ネットワークの実装例を示す図を、トランスペアレントペイロードと再生ペイロードの両方のアーキテクチャを含むように更新</td>
+  </tr>
+</table>
+
+<h2>4. Conclusion</h2>
+<ul>
+  <li>再生ペイロードアーキテクチャのNGおよびXnインターフェースへの影響は、RAN2の検討範囲外</li>
+  <li>スイッチオーバーとNGインターフェースに関連する16.14.4節と16.14.6節の更新は、RAN3からの入力を待つ</li>
+  <li>オンボードgNBの再生ペイロードアーキテクチャをサポートするためのTS 38.300のテキスト案をベースラインとして検討</li>
+</ul>
+
+</body>
+</html>
