@@ -1,0 +1,104 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">Clarifications on the Scope of EDT enhancement for IoT-NTN</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG RAN WG2 #125bis R2-2403206<br>Source: InterDigital, Inc.</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">章</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">1 Introduction</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>NB-IoTとeMTCのサポートをさらに強化するための新しいWIDが承認された[1]。以下の目的が提供されている。</p>
+      <ul>
+        <li>アップリンクの容量強化のサポート
+          <ul>
+            <li>3.75kHzまたは15kHzのサブキャリアで直交カバーコード（OCC）を介して複数のUE（最大4つまで、または既存のULおよびDLシグナリングで許可される最大数）を多重化する強化を検討し、有益な場合は規定する。 [RAN1, RAN2]
+              <ul>
+                <li>15kHz SCSのマルチトーンサポートも検討すべき</li>
+                <li>障害の影響を考慮する必要がある</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>EDTトランザクションを完了するために必要なアップリンクおよびダウンリンクシグナリングを削減する以下の拡張を検討し、有益な場合は規定する。[RAN2]
+          <ul>
+            <li>msg1/RARなしでのMsg3送信</li>
+            <li>msg4/RRCEarlyDataCompleteの効率的な配信（オーバーヘッドの削減）</li>
+          </ul>
+        </li>
+      </ul>
+      <p>アップリンク容量拡張の研究の正当化は不完全であり、少なくともWIDからはEDT拡張の研究の正当化/動機が明確ではない。セクション2から分かるように、EDTには多くの異なるオプションがあり、その一部は意図された潜在的な拡張の使用には適用できない/関連しない可能性がある。研究/作業に割り当てられた時間が限られているため、商業的なニーズに対処する必要がある特定の問題にRAN2で取り組むべきである。</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">2 Overview of existing features</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>既存のMO-EDTとMT-EDTの手順について、各種CIoT最適化（Control Plane EPS/5GS、User Plane EPS/5GS）の場合分けで詳細に解説されている。</p>
+      <ul>
+        <li>MO-EDTは、ランダムアクセス手順中に1回のアップリンクデータ送信とオプションで1回のダウンリンクデータ送信を可能にする。モバイルオリジネーテッドデータ（シグナリングやSMSではない）のためにRRC接続の確立または再開が要求され、アップリンクデータサイズがシステム情報で示されるTBサイズ以下の場合にトリガーされる。BL UE、拡張カバレッジのUE、NB-IoT UEにのみ適用可能。</li>
+        <li>MT-EDTは、ランダムアクセス手順中の単一のダウンリンクデータ送信を目的としている。UEとネットワークがMT-EDTをサポートし、UEに単一のDLデータ送信がある場合、MMEによって開始される。BL UE、拡張カバレッジのUE、NB-IoT UEにのみ適用可能。</li>
+      </ul>  
+      <p>また、PURを使用した送信手順についても、Control Plane CIoT EPS/5GS最適化とUser Plane CIoT EPS/5GS最適化の場合分けで詳しく説明されている。</p>
+      <ul>
+        <li>PURを使用した送信は、ランダムアクセス手順を実行せずに、RRC_IDLEから事前構成されたアップリンクリソースを使用して1回のアップリンク送信を可能にする。UEと(ng-)eNBがサポートしている場合に(ng-)eNBによって有効化される。BL UE、拡張カバレッジのUE、NB-IoT UEにのみ適用可能。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">3 Clarification of the scope of the study</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>アップリンク容量の制限に対処することが主な動機であると理解しているが、EDTとPURの多くの形式はeMTC固有のソリューションにも適用され、それぞれのオプションには独自の問題がある。研究の範囲を明確にするために、いくつかの提案がなされている。</p>
+      <ol>
+        <li>アップリンク容量の拡張の範囲がNB-IoTに限定されているのか、それともeMTCも範囲内なのかを明確にする。
+          <ul>
+            <li>作業がNB-IoTに限定されている場合、実際のNB-IoT展開で使用されているCプレーンソリューションのみを扱い、作業を最小限に抑えるためにUプレーンを研究から除外することも有益である。</li>
+          </ul>
+        </li>
+        <li>アップリンク容量の拡張の範囲がCプレーン最適化のみなのか、それともUプレーン最適化も範囲内なのかを明確にする。</li>
+        <li>アップリンク容量の拡張の範囲がCIoT EPS最適化のみなのか、それともCIoT 5GS最適化も範囲内なのかを明確にする。
+          <ul>
+            <li>RANの側面のほとんどは同様だが、コアネットワークがEPSか5GSかによって若干異なるソリューションがある。TNでは5GSがサポートされているが、現在IoT-NTNでは5GSのサポートがない。Rel-19の潜在的な拡張として議論されたが、目的は承認されなかった。しかし、既存のEDTはEPSと5GSの両方をサポートしており、WIDは明示的ではないため、この点での範囲を明確にする必要がある。</li>
+          </ul>
+        </li>
+        <li>MO-EDTとMT-EDTはアップリンク容量の拡張を利用できるが、MT-EDT固有の拡張は範囲外であることを明確にする。
+          <ul>
+            <li>WIの目的で明示的にリストされている拡張は、「msg1/RARなしでのMsg3送信」と「msg4/RRCEarlyDataCompleteの効率的な配信（オーバーヘッドの削減）」であり、これらはどちらもMO-EDTソリューションの一部である。MT-EDTはMO-EDTソリューションを再利用し、ページングにMT-EDT indicationを追加している。MO-EDTを拡張すれば、その拡張は自然とMT-EDTに適用できるが、MT-EDT固有の拡張は必要ないと思われる。</li>
+          </ul>
+        </li>
+        <li>アップリンク容量の拡張の範囲がNTNのみなのか、それとも拡張がTNにも適用される可能性があるのかを明確にする。
+          <ul>
+            <li>既存のEDTは、TNとNTNの両方のMO/MT、CP/UP、EPS/5GS、NB-IoT/eMTCに適用されることは明らかである。WIDはNTN固有だが、さらなる拡張は潜在的にTNにも適用できる可能性がある。</li>
+          </ul>
+        </li>
+        <li>アップリンク容量拡張の研究の範囲を明確にする。
+          <ul>
+            <li>NTNの既存のEDT/PUR機能の欠点を特定する。</li>
+            <li>既存のEDT/PUR機能への潜在的な拡張を特定する。</li>
+            <li>既存のEDT/PURと比較した潜在的な拡張の利得を示す。</li>
+            <li>アップリンク容量は、少なくとも部分的にはダウンリンク容量（PDCCHスケジューリング、L2 ACK、RRC応答メッセージなど）によって制限される。WIDにリストされている具体的な拡張は、アップリンク（RACHキャパシティなど）の改善を目的としているのか、ダウンリンク（PDCCHスケジューリングやPDSCHペイロードなど）の改善を目的としているのか、あるいはその両方なのかは完全には明確ではない。つまり、実際のボトルネックが何であるかはWIDから明確ではない。例えばRANへのオペレーターの寄稿に基づくと、アップリンクベースのトラフィックであっても、関連するDLシグナリングによるダウンリンク容量が実際の主なボトルネックであるようだ。</li>
+            <li>「msg1/RARなしでのMsg3送信」は、Rel-16でPURでサポートされていることに注意する必要がある。ただし、PURを使用するEDTにはいくつかの制限がある（例：PURはEDT手順を再利用するため、ULとDLのRRCおよびNASシグナリング交換に依存する、UEはPURを構成する前にRRC_CONNECTEDに移動する必要があり、セル間でPURリソースを構成することはできない、NTNでは、位置情報に基づくタイミング事前補償がサポートされているため、PUR手順のTA調整ステップ（DLシグナリング）をスキップできる可能性がある）。</li>
+            <li>NB-IoT/eMTCは既に小さなデータを効率的な方法で送信するメカニズムをサポートしており、Msg1/RARなしでアップリンクデータを送信することもできるため、NTNの研究の範囲は、欠点を特定し、潜在的な改善を特定し、既存のPURソリューションに対する利点を示すことである。例えば、ダウンリンク容量が主な問題である場合、これに対処するソリューションは何か、既存のPUR機能を使用する場合と比較してどの程度改善できるか。</li>
+          </ul>
+        </li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">4 Conclusion</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>本寄書では、Earth Moving CellsにおけるLocation-based CHOの拡張について議論し、アップリンク容量拡張の研究範囲を明確にするために以下を提案した。</p>
+      <ol>
+        <li>アップリンク容量の拡張の範囲がNB-IoTに限定されているのか、それともeMTCも範囲内なのかを明確にする。</li>
+        <li>アップリンク容量の拡張の範囲がCプレーン最適化のみなのか、それともUプレーン最適化も範囲内なのかを明確にする。</li>
+        <li>アップリンク容量の拡張の範囲がCIoT EPS最適化のみなのか、それともCIoT 5GS最適化も範囲内なのかを明確にする。</li>
+        <li>MO-EDTとMT-EDTはアップリンク容量の拡張を利用できるが、MT-EDT固有の拡張は範囲外であることを明確にする。</li>
+        <li>アップリンク容量の拡張の範囲がNTNのみなのか、それとも拡張がTNにも適用される可能性があるのかを明確にする。</li>
+        <li>アップリンク容量拡張の研究の範囲を明確にする。
+          <ul>
+            <li>NTNの既存のEDT/PUR機能の欠点を特定する。</li>
+            <li>既存のEDT/PUR機能への潜在的な拡張を特定する。</li>
+            <li>既
