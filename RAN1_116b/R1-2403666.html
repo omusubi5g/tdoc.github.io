@@ -1,0 +1,126 @@
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">Session notes for 9.11 Non-Terrestrial Networks (NTN) for NR Phase 3 and Internet of Things (IoT) Phase 3</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG RAN WG1 #116-bis R1-2403666<br>Source: Ad-Hoc Chair (Huawei)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">NR-NTN downlink coverage enhancement</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p><strong>Agreements</strong></p>
+      <ul>
+        <li>PDCCHのカバレッジ評価のための仮定を規定</li>
+        <li>PDSCHのカバレッジ評価のための仮定を規定</li>
+        <li>リンクレベル評価では、ステアリングロスによるアンテナゲインの低下は考慮しない</li>
+        <li>LEO 600kmのFR1におけるSatellite phased-array antennaパラメータを確認</li>  
+        <li>SIB19取得前のDLチャネル/信号のカバレッジ性能評価について、最大ドップラー周波数ドリフトは0.27ppm/sと仮定</li>
+      </ul>
+      <p><strong>Observation</strong></p>
+      <ul>
+        <li>LEO600kmのSet1-1 FR2について、企業がいくつかのパラメータを報告するのは任意</li>
+        <li>PUSCHのPDSCHペイロードサイズの仮定値を規定</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">Support of RedCap and eRedCap UEs with NR NTN operating in FR1-NTN bands</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>RAN1の作業は、2024年Q2末までに必須の変更が必要かどうかを確認することに限定される（HD衝突ルールに焦点を当てる）。</p>
+      <p><strong>Observations:</strong></p>  
+      <ul>
+        <li>エラーケース3と4の発生をネットワークスケジューリングにより回避するには、UEとgNBの間のTAのミスマッチがある場合、TNと比較してNTNでスケジュールされたHD-FDD RedCap/eRedCap UEに利用可能なリソースが少なくなる</li>
+        <li>衝突ケース1,2,5,6では、UEとgNBの間のTAのミスマッチがある場合、gNBが衝突を回避しようとするか衝突によりDL/UL送信が失われると、TNと比較してNTNでスケジュールされたHD-FDD RedCap/eRedCap UEに利用可能なリソースが少なくなる可能性がある</li>
+        <li>UEとgNBの間のTAのミスマッチがある場合、gNBがTNと比較して少なくとも以下のケースで衝突を回避しようとしないと、スケジュールされたHD-FDD RedCap/eRedCap UEのgNBでのUL送信の受信性能劣化が生じる可能性がある：
+          <ul>
+            <li>SSB受信と衝突する際のUEとgNBでのスロットカウントの違いによる、繰り返しを伴うUL送信</li>
+            <li>DL送信と衝突する際のgNBとUEでの無効シンボル決定の違いによる、PUSCHリピータタイプB</li>  
+            <li>DL送信と衝突する際のgNBとUEでの実際のTDW決定の違いによる、DMRSバンドリングを伴うUL送信</li>
+          </ul>  
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">NR-NTN uplink capacity/throughput enhancement</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p><strong>Agreements</strong></p>
+      <ul>
+        <li>Rel-19 NR NTNでPUSCHのOCCをサポートする
+          <ul>
+            <li>少なくともPUSCHリピータタイプAに対応（intra-symbolおよび/またはinter-symbolのPUSCHリピーションなしの場合は要検討）</li>
+            <li>少なくともコード長2または4、コード長8は要検討</li>
+            <li>RBの数は要検討</li>
+            <li>潜在的なOCC技術は以下のリストから絞り込む
+              <ul>
+                <li>Inter-slot time-domain OCC with PUSCH repetition Type A</li>
+                <li>Inter-symbol(s) time domain OCC</li>
+                <li>Intra-symbol pre-DFT-s OCC (comb-like structure as in PUCCH format 4)</li>
+                <li>Combinations of OCC techniques</li>
+              </ul>
+            </li>
+            <li>OCC技術のTBoMSは要検討</li>
+          </ul>
+        </li>
+        <li>OCC技術の潜在的な仕様面を少なくともさらに検討する
+          <ul>
+            <li>TBS計算/レートマッチング</li>
+            <li>UCIマルチプレクシング</li>
+            <li>繰り返し間のRVサイクリング</li>
+            <li>周波数ホッピング、例：スロット内/スロット間</li>
+            <li>OCC指示/設定</li>
+            <li>パワー制御</li>
+            <li>他の面は要検討</li>  
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">IoT-NTN uplink capacity/throughput enhancement</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p><strong>Agreements</strong></p>
+      <ul>
+        <li>NPUSCHの評価の仮定について、DMRS設定を更新</li>
+        <li>RAN1は少なくとも以下のNPRACH OCCスキームを検討して研究する
+          <ul>
+            <li>Intra-symbol group OCC</li>
+            <li>Inter-symbol group(s) OCC</li>  
+            <li>Inter-repetition OCC</li>
+          </ul>
+        </li>
+        <li>NPRACHのOCCの研究ではNPRACHフォーマット2を考慮しない</li>
+        <li>NPRACHのOCC研究のための評価の仮定を規定</li>
+        <li>3.75kHz SCSのNPUSCHフォーマット1を使用するUEと、15kHz SCSのNPUSCHフォーマット1を使用する別のUE間のOCC多重化はサポートされない</li>  
+        <li>NPUSCHフォーマット1のOCCでは、4つを超えるUEの多重化は考慮しない</li>
+        <li>NPUSCHフォーマット1にOCCを適用する場合のシングルトーンDMRSについて、RAN1は少なくとも以下を検討して研究する
+          <ul>
+            <li>DMRSのTDM。異なるUEのDMRSの時間領域の位置は異なる。異なるUEのDMRSにOCCは適用されない。
+              <ul>
+                <li>詳細なマッピングは要検討</li>
+              </ul>
+            </li>
+            <li>DMRSのCDM。異なるUEのDMRSの時間領域の位置は同じ。異なるUEのDMRSに異なるOCCが適用される。  
+              <ul>
+                <li>詳細なマッピングは要検討</li>
+              </ul>
+            </li>
+            <li>上記の組み合わせを含む他のスキームも排除しない</li>
+          </ul>
+        </li>
+        <li>NPUSCHの評価の仮定について、周波数誤差の仮定を更新
+          <ul>
+            <li>全UEに対して[-0.1ppm, +0.1ppm]からの一様ランダム選択</li>
+            <li>周波数誤差の変動は無視できる</li>
+            <li>GEOの場合、トランスポートブロックの各サブフレームに同じ周波数誤差が適用される</li>
+            <li>LEOの場合、セグメント（評価で適用される場合）の各サブフレームに同じ周波数誤差が適用される。企業はセグメント間の周波数誤差に関する仮定を報告する</li> 
+          </ul>  
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
