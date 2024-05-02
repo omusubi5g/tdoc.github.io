@@ -1,225 +1,153 @@
-<html>
-<head>
-<style>
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-th, td {
-border: 1px solid black;
-padding: 8px;
-text-align: left;
-}
-th {
-background-color: #f2f2f2;
-}
-tr:nth-child(even) {
-background-color: #f2f2f2;
-}
-</style>
-</head>
-<body>
-<p>
-寄書番号：R1-2403719<br>
-タイトル：FL Summary #2 for IoT-NTN<br>
-著者名：Moderator (Sony)
-</p>
-<h2>1. はじめに</h2>
-<p>この文書は、IoT-NTNの第2回FLSである。以下の論点について、4月18日木曜日にオフライン/オンラインディスカッションを行うための準備を目的としている。</p>
-<ul>
-<li>シングルトーンとマルチトーンのOCCの選択/優先順位付け
-<ul>
-<li>シングルトーンについて15kHzSCS、3.75kHzSCSの一方または両方のサポート</li>
-<li>SCS/トーン数によって異なるスキーム（スロットレベルvs.シンボルレベル）をサポートするかどうか</li>
-</ul>
-</li>
-<li>DMRS：提案されているスキームを明確にすることが目的</li>
-<li>NPUSCH形式1の評価におけるランダムな周波数誤差についての明確化</li>
-</ul>
-<h2>2. 以前の合意事項</h2>
-<p>RAN1#116アテネ会合で以下の合意がなされた。</p>
-<table>
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
   <tr>
-    <th>番号</th>
-    <th>合意内容</th>
+    <th colspan="2" style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">FL Summary #2 for IoT-NTN</th>
   </tr>
   <tr>
-    <td>Agreement#116-IoT-NTN #1</td>
-    <td>15kHzおよび3.75kHzSCSのシングルトーンNPUSCH形式1送信について、RAN1は以下のOCCスキームを検討する：
-<ul>
-<li>OCCがシンボル、スロット、繰り返し、RVレベルにまたがる時間領域OCC</li>
-</ul>
-マルチトーンNPUSCH形式1送信について、RAN1は以下のOCCスキームを検討する：
-<ul>
-<li>OCCがシンボル、スロット、繰り返し、RVレベルにまたがる時間領域OCC</li>
-<li>シンボル内プリDFTスプレッディングOCC</li>
-</ul>
+    <td colspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: center;">3GPP TSG RAN WG1 #116bis R1-2403719<br>Source: Moderator (Sony)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">項目</th>
+    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">内容</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">Introduction</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>本文書はIoT-NTNの第2回目のFLSであり、4月18日木曜日のオフライン/オンライン議論の準備を目的としている。議論する課題は以下の通り。</p>
+      <ul>
+        <li>シングルトーンとマルチトーンのOCCの選択/優先順位付け
+          <ul>
+            <li>シングルトーンの15kHz SCS、3.75kHz SCS、またはその両方のサポートの選択</li>
+            <li>異なるSCS/トーン数に対して異なるスキーム（スロットレベルとシンボルレベル）をサポートするかどうか</li>
+          </ul>
+        </li>
+        <li>DMRS: 提案されているスキームを明確にすることを目標とする</li>
+        <li>NPUSCHフォーマット1の評価における周波数誤差の一様ランダム分布の明確化</li>
+      </ul>
+      <p>このFLSには一連の提案が含まれており、それらはオンラインミーティングで検討される可能性がある。また、一連の質問も含まれている。これらの質問は企業の見解を共有することを目的としている。十分な合意が得られれば、提案を生成することも可能かもしれない。</p>
+      <p>木曜日のオフラインセッションで議論される内容に関心のある代表者は、セクション7に直接進むことができる。</p>
     </td>
   </tr>
   <tr>
-    <td>Agreement#116-IoT-2</td>
-    <td>NPUSCH形式1のOCC研究に以下の評価前提を使用する：（省略）</td>
-  </tr>
-</table>
-<h2>3. NPUSCH</h2>
-<h3>3.1 寄書で提起された論点の概要</h3>
-<ul>
-<li>DMRS多重化スキーム
-<ul>
-<li>CDM[HW]、TDM[HW]。TDMはCDMより性能良[HW]</li>
-<li>OCCのためにDMRSシンボル数を増やす[LGE]</li>
-</ul>
-</li>
-<li>シングルトーンOCC性能
-<ul>
-<li>RV/rep OCC性能不良[HW]。repの損失は大きくない[ZTE]（約0.7dB損）</li>
-<li>symbol/slot OCCは同等の性能[HW,ZTE]。スループット2倍[HW]。OCC2で2倍[QC]</li>
-<li>slot以上だとCFO問題大きいのでsymbol検討[QC]</li>
-<li>TDM DMRSはCDMより良好[HW]</li>
-</ul>
-</li>
-<li>マルチトーン性能
-<ul>
-<li>RV/rep OCC性能不良[HW]。repの損失は大きくない[ZTE]</li>
-<li>OCC2だとsymbol/slot/N_slotの性能同等[HW]。OCC4だとsymbol/slotは同等だがN_slotは劣化[HW]</li>
-<li>OCC4の方がOCC2より損失大。長いOCC4送信でFO誤差増[Xiaomi]</li>
-<li>OCCでスループット向上[HW,ZTE]</li>
-<li>送信時間短いのでシングルトーンより劣化小[ZTE]</li>
-</ul>
-</li>
-<li>3.75kHz/15kHz OCC多重
-<ul>
-<li>eNBで分離困難なのでサポートせず[Len]</li>
-</ul>
-</li>
-<li>基本OCC長設定
-<ul>
-<li>値Xで設定可能[Len]</li>
-</ul>
-</li>
-<li>OCCシーケンスシグナリング
-<ul>
-<li>DCI、セミスタティック（RRC）、C-RNTIベースの選択肢</li>
-</ul>
-</li>
-<li>OCCシーケンス種別
-<ul>
-<li>DFTコード[ZTE,Apple]（PUCCH形式1から[ZTE]）、Walshコード[CATT,Apple]</li>
-<li>シーケンス選択前にOCC長を決めるべき[FL]</li>
-</ul>
-</li>
-<li>OCCサイズ
-<ul>
-<li>最大4[Apple]。OCC4超だとNPDCCHシグナリングがボトルネック[Apple]（NPDSCHもスケジューリング[Apple]）</li>
-<li>最大2[Ericsson]。OCC4だと位相シフト大きすぎ[Ericsson]</li>
-<li>2,4[Apple]</li>
-<li>OCC長を制限[Nokia]。多すぎると複雑性増[Nokia]</li>
-</ul>
-</li>
-<li>NPUSCHのOCCスキームに対する見解
-<ul>
-<li>シンボルレベル
-<ul>
-<li>物理チャネルマッピング再定義が必要で仕様影響大[ZTE,Apple,QC]</li>
-<li>FO、TOに対し強い[ZTE,QC]</li>
-<li>符号化率増で性能影響[vivo,OPPO,Sharp]。特にOCC4で繰り返し多いと顕著[vivo]</li>
-<li>DMRS課題[Apple,Sharp,QC]。DMRSシンボルを再配置し解決可。シンボルペア内は小ギャップ、ペア間は大ギャップ[QC]。引き込み範囲（あいまいさ回避のための最大位相誤差）とDMRS相対オーバーヘッドを考慮[QC]</li>
-<li>3.75kHzではOCC2[Ericsson]</li>
-</ul></li>
-<li>スロットレベル
-<ul>
-<li>物理チャネルマッピング再定義が必要で仕様影響大[ZTE]</li>
-<li>FO、TOに対し強い。シンボルレベルほどではない[ZTE]</li>
-<li>許容できる性能[Xiaomi,CATT]。OCC4でリンクレベル性能劣化あるがスループット利得[CATT]</li>
-<li>符号化率増で性能影響[vivo,Sharp]</li>
-<li>実装が単純（複雑性低）[CATT]</li>
-<li>性能OK（NR NTNシミュレーション）[MTK]</li>  
-<li>15kHzではOCC2[Ericsson]</li>
-</ul></li>
-<li>繰り返しレベル
-<ul>
-<li>仕様影響小[ZTE,Sharp]</li>
-<li>FO、TOによる性能劣化[ZTE]</li>
-<li>タイムスパン長すぎて性能劣化[Spreadtrum]</li>
-<li>性能OK[MTK]</li>
-</ul></li>
-<li>RVレベル 
-<ul>
-<li>FO、TOによる性能劣化[ZTE]</li>
-<li>タイムスパン長すぎて性能劣化[Spreadtrum,Sharp]</li>
-<li>デコード遅延[Apple]</li>
-</ul></li>
-<li>シンボル内プリDFT
-<ul>
-<li>仕様変更大[ZTE]</li>
-<li>OCCせずに周波数リソースを小さく割り当てれば同様の多重効果[ZTE]</li>
-<li>符号化率増加[vivo]</li>
-<li>電力ブースト利得[vivo]。サブキャリア少なくすれば同じ効果では？[FL,CATT]</li>
-<li>時間領域スキームのみ検討[Xiaomi,Nokia,ETRI]。TDはマルチにもシングルにも適用可[Xiaomi,Nokia]。シングルとの共通設計[Ericsson]</li>
-<li>マルチキャリアスキーム不要[Sharp,MTK]。容量が問題ならeNBはシングルキャリアを適用すべき[Sharp]。まずシングルトーンスキームを検討[Ericsson]</li>
-</ul></li>  
-</ul>
-<li>異なるサブキャリア間隔（3.75kHz、15kHz）で異なるスキームをサポートするか
-<ul>
-<li>Yes[Ericsson]。3.75kHzではスロットレベルOCCで位相シフト大きすぎるのでシンボルレベル</li>
-</ul></li>
-</ul>
-</li>
-<li>評価前提
-<ul>
-<li>評価でスモールデータ、VoIP考慮[CMCC]</li>
-<li>DMRS位置誤りを考慮するよう修正[ETRI]</li>
-<li>セル内パスロス差を考慮し、電力アンバランスは5.1dB[ETRI]</li>
-</ul>
-</li>
-<li>セグメント
-<ul>
-<li>ULセグメントのOCC動作への影響を検討[spreadtrum,LGE,Nokia,Ericsson]</li>
-<li>セグメント間で位相連続性損失[spreadtrum,LGE]</li>  
-<li>セグメントギャップ内のドロップシンボルにOCCがまたがるとセグメント全体ドロップ。部分OCCユニットだと直交性損失[Nokia]</li>
-</ul>
-</li>
-<li>OCCが動作すべき機能（コネクテッドモード動的グラント以外） 
-<ul>
-<li>IDLE/INACTIVE（EDTを含む）[Xiaomi]。現WIDでこれらに適用するか不明[Xiaomi]</li>
-<li>EDT[QC]、PUR[QC]、RACH-less EDT（Rel-19）[QC]</li>
-</ul>
-</li>
-<li>レガシーUEとの互換性と共存[Nokia]</li>
-<li>NPRACHピリオディシティ
-<ul>
-<li>OCCのNPUSCHはNPRACHピリオディシティに収まるべき[Ericsson]</li>
-</ul>
-</li>
-<li>奇数のNPUSCHスケジューリング遅延[Ericsson]  
-<ul>
-<li>NPUSCHスケジューリング機会を増やすため、NPDCCHで奇数サブフレームオフセットをシグナリングできるべき[Ericsson]</li>
-</ul>
-</li>
-</ul>
-<h3>3.2 評価前提の更新</h3>
-<p>ETRIより、RAN1#116アテネ会合の合意評価前提のNPUSCH DMRSシンボル位置に誤りがあると指摘。以下の更新を提案。</p>
-<table>
-  <tr>
-    <th>DMRS設定</th>
-    <th>ベースライン評価</th>
-    <th>ベースライン評価</th>
-  </tr>
-  <tr>
-    <td></td>
-    <td>3.75kHzでスロット当たりOS#<s>3</s><b>4</b>
-15kHzでスロット当たりOS#<s>4</s><b>3</b></td>
-    <td>15kHzでスロット当たりOS#3
-OCC評価：
-提案者次第</td>
-  </tr>
-</table>
-<p>提案4.2-1：上記のようにNPUSCH評価前提のDMRS設定を更新する。</p>
-<p>さらに、周波数誤差の評価前提に関し、一部企業はトランスポートブロックの各サブフレームに異なる周波数誤差を適用している印象がある。前提の意図は、実際の周波数誤差の発生に合わせ、トランスポートブロックの各サブフレームに同一の周波数誤差を適用することだった。よって以下を提案。</p>
-<p>提案4_2_2：NPUSCH評価前提の周波数誤差前提を以下のように更新する。</p>
-<table>
-  <tr>
-    <th>周波数誤差</th>
-    <td>全UEについて[-0.1ppm, +0.1ppm]の範囲からランダム選択
-周波数誤差変動は無視できるレベル 
-<b>トランスポートブロックの各サブフレームに同一の周波数誤差を適
+    <td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">NPUSCH</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <p>NPUSCHについては以下の問題が議論されている。</p>
+      <ul>
+        <li><strong>時間領域および周波数領域OCC</strong>。シングルトーンとマルチトーンNPUSCHにOCCを適用する方法。RAN1がシングルトーン送信に注力すべきかどうか。</li>
+        <li><strong>シグナリングと設定</strong>。UEは複数のOCCスキームをサポートし、eNBがサポートされているスキームの1つを選択できるようにすべきか。</li>
+        <li><strong>OCCシーケンスの設計と長さ</strong>。OCCシーケンスの最大長は何か。</li>
+        <li><strong>他の機能との互換性</strong>。OCCはEDT、PURなどで動作すべきか。</li>
+        <li><strong>更新された評価の仮定</strong>。RAN1#116で合意された評価の仮定の一部の小さな修正を検討する必要がある。</li>  
+      </ul>
+      <p>入力寄書で企業が提起した問題の全体的な要約は以下の通り。</p>
+      <ul>
+        <li>DMRSの多重化方式: CDM [HW]、TDM [HW] (CDMよりもパフォーマンスが良い [HW])</li>
+        <li>OCCをサポートするためのDMRSシンボル数の増加 [LGE]</li>  
+        <li>シングルトーンOCCのパフォーマンス
+          <ul>
+            <li>RV/repレベルのOCCはパフォーマンスが悪い[HW]（repレベルのパフォーマンス損失はスロット/シンボルレベルと比較して有意ではない[ZTE] - 約0.7dBの追加の損失があるようだ）</li>
+            <li>シンボルレベルとスロットレベルのOCCは同等のパフォーマンスを示す[HW, ZTE]（集約スループットが2倍[HW]、OCC2で集約スループットが2倍[QC]）</li>
+            <li>スロットレベル以上ではCFOの問題が大きすぎるため、シンボルレベルが検討された[QC]</li>
+            <li>TDM DMRSはCDM DMRSよりもパフォーマンスが良い[HW]</li>
+          </ul>
+        </li>
+        <li>マルチトーンのパフォーマンス  
+          <ul>
+            <li>RV/repレベルのOCCはパフォーマンスが悪い[HW]（repレベルのパフォーマンス損失はスロット/シンボルレベルと比較して有意ではない[ZTE]）</li>
+            <li>OCC2の場合、シンボル、スロット、N_slotレベルのOCCは同等のパフォーマンスを示す[HW]</li>
+            <li>OCC4の場合、シンボル、スロットは同等のパフォーマンスを示す[HW]（N_slotレベルはOCC4で低下[HW]）</li>
+            <li>OCC4の送信が長いため、OCC4の方がOCC2よりもFO誤差が大きい[Xiaomi]</li>
+            <li>OCCスキームでより高い集約スループット[HW, ZTE]</li>
+            <li>送信時間が短いため、シングルトーンよりもSNR劣化が少ない[ZTE]</li>
+          </ul>
+        </li>
+        <li>3.75kHzと15kHzのOCC多重化
+          <ul>
+            <li>サポートしない：eNBでの分離が難しすぎる/複雑すぎる[Len]</li>
+          </ul>
+        </li>
+        <li>OCCの基本単位長の設定
+          <ul>
+            <li>値Xで構成可能[Len]</li>
+          </ul>
+        </li>
+        <li>OCCシーケンスのシグナリング
+          <ul>
+            <li>DCI、半静的（RRC）、またはC-RNTIに基づく</li>
+          </ul>
+        </li>
+        <li>OCCシーケンスの種類
+          <ul>
+            <li>DFTコード[ZTE, Apple]（TS38.211のPUCCHフォーマット1から[ZTE]）</li>
+            <li>ウォルシュコード[CATT, Apple]</li>
+            <li>どのOCCシーケンスを使用するかを決定する前に、OCCの長さを決定すべき[FL]</li>  
+          </ul>
+        </li>
+        <li>OCCサイズ
+          <ul>
+            <li>最大4 [Apple]（OCC4以上をサポートするとNPDCCHシグナリングがボトルネックになる[Apple] - NPDCCHはNPUSCHだけでなくNPDSCHもスケジュールする必要がある[Apple]）</li>
+            <li>最大2 [Ericsson]（OCC4の位相シフトが大きすぎる[Ericsson]）</li>
+            <li>2,4 [Apple]</li>
+            <li>限られた数のOCC長さをサポート[Nokia]（あまりにも多くのOCC長さをサポートすると複雑さが増す[Nokia]）</li>
+          </ul>  
+        </li>
+        <li>NPUSCHのOCCスキームに関する見解
+          <ul>
+            <li>シンボルレベル
+              <ul>
+                <li>PhyCHマッピングを再定義する必要があるため、仕様への影響が大きい[ZTE, Apple, QC]</li>
+                <li>FOとTOに対してより弾力的[ZTE, QC]</li>  
+                <li>符号化率に影響し、それがパフォーマンスに影響する[vivo, OPPO, Sharp]（OCC4の場合、繰り返し回数が多いため特に[vivo]）</li>
+                <li>DMRSの問題[Apple, Sharp, QC]（DMRSシンボルをペアで小さなギャップで分離し、ペアを大きなギャップで分離することで、DMRSシンボルを再配置することでDMRSの問題を解決できる[QC]。考慮すべき問題：プルイン範囲（あいまいさを回避する最大位相誤差）[QC]、DMRSの相対的なオーバーヘッド[QC]）</li>
+                <li>3.75kHzにはOCC2 [Ericsson]</li>
+              </ul>
+            </li>
+            <li>スロットレベル  
+              <ul>
+                <li>PhyCHマッピングを再定義する必要があるため、仕様への影響が大きい[ZTE]</li>
+                <li>FOとTOに対してより弾力的だが、シンボルレベルほどではない[ZTE]</li>
+                <li>許容可能なパフォーマンスを示す[Xiaomi, CATT]（OCC4がサポートされる。リンクレベルのパフォーマンス損失があるにもかかわらず、全体的なスループット利得はまだある[CATT]）</li>  
+                <li>符号化率を増加させ、パフォーマンスに影響を与える[vivo, Sharp]</li>
+                <li>実装が簡単（複雑さが少ない）[CATT]</li>
+                <li>パフォーマンスはOK（NR NTNでシミュレーション済み）[MTK]</li>
+                <li>15kHzにはOCC2 [Ericsson]</li>
+              </ul>
+            </li>
+            <li>繰り返しレベル
+              <ul>
+                <li>仕様への影響が少ない[ZTE, Sharp]</li>  
+                <li>FOとTOのため、パフォーマンスが悪い[ZTE]</li>
+                <li>時間スパンが長すぎるため、パフォーマンスが悪い[Spreadtrum]</li>
+                <li>パフォーマンスはOK [MTK]</li>
+              </ul>
+            </li>
+            <li>RVレベル  
+              <ul>
+                <li>FOとTOのため、パフォーマンスが悪い[ZTE]</li>
+                <li>時間スパンが長すぎるため、パフォーマンスが悪い[Spreadtrum, Sharp]</li>
+                <li>デコード遅延[Apple]</li>
+              </ul>
+            </li>
+            <li>シンボル内pre-DFT  
+              <ul>
+                <li>仕様の大幅な変更[ZTE]</li>
+                <li>多重化の効果は、OCCを行わず、UEにより少ない量の周波数リソースを割り当てることで達成できる[ZTE]</li>
+                <li>符号化率を増加[vivo]</li>
+                <li>電力ブースト利得[vivo]（しかし、同じ効果はサブキャリア数を減らすことで達成できないか？[FL, CATT]）</li>
+                <li>時間領域スキームのみを考慮[Xiaomi, Nokia, ETRI]（TDスキームはマルチキャリアとシングルキャリアの両方に適用可能[Xiaomi, Nokia]、シングルトーンスキームとの共通設計[Ericsson]）</li>
+                <li>マルチキャリアスキームは考慮しない[Sharp, MTK]（eNBが容量を懸念しているのであれば、シングルキャリアを適用すべき[Sharp]、まずシングルトーンスキームを検討[Ericsson]）</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>異なるサブキャリア間隔（3.75kHz、15kHz）で異なるスキームをサポートするか？
+          <ul>
+            <li>Yes [Ericsson]（3.75kHzでスロットレベルOCCの位相シフトが大きすぎるため、3.75kHzではシンボルレベルを使用）</li>
+          </ul>  
+        </li>
+      </ul>
+      <p>評価の仮定に関する問題:</p>
+      <ul>
+        <li>評価では小さなデータとVoIPを考慮[CMCC]</li>
+        <li>DMRSの位置誤差を考慮するために、NPUSCH評価の仮定を更新[ETRI]</li>
+        <li>セル内の潜在的な経路損失の差を考慮して、電力不均衡は5.1dBとすべき[ETRI]</li>
+      </ul
