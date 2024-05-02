@@ -22,6 +22,7 @@
 ## RAN1 #116bis
 - [R1-2403666 Session notes for 9.11 Non-Terrestrial Networks (NTN) for NR Phase 3 and Internet of Things (IoT) Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403666.html)
 - [R1-2403719 FL Summary #2 for IoT-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403719.html)
+- [R1-2403787 Support of RedCap and eRedCap UEs with NR NTN operating in FR1-NTN bands](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403787.html)
 
 ## RAN2 #125bis
 - [R2-2403206 Clarifications on the Scope of EDT enhancement for IoT-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403206.html)
