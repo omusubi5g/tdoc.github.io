@@ -25,8 +25,8 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
-.proposal {
-  margin-bottom: 10px;
+.case-description {
+  margin-bottom: 20px;
 }
 </style>
 </head>
@@ -35,146 +35,90 @@ th {
 <p><strong>タイトル:</strong> Support of RedCap and eRedCap UEs with NR NTN operating in FR1-NTN bands のまとめ #3</p>
 <p><strong>著者:</strong> Moderator (CATT)</p>
 
-<h2>1. はじめに</h2>
-<p>RP-234078に記載されているように、NR NTN上のRedCapの目的は以下の通り:</p>
-<ul>
-<li>FR1-NTNバンドで動作するNR NTNを伴うRel-17 RedCapおよびRel-18 eRedCap UEのサポート</li>
-<li>フルデュプレックスFDD RedCapおよびeRedCap UEについて、RFおよびRRM要件を定義</li>
-<li>HD-FDD RedCapおよびeRedCap UEのサポートに必要な本質的な変更を2024年Q2末までに検討</li>
-</ul>
-<p>前回のRAN1会合では、以下のRedCap動作に関する合意が得られた:</p>
-<ul>
-<li>NTN向け(e)RedCap HD-FDD UEについて、少なくとも以下のシナリオを検討</li>
-<li>利用可能なTAレポートに基づくgNBにおける想定TAとUEの実際のTA間のミスマッチを考慮した場合の、7つの衝突ケースの処理ルールの再利用または更新の必要性</li>
-<li>(e)RedCap HD-FDD UEの潜在的な問題を更に検討</li>  
-</ul>
-
-<h2>2. 各社見解のまとめ</h2>
-<p>RedCapのNTNへの適用については、以下の2つの部分に分かれる:</p>
-<ol>
-<li>TAミスマッチを考慮した場合の、7つの衝突ケースの処理ルールの再利用または更新の必要性</li>
-<li>(e)RedCap HD-FDD UEの潜在的な問題</li>
-</ol>
-
-<h3>2.1 Case 1～7の衝突ケースについて</h3>
+<h2>各社見解のまとめ</h2>
 <table>
 <tr>
-<th>課題</th>
-<th>デザインオプション</th>
-<th>提案企業</th>
+<th>ケース</th>
+<th>TNルール再利用可能</th>
+<th>TNルール再利用不可</th>
+<th>コメント</th>
 </tr>
 <tr>
-<td>Case 1の衝突ルールのNTNへの再利用</td>
-<td>TNのルールを再利用可能</td>
+<td>Case 1</td>
 <td>Huawei, HiSilicon, Spreadtrum, vivo, Samsung, China Telecom, xiaomi, Honor, ZTE, MediaTek, CAICT, NTT DOCOMO</td>
-</tr>
-<tr>
-<td></td>
-<td>TNのルールは再利用できない</td>
 <td>CATT, CMCC</td>
+<td>大多数の企業がTNルールの再利用を支持</td>
 </tr>
 <tr>
-<td>Case 2の衝突ルールのNTNへの再利用</td>
-<td>TNのルールを再利用可能</td>
+<td>Case 2</td>
 <td>Huawei, HiSilicon, Spreadtrum, vivo, Samsung, China Telecom, xiaomi, Honor, ZTE, MediaTek, CAICT, NTT DOCOMO</td>
-</tr>
-<tr>
-<td></td>
-<td>TNのルールは再利用できない</td>  
 <td>CATT, CMCC</td>
+<td>大多数の企業がTNルールの再利用を支持</td>
 </tr>
 <tr>
-<td>Case 3の衝突ルールのNTNへの再利用</td>
-<td>TNのルールを再利用可能</td>
-<td>ZTE, MediaTek</td>  
-</tr>
-<tr>
-<td></td>
-<td>TNのルールは再利用できない</td>
+<td>Case 3</td>
+<td>ZTE, MediaTek</td>
 <td>Huawei, HiSilicon, Spreadtrum, InterDigital, vivo, OPPO, CATT, Samsung, China Telecom, CMCC, Honor, LG, Apple, ETRI, CAICT, Qualcomm, NTT DOCOMO</td>
+<td>大多数の企業がTNルールの再利用に反対</td>
 </tr>
 <tr>
-<td>Case 4の衝突ルールのNTNへの再利用</td>  
-<td>TNのルールを再利用可能</td>
+<td>Case 4</td>
 <td>Samsung, ZTE, MediaTek</td>
-</tr>
-<tr>
-<td></td>
-<td>TNのルールは再利用できない</td>
 <td>Huawei, HiSilicon, Spreadtrum, InterDigital, vivo, OPPO, CATT, China Telecom, CMCC, Honor, LG, Apple, CAICT, Qualcomm, NTT DOCOMO</td>
+<td>大多数の企業がTNルールの再利用に反対</td>
 </tr>
 <tr>
-<td>Case 5の衝突ルールのNTNへの再利用</td>  
-<td colspan="2">TNのルールを再利用可能との見解で一致</td>
+<td>Case 5</td>
+<td colspan="2">全企業一致</td>
+<td>TNルールの再利用で合意</td>
 </tr>
 <tr>
-<td>Case 6の衝突ルールのNTNへの再利用</td>
-<td>TNのルールを再利用可能</td>
+<td>Case 6</td>
 <td>Huawei, HiSilicon, Spreadtrum, vivo, Samsung, China Telecom, CMCC, xiaomi, Honor, MediaTek, CAICT, NTT DOCOMO</td>
-</tr>
-<tr>
-<td></td>
-<td>TNのルールは再利用できない</td>  
 <td>Qualcomm</td>
+<td>大多数の企業がTNルールの再利用を支持</td>
 </tr>
 <tr>
-<td>Case 7の衝突ルールのNTNへの再利用</td>
-<td colspan="2">TNのルールを再利用可能との見解で大多数の企業が一致</td>
-</tr>  
+<td>Case 7</td>
+<td colspan="2">全企業一致</td>
+<td>TNルールの再利用で合意</td>
+</tr>
 </table>
 
-<h3>2.2 (e)RedCap HD-FDD UEのTAミスマッチによる潜在的な問題</h3>
-<h4>2.2.1 SIB19受信とUL送信の衝突</h4>
-<ul>
-<li>QualcommとChina Telecomは、SIB19受信を優先すべきと提案</li>
-<li>CMCCとZTEは、SIB19を他のSIB情報から切り離すのは難しいと指摘</li>
-<li>Ericssonは、SIB19などの特定のダイナミックDLを優先するか、一般的にダイナミックDLを優先するかを検討すべきと提案</li>  
-<li>LGは、SIB19だけでなくNTN特有の送信全般の優先度を検討すべきと提案</li>
-</ul>
-
-<h4>2.2.2 UL繰り返し送信とSSB受信の衝突によるスロットカウント</h4>
-<p>UEとgNBでスロットカウントの理解に不一致が生じ、UL送信のパフォーマンスに影響を与える可能性があるため、多くの企業がエンハンスメントが必要と考えている。一方、vivo、NTT DOCOMOなどは不要と主張。</p>
-
-<h4>2.2.3 PUSCHタイプBの無効シンボル判定</h4>  
-<p>UEとgNBで無効シンボル判定の理解に不一致が生じる可能性があるため、多くの企業がエンハンスメントが必要と考えている。一方、NTT DOCOMOはタイプBを適用する動機が見当たらないとして不要と主張。</p>
-
-<h4>2.2.4 実際のTDW決定</h4>
-<p>UEとgNBのTA情報の不一致により問題が生じるため、多くの企業が解決すべき問題と認識。一方、vivoとZTEは、gNBのスケジューリングで対処可能として問題視していない。</p>
-
-<h4>2.2.5 DL受信やUL送信の省略によるCPU占有</h4>
-<p>ほとんどの企業が問題ないと考えており、NTNケースでの追加対応は不要と認識されている。</p>
-
-<h2>3. 主なプロポーザル</h2>
-<div class="proposal">
-<strong>プロポーザル1:</strong> Case 1の優先度ルールはNTNで再利用可能
-</div>
-<div class="proposal">  
-<strong>プロポーザル2:</strong> Case 2の優先度ルールはNTNで再利用可能
-</div>
-<div class="proposal">
-<strong>プロポーザル3:</strong> Case 3の衝突は、NTNにおいてはエラーケースではない。NTNシナリオでのUE動作を規定する必要がある。  
-</div>
-<div class="proposal">
-<strong>プロポーザル4:</strong> Case 4の衝突は、NTNにおいてはエラーケースではない。NTNシナリオでのUE動作を規定する必要がある。
-</div>
-<div class="proposal">  
-<strong>プロポーザル5:</strong> Case 5の優先度ルールはNTNで再利用可能
-</div>
-<div class="proposal">
-<strong>プロポーザル6:</strong> Case 6の優先度ルールはNTNで再利用可能  
-</div>
-<div class="proposal">
-<strong>プロポーザル7:</strong> Case 7の衝突ルールはNTNで再利用可能
-</div>
-<div class="proposal">
-<strong>プロポーザル8:</strong> SIB19受信とUL送信の衝突の優先度ルールは、Case 1/4/6/7の優先度ルールによって既にカバーされている。追加の規定は不要。
-</div>
-<div class="proposal">  
-<strong>プロポーザル9:</strong> DL受信やUL送信の省略によるCPU占有の問題には、エンハンスメントは不要。
+<div class="case-description">
+<h3>Case 1: ダイナミックDL受信と半静的UL送信の衝突</h3>
+<p>大多数の企業が、TNの優先ルール（ダイナミックDLが優先）をNTNでも再利用可能と考えている。一方、CATT、CMCCは、正確なTAが得られない場合、gNBとUEの間で理解に不一致が生じる可能性があるとして、TNルールの再利用に反対している。</p>
 </div>
 
-<h2>4. 次回ミーティングへの提案</h2>
-<p>5月のRAN1ミーティングでは、RedCapとeRedCapの適用可能性の検討を終了する予定。したがって、特定された課題への結論を出し、潜在的なエンハンスメントを検討し、RAN総会への提言をまとめる必要がある。FLの観点から、他の潜在的な問題や解決策の検討を更に進めることが奨励される。</p>
+<div class="case-description">
+<h3>Case 2: 半静的DL受信とダイナミックUL送信の衝突</h3>
+<p>大多数の企業が、TNの優先ルール（ダイナミックULが優先）をNTNでも再利用可能と考えている。一方、CATT、CMCCは、正確なTAが得られない場合、gNBとUEの間で理解に不一致が生じる可能性があるとして、TNルールの再利用に反対している。</p>
+</div>
+
+<div class="case-description">
+<h3>Case 3: 半静的DL受信と半静的UL送信の衝突</h3>
+<p>ZTE、MediaTek以外の大多数の企業が、TNルールの再利用に反対している。多くの企業が、NTNにおいてはエラーケースではなく、NTNシナリオでのUE動作を規定する必要があると考えている。</p>
+</div>
+
+<div class="case-description">  
+<h3>Case 4: ダイナミックDL受信とダイナミックUL送信の衝突</h3>
+<p>Samsung、ZTE、MediaTek以外の大多数の企業が、TNルールの再利用に反対している。多くの企業が、NTNにおいてはエラーケースではなく、NTNシナリオでのUE動作を規定する必要があると考えている。</p>  
+</div>
+
+<div class="case-description">
+<h3>Case 5: 設定されたSSBとダイナミックまたは設定されたUL送信の衝突</h3>  
+<p>全企業が、TNの優先ルールをNTNでも再利用可能であるとの見解で一致している。</p>
+</div>
+
+<div class="case-description">
+<h3>Case 6: ダイナミックまたは半静的DLと設定されたROの衝突</h3>
+<p>Qualcomm以外の大多数の企業が、TNの優先ルール（UE実装に依存）をNTNでも再利用可能と考えている。</p>  
+</div>
+
+<div class="case-description">
+<h3>Case 7: 送受信切り替えによる衝突</h3>
+<p>全企業が、TNの衝突ルールをNTNでも再利用可能であるとの見解で一致している。</p>
+</div>
 
 </body>
 </html>
