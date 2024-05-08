@@ -9,6 +9,7 @@
 # Workshop on IMT-2030 Use Cases
 - [SWS-240002 GSMA Proposal on 6G](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240002.html)
 - [SWS-240003 NGMN’s 6G Vision](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240003.html)
+
 # RAN #103
 - [RP-240060 Summary for NR NTN (Non-Terrestrial Networks) enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240060_Summary_NTNenh.html)
 - [RP-240061 New WID: Inter RAT mobility support from E-UTRAN TN to NR-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240061_mobilityTN-NTN.html)
