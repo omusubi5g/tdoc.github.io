@@ -2,9 +2,9 @@
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
 - [Workshop on IMT-2030 Use Cases](#workshop-on-imt-2030-use-cases)
 - [RAN #103](#ran-103)
-  - [RAN1 #116bis](#ran1-116bis)
-  - [RAN2 #125bis](#ran2-125bis)
-  - [RAN4 #110bis](#ran4-110bis)
+- [RAN1 #116bis](#ran1-116bis)
+- [RAN2 #125bis](#ran2-125bis)
+- [RAN4 #110bis](#ran4-110bis)
 
 # Workshop on IMT-2030 Use Cases
 - [SWS-240002 GSMA Proposal on 6G](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240002.html)
@@ -15,6 +15,22 @@
 - [SWS-240008 NTN evolution into 6G for IMT-2030 Use Cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240008.html)
 - [SWS-240009 Can societies depend on 6G?](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240009.html)
 - [SWS-240010 Next Generation of Access](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240010.html)
+
+# RAN1 #116bis
+- [R1-2401993 FL Summary #3: NR-NTN downlink coverage enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2401993.html)
+- [R1-2403666 Session notes for 9.11 Non-Terrestrial Networks (NTN) for NR Phase 3 and Internet of Things (IoT) Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403666.html)
+- [R1-2403719 FL Summary #2 for IoT-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403719.html)
+- [R1-2403787 Support of RedCap and eRedCap UEs with NR NTN operating in FR1-NTN bands](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403787.html)
+ 
+# RAN2 #125bis
+- [R2-2403206 Clarifications on the Scope of EDT enhancement for IoT-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403206.html)
+- [R2-2403274 Discussion on Store and Forward support for IoT NTN Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403274.html)
+- [R2-2403606 Regenerative NTN payload support in NR NTN Evolution](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403606.html)
+- [R2-2403641 IoT NTN phase 3 scope](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403641.html)
+
+# RAN4 #110bis
+- [R4-2404149 Discussion on UE requirements for IoT-NTN enhancement](https://omusubi5g.github.io/tdoc.github.io/RAN4_110b/R4-2404149.html)
+
 
 # RAN #103
 - [RP-240060 Summary for NR NTN (Non-Terrestrial Networks) enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240060_Summary_NTNenh.html)
@@ -29,18 +45,3 @@
 - [RP-240846 New WID: Inter RAT mobility support from E-UTRAN TN to NR-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240846.html)
 - [RP-240857 New WID: Enhanced requirements and test methodology for NR and IoT NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240857.html)
 
-## RAN1 #116bis
-- [R1-2401993 FL Summary #3: NR-NTN downlink coverage enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2401993.html)
-- [R1-2403666 Session notes for 9.11 Non-Terrestrial Networks (NTN) for NR Phase 3 and Internet of Things (IoT) Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403666.html)
-- [R1-2403719 FL Summary #2 for IoT-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403719.html)
-- [R1-2403787 Support of RedCap and eRedCap UEs with NR NTN operating in FR1-NTN bands](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2403787.html)
-
-  
-## RAN2 #125bis
-- [R2-2403206 Clarifications on the Scope of EDT enhancement for IoT-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403206.html)
-- [R2-2403274 Discussion on Store and Forward support for IoT NTN Phase 3](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403274.html)
-- [R2-2403606 Regenerative NTN payload support in NR NTN Evolution](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403606.html)
-- [R2-2403641 IoT NTN phase 3 scope](https://omusubi5g.github.io/tdoc.github.io/RAN2_125/R2-2403641.html)
-
-## RAN4 #110bis
-- [R4-2404149 Discussion on UE requirements for IoT-NTN enhancement](https://omusubi5g.github.io/tdoc.github.io/RAN4_110b/R4-2404149.html)
