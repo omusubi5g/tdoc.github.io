@@ -15,7 +15,7 @@
 - [SWS-240008 NTN evolution into 6G for IMT-2030 Use Cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240008.html)
 - [SWS-240009 Can societies depend on 6G?](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240009.html)
 - [SWS-2400010 Next Generation of Access](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240010.html)
-- 
+
 # RAN #103
 - [RP-240060 Summary for NR NTN (Non-Terrestrial Networks) enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240060_Summary_NTNenh.html)
 - [RP-240061 New WID: Inter RAT mobility support from E-UTRAN TN to NR-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240061_mobilityTN-NTN.html)
