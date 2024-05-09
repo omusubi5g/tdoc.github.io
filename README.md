@@ -9,7 +9,13 @@
 # Workshop on IMT-2030 Use Cases
 - [SWS-240002 GSMA Proposal on 6G](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240002.html)
 - [SWS-240003 NGMN’s 6G Vision](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240003.html)
-
+- [SWS-240005 5GAA MRP input to 3GPP Stage-1 workshop on IMT-2030 Use Cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240005.html)
+- [SWS-240006 5G-ACIA’s Considerations on 6G Use Cases & Requirements](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240006.html)
+- [SWS-240007 Views from 5G-MAG towards IMT-2030](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240007.html)
+- [SWS-240008 NTN evolution into 6G for IMT-2030 Use Cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240008.html)
+- [SWS-240009 Can societies depend on 6G?](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240009.html)
+- [SWS-2400010 Next Generation of Access](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240010.html)
+- 
 # RAN #103
 - [RP-240060 Summary for NR NTN (Non-Terrestrial Networks) enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240060_Summary_NTNenh.html)
 - [RP-240061 New WID: Inter RAT mobility support from E-UTRAN TN to NR-NTN](https://omusubi5g.github.io/tdoc.github.io/RAN103/RP-240061_mobilityTN-NTN.html)
