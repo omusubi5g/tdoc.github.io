@@ -15,6 +15,12 @@
 - [SWS-240008 NTN evolution into 6G for IMT-2030 Use Cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240008.html)
 - [SWS-240009 Can societies depend on 6G?](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240009.html)
 - [SWS-240010 Next Generation of Access](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240010.html)
+- [SWS-240013 B5GPC’s Views on IMT2030 use cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240013.html)
+- [SWS-240014 6GForum’s Views on IMT2030 use cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240014.html)
+- [SWS-240015 Use cases towards 2030 and beyond](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240015.html)
+- [SWS-240016 Bharat 6G Alliance’s Views on IMT2030 use cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240016.html)
+- [SWS-240017 NGA Vision for 6G](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240017.html)
+- [SWS-240018 The European view on 6G use cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240018.html)
 
 # RAN1 #116bis
 - [R1-2401993 FL Summary #3: NR-NTN downlink coverage enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2401993.html)
