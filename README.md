@@ -21,6 +21,9 @@
 - [SWS-240016 Bharat 6G Alliance’s Views on IMT2030 use cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240016.html)
 - [SWS-240017 NGA Vision for 6G](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240017.html)
 - [SWS-240018 The European view on 6G use cases](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240018.html)
+- [SWS-240022 Update from ITU-R on IMT-2030](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240022.html)
+- [SWS-240023 3GPP Intro and 6G Update](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240023.html)
+- [SWS-240025 Summary of the Workshop](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240025.html)
 
 # RAN1 #116bis
 - [R1-2401993 FL Summary #3: NR-NTN downlink coverage enhancements](https://omusubi5g.github.io/tdoc.github.io/RAN1_116b/R1-2401993.html)
