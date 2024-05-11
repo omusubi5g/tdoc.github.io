@@ -1,0 +1,108 @@
+Here is an even more detailed summary in Japanese, formatted in an HTML table with CSS styling:
+
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: #f5f5f5;}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.code {
+  font-family: monospace;
+  background-color: #f0f0f0;
+  padding: 2px;
+}
+</style>
+</head>
+<body>
+<h1>再生ペイロードのサポートに関する議論</h1>
+<p>著者: Huawei, HiSilicon, Turkcell</p>
+
+<table>
+  <tr>
+    <th>セクション</th>
+    <th>詳細な要約</th>
+  </tr>
+  <tr>
+    <td>1. 序論</td>
+    <td>
+      <ul>
+        <li>本寄書では、Rel-19 NR NTN WID [1]に含まれる再生ペイロードのサポートについて議論する</li>
+        <li>前回の会議では、R18 NTNの機能（特に再同期を伴う衛星切り替え）が再生ペイロードに適用可能かどうかが議論され、次回の会議で議論を継続することが合意された [2]</li>
+        <li>本寄書では、この問題に関する見解を提供する</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>2. 議論</td>
+    <td>
+      <ul>
+        <li>前回の会議では、RA-SDT、再同期を伴う切り替え、ネットワーク検証済みUE位置ソリューションについて議論された。3番目については透過型ペイロードと再生ペイロードで違いがないため、他の2つ（RA-SDTと再同期を伴う切り替え）について議論する</li>
+        <li>2.1 再生ペイロードにおけるRA-SDT
+          <ul>
+            <li>[2]では、RA-SDT手順でMsg4（RRC Release）とともに地上のCNからDLパケットが常に送信されると仮定し、競合解決MACCEのACKを送信した後にMsg4のPDCCHモニタリングを遅らせることが期待されている</li>
+            <li>しかし、UL SDT送信に関連するDL SDTパケットが常に存在するとは限らず、ULでの非アクティビティによってSDT手順がネットワークによって終了される可能性がある。その結果、UEは競合解決MACCEのACKを送信した後にPDCCHのモニタリングを停止し、RRCReleaseメッセージを見逃す可能性がある</li>
+            <li>さらに、MACCEとMsg4の間のオフセットをどのように設定するかが不明確である。Uuインターフェースの往復遅延（RTT）のみを考慮する場合、透過型ペイロードのシナリオと変わりがない。UuインターフェースとバックホールのRTTの両方を考慮することは、特にマルチホップシナリオで衛星間リンクが考慮される場合、バックホールの遅延が不確定であるため困難と思われる</li>
+          </ul>
+        </li>
+        <li>2.2 再生ペイロードにおける再同期を伴う衛星切り替え  
+          <ul>
+            <li>Rel-18ではL3ハンドオーバーシグナリングを削減するために再同期メカニズムを伴う衛星切り替えが導入された。Rel-18では2つの透過型衛星が地上の同じgNBから同じセルを転送できるため、PCIを変更せずに済む</li>
+            <li>gNBが変更された場合はキーの更新が必要。TS 38.331によると、ターゲットgNBはRRCReconfigurationメッセージを使用してUEにNCCを通知するが、再同期を伴う衛星切り替えの利点は、切り替え時にRRCReconfigurationメッセージを送信しないことにある</li>
+            <li>再生ペイロードではRel-19で再同期機能を伴う切り替えがサポートされないことをステージ2で明確化する説明を追加することができる</li>
+          </ul>
+        </li>
+        <li>2.3 ステージ3への影響
+          <ul>
+            <li>上記の分析に基づき、RAN2ステージ3への影響は見られない</li>  
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>3. 結論</td>
+    <td>
+      <ul>
+        <li>本寄書は、既存の重要な機能が再生ペイロードの影響を受けるかどうか、再生ペイロードに拡張が必要かどうかを分析し、以下を提案する:</li>
+        <li>RA-SDT
+          <ul>
+            <li><strong>観測1:</strong> UL SDT送信に関連するDL SDTパケットが常に存在するとは限らず、ULでの非アクティビティによってSDT手順がネットワークによって終了される可能性がある。その結果、UEは競合解決MACCEのACKを送信した後にPDCCHのモニタリングを停止し、<span class="code">RRCRelease</span>メッセージを見逃す可能性がある</li>  
+          </ul>
+        </li>
+        <li>再同期を伴う切り替え
+          <ul>  
+            <li><strong>提案1:</strong> 再生ペイロードでは再同期を伴う衛星切り替えがサポートされないことをステージ2で明確化する説明を追加する</li>
+          </ul>
+        </li>
+        <li>ステージ3への影響
+          <ul>
+            <li><strong>提案2:</strong> 再生ペイロードに関連するRAN2ステージ3への影響はない</li>
+          </ul>  
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h2>参考文献</h2>
+<ol>
+  <li>RP-240775, Revised WID: Non-Terrestrial Networks (NTN) for NR Phase 3, Thales, CATT</li>
+  <li>R2-2402808, Discussion on regenerative payload, Qualcomm Incorporated</li>
+</ol>
+</body>
+</html>
