@@ -9,6 +9,7 @@
 - [RAN #103](#ran-103)
 
 # RAN2 #126
+- [R2-2404680 Discussion on regenerative payload(QC)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2404680.html)
 - [R2-2405126 Overview of Regenerative payload(HUAWEI)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2405126.html)
 - [R2-2405241 Regenerative NTN payload support in NR NTN Evolution(THALES)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2405241.html)
   
