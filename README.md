@@ -1,10 +1,15 @@
 ## 3GPP寄書要約
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
+
+- [RAN2 #126](#ran2-126)
 - [Workshop on IMT-2030 Use Cases](#workshop-on-imt-2030-use-cases)
 - [RAN1 #116bis](#ran1-116bis)
 - [RAN2 #125bis](#ran2-125bis)
 - [RAN4 #110bis](#ran4-110bis)
 - [RAN #103](#ran-103)
+
+# RAN2 #126
+- [R2-2405241 Regenerative NTN payload support in NR NTN Evolution(thales)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2405241.html)
   
 # Workshop on IMT-2030 Use Cases
 - [SWS-240002 GSMA Proposal on 6G](https://omusubi5g.github.io/tdoc.github.io/6GUCWS/SWS-240002.html)
