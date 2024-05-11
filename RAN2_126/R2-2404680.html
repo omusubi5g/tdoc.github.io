@@ -1,0 +1,96 @@
+Here is a detailed summary of the document in Japanese, formatted in an HTML table with CSS styling:
+
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: #f5f5f5;}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+</head>
+<body>
+<h1>再生ペイロードに関する議論</h1>
+<p>著者: Qualcomm Incorporated</p>
+
+<table>
+  <tr>
+    <th>セクション</th>
+    <th>詳細な要約</th>
+  </tr>
+  <tr>
+    <td>序論</td>
+    <td>
+      <p>RAN2#125bis会議で以下の合意がなされた:</p>
+      <ul>
+        <li>RAN3の入力を待って、切り替えとNGインターフェースに関連するセクション16.14.4と16.14.6を更新する</li>
+        <li>オンボードgNB再生ペイロードアーキテクチャをサポートするためのRAN2ディスカッションの可能なベースラインとして、R2-2403606のTS 38.300のテキスト提案を検討できるかどうかを今後の会議で確認する</li>
+        <li>再生ペイロードアーキテクチャにおける再同期を伴う衛星切り替えのサポートに関する議論を次回の会議で継続する</li>
+      </ul>
+      <p>本文書では、再生ペイロード動作で機能させるために議論が必要となる可能性のある機能の詳細を提供する。</p>
+    </td>
+  </tr>
+  <tr>
+    <td>議論</td>
+    <td>
+      <p><u>再同期のサポートを伴う衛星切り替え</u></p>
+      <ul>
+        <li>透過型ペイロードと固定セルシナリオでは、このRel-18機能により、UEはL3ハンドオーバーなしで衛星を切り替えることができる。この場合、セルSSB、SIB、UEのRRC設定は、衛星切り替え後も同じままである。この機能は、固定セルシナリオでL3ハンドオーバーとシグナリングのオーバーヘッドを回避するために重要である。</li>
+        <li>再生ペイロードの場合、gNBがオンボードにあると、衛星の切り替えはgNBの切り替えになる。再同期機能を伴う衛星切り替えが再生ペイロードアーキテクチャに適用可能かどうかが問題となる。</li>
+        <li>理想的なISLバックホールを前提とすれば、ネットワークの実装により可能である。古い衛星は、同じエリアにサービスを提供する新しい衛星にすべてのデータ（gNBコンテキスト、すべてのUEコンテキストなど）を転送する。再同期を伴うHARD衛星切り替えと同様のデータ転送時間がかかる可能性がある。これによるRANまたはコアネットワークへの影響は予見されない。</li>
+        <li>再同期機能を伴う衛星切り替えは、ミラー衛星のネットワーク実装により、再生ペイロードアーキテクチャでサポートされる可能性がある。</li>
+        <li>ソフト切り替えは、t-ServiceStartがt-Serviceより前に発生できないため、切り替え時間により不可能かもしれない。しかし、ハード衛星切り替えは、ごくわずかな仕様変更で可能である。必要な変更は、再生アーキテクチャでは位置ギャップ（t-Service - t-ServiceStart）が可能であることを明確にすることのみ。正の切り替えギャップ中にRRM要件を定義する必要があるかどうかは、RAN4に確認できる。</li>
+        <li>RAN2の観点から、再生ペイロードに対する再同期を伴う衛星切り替えのサポートを示すかどうかは、ネットワーク実装に任せる。唯一のRAN2仕様への影響は、衛星切り替えの正のギャップを明確にすること。つまり、t-ServiceStartはt-Serviceの後に発生する可能性がある。</li>
+      </ul>
+      
+      <p><u>RA-SDTにおける消費電力</u></p>
+      <ul>
+        <li>NTNではRRC_INACTIVE状態とSDTがサポートされている。RA SDTでは、Msg3で小さなデータが送信され、ネットワークはMsg4を介してUEをRRC_INACTIVEに戻したい場合がある。ただし、UEをRRC_INACTIVEに戻す前に、オンボード衛星のgNBは、地上のAMFからのDL応答または保留中のDLデータを取得する必要がある。これにより、gNBがUEにDL応答データを提供するためのフィーダーリンクRTT遅延が発生する。</li>
+      </ul>
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeoAAAD2CAIAAAAMq4UeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA4aSURBVHhe7dwva1xXFAbw20XNUNyEURNCxmK0gqglCe1C3NRj8BPU7ZSCi4Awpug3EEIgScFiSE3ARcEmSZMhKZIgQUjQgNWBQZd1ZShYcBG2uNl/Ds+bnPHeM3PGmb8z9x7OuXnOeTFjWdy9s3feQ+/mzoMfPhEARWIxSV6eDfz6/K/n//54LfrlzWFbQa0uqNSFtTEWaqttq/GhYBbLmTMFuX//vr/wIqW4c+fO7Oys/ksMlmIFy+oX8q8rWa3l21lWi1NXt1nBR2aL/WPRiF+L5cyZglBQFhcX/QXXZmAUK1irX8j/Lcn4FyvV6QCrVvDR1WobajR0Wxd/J5Yvb4pCQdm8zNXkwChWsOZ+0S5W9Iu3tJojG6yaKC5ey5tTyJFVV6v1XBSXyE/BrGMYhikB5c7KyopftP5iNaP1K6RereCDu12tNmSx4qrlqLx5MxcKFrS6yZuVNbYxeJRDrX4hq1rRHFbbUKNZrDZUxlg1mbhYcbkKu1rBUkVxieIxjCkS5Y7fvuzKM1jEYgVLdbtarZvJanUVKi5W8KHdqVarRLFqJX8jliBXCkaJ4zfx4OQWrB+3sViEgmQ7+eCCtZpH7Q3VdpPFCpa0O9Xq+FarVfyNWQzHiKJxbUGkZHHrGMx8XHE8imW6hZzxKFbQqDVYcXN7U7IXK5bdGypVrODTPYsVV7SmXa3qL6FqlEiBKsasXIHrwWBx9xjMfiTWsIZkYz1bztlSXMTMo66L0Z0p2LUjWKi7glIxGGO+IHd2dnb8hUPiP0ixuIUMHK9qtdV0u1o1WLtYzc0EtTow5hvlzu7urr8Yz2pFghXo99UqEdRqqwXDMIxlC7Kzszszs+IvxvOqVqD4e8R+h8qrghmGYVrCHB4ezs6uti6L6Fa9R5x5aRjmDMKcnJzMz8/FX/wFcZ01NwyTPWYNc3h4eP36tPiLAWG17BqGqTqFDHN0dOSeiNXG7m9XwzAM0wWmNhQHi7fhhhXCZA69cq/chwcHZ//88uvxiYpxOPz69Wt8k+wKi+4XfBFTOWrHp55hmMFiBVM5TM/8B0HQMf3ZkIDpAAAAAElFTkSuQmCC" alt="RA-SDT procedure in regenerative payload architecture">
+
+      <ul>
+        <li>オンボードのgNBは、地上ネットワークからの応答を待つ間、競合解決MACCEをすぐに送信したい場合がある。これは、競合解決タイマーの期限切れの可能性を回避するためである。この場合、競合解決MACCEのHARQフィードバックを送信した後、UEが不必要にPDCCHを継続的にモニタリングするのは確かに電力効率が良くない。競合解決タイマーの開始遅延と同様に、競合解決MACCEのHARQフィードバックを送信した後、さらなるRRCメッセージのPDCCHモニタリングを遅らせることができる。</li>
+        <li>再生ペイロードでRA SDTを使用する際のUE省電力のために、競合解決MACCEのHARQフィードバックを送信した後、UE-gNB RTTによってさらなるRRCメッセージのPDCCHモニタリングが遅延される。</li>
+      </ul>
+      
+      <p><u>ネットワーク検証済みUE位置ソリューションにおける頻繁なハンドオーバー中断</u></p>
+      <ul>
+        <li>透過型ペイロードについて、RAN2はすでに、特に移動セルシナリオにおける頻繁な衛星切り替えが、頻繁なセル変更によるネットワーク検証の長い遅延につながる可能性があることを議論した。完全なgNBがオンボードにある再生ペイロードアーキテクチャでは、古いgNBが到達できなくなるため、この問題はさらに悪化する可能性がある。シンプルなアプローチの1つは、LMFで遅延なくTRP/gNB更新を完了する方法をシグナリングで調べることである。</li>
+        <li>頻繁なgNB切り替えがネットワーク検証済みUE位置の問題になるかどうかをRAN2で検討する。</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>結論</td>
+    <td>
+      <p>以下の観察と提案がなされた。</p>
+      <ul>
+        <li>観察1. 再同期機能を伴う衛星切り替えは、t-Serviceでのミラー衛星のネットワーク実装により、再生ペイロードアーキテクチャでサポートされる可能性がある。</li>
+        <li>提案1 RAN2の観点から、再生ペイロードに対する再同期を伴う衛星切り替えのサポートを示すかどうかは、ネットワーク実装に任せる。唯一のRAN2仕様への影響は、衛星切り替えの正のギャップを明確にすること。つまり、t-ServiceStartはt-Serviceの後に発生する可能性がある。</li>
+        <li>提案2 再生ペイロードでRA SDTを使用する際のUE省電力のために、競合解決MACCEのHARQフィードバックを送信した後、UE-gNB RTTによってさらなるRRCメッセージのPDCCHモニタリングが遅延される。</li>  
+        <li>提案3 頻繁なgNB切り替えがネットワーク検証済みUE位置の問題になるかどうかをRAN2で検討する。</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
