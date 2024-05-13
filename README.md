@@ -1,6 +1,7 @@
 ## 3GPP寄書要約
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
 
+- [RAN1 #117](#ran1-117)
 - [RAN2 #126](#ran2-126)
 - [Workshop on IMT-2030 Use Cases](#workshop-on-imt-2030-use-cases)
 - [RAN1 #116bis](#ran1-116bis)
@@ -8,6 +9,9 @@
 - [RAN4 #110bis](#ran4-110bis)
 - [RAN #103](#ran-103)
 
+# RAN1 #117
+- [R1-2404205 Work plan for Rel-19 NR_NTN_Ph3](https://omusubi5g.github.io/tdoc.github.io/RAN1_117/R1-2404205.html)
+- 
 # RAN2 #126
 - [R2-2404680 Discussion on regenerative payload(QC)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2404680.html)
 - [R2-2405126 Overview of Regenerative payload(HUAWEI)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2405126.html)
