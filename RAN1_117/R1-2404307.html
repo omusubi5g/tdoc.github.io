@@ -1,202 +1,219 @@
 <html>
 <head>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-}
-
-h2 {
-  color: #444;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-}
-
-h3 {
-  color: #555;
-}
-
-.author {
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 20px;
-}
-
-.observation, .proposal {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.observation {
-  background-color: #f0f8ff;
-  border: 1px solid #add8e6;
-}
-
-.proposal {
-  background-color: #f0fff0;
-  border: 1px solid #90ee90;
-}
-
 table {
-  width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  width: 100%;
 }
 
 th, td {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
 th {
-  background-color: #f0f0f0;
+  background-color: #f2f2f2;
 }
 
-ul {
-  margin: 0;
-  padding-left: 20px;
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.observation {
+  background-color: #f0f8ff;
+}
+
+.proposal {
+  background-color: #f0fff0;
 }
 </style>
 </head>
 <body>
 <h1>NR-NTNダウンリンクカバレッジ強化に関する議論</h1>
-<p class="author">Apple</p>
+<p>著者: Apple</p>
 
-<h2>1. はじめに</h2>
-<p>RAN#103会合でリリース19 NR NTNのWIDが改訂され、ダウンリンクカバレッジ強化が目的の1つとなった。RAN1#116bis会合では、PDCCHおよびPDSCHのカバレッジ評価に関する合意がなされた。</p>
-
-<h2>2. 議論</h2>
-<h3>2.1. リンクレベル評価</h3>
-<p>RAN1#116の合意に従い、ダウンリンクカバレッジ性能の3段階のリンクレベル研究が実施された。RAN1#116bis会合では、各衛星ペイロードパラメータセットのCNRが観測された。以下のサブセクションでは、ステップ2とステップ3について検討する。</p>
-
-<h4>2.1.1. リンクレベルシミュレーション</h4>
-<p>評価対象のダウンリンク物理チャネルが特定され、リンクレベルシミュレーションによって必要SNRが評価された。結果は以下の通り:</p>
-
-<div class="observation">
-<p><strong>Observation 1:</strong> 2% BLERにおいて、VoIPのPDSCHに必要なSNRは、7 PRBで8回の繰り返しの場合-12.7 dB。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 2:</strong> 10% BLERにおいて、3 kbpsのPDSCHに必要なSNRは、1 PRBで8回の繰り返しと120/1024のコーディングレートの場合-10.4 dB。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 3:</strong> 10% BLERにおいて、1 MbpsのPDSCHに必要なSNRは、25 PRBで193/1024のコーディングレートで繰り返しなしの場合-4.9 dB。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 4:</strong> 10% BLERにおいて、Msg2 PDSCHに必要なSNRは、スケーリングファクター1、1/2、1/4の場合、それぞれ3、6、12 PRBで3 DMRSシンボルと120/1024のコーディングレートで-6.1、-8.8、-11.2 dB。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 5:</strong> 10% BLERにおいて、Msg4 PDSCHに必要なSNRは、23 PRBで193/1024のコーディングレートで1、2、4回の繰り返しの場合、それぞれ-4.8 dB、-7.4 dB、-10.0 dB。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 6:</strong> 10% BLERにおいて、SIB1 PDSCHに必要なSNRは、ペイロードサイズが800ビットと1280ビットの場合、24 PRBでそれぞれ-5.8 dBと-3.7 dB。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 7:</strong> 10% BLERにおいて、SIB19のPDSCHに必要なSNRは、24 PRBで120/1024のコーディングレートの場合-6.7 dB。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 8:</strong> 1% BLERにおいて、PDCCHに必要なSNRは、アグリゲーションレベル8、4、2、1の場合、それぞれ-7.9、-5.5、-2.4、1.7 dB。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 9:</strong> 1% BLERにおいて、PBCHに必要なSNRは、80 msの4つのSSBの組み合わせの場合-12.1 dB。</p>
-</div>
-
-<h4>2.1.2. リンクレベル評価</h4>
-<p>セクション2.1.1のリンクレベルシミュレーション結果に基づき、セット1-1/1-2と1-3の衛星パラメータについて、必要SNRとCNRの差をまとめた。</p>
-
-<div class="observation">
-<p><strong>Observation 10:</strong> LEO-600セット1-3パラメータでは、以下のチャネルにカバレッジギャップが存在する:</p>
-<ul>
-<li>1 MbpsのPDSCH: 5.0 dB</li>
-<li>スケーリングファクター1のPDSCH Msg2: 3.8 dB</li>
-<li>スケーリングファクター1/2のPDSCH Msg2: 1.1 dB</li>
-<li>PDSCH Msg4: 5.1 dB</li>
-<li>PDSCH SIB1: 4.1 dB</li>
-<li>PDSCH SIB19: 3.2 dB</li>
-<li>PDCCH: 2.0 dB</li>
-</ul>
-</div>
-
-<h3>2.2. リンクレベル強化</h3>
-
-<div class="proposal">
-<p><strong>Proposal 1:</strong> 少なくともPDCCH、PDSCH Msg4、PDSCH SIB1、PDSCH SIB19のカバレッジを強化する必要がある。PDSCH Msg2のカバレッジを強化する必要があるかどうかをさらに評価する。</p>
-</div>
-
-<div class="proposal">
-<p><strong>Proposal 2:</strong> PDSCH Msg4とPDSCH SIB1のカバレッジを強化するために、PDSCH繰り返しの導入を検討する。</p>
-</div>
-
-<div class="proposal">
-<p><strong>Proposal 3:</strong> PDSCHのカバレッジを強化するために、PUSCHの性能向上に使用されるスキーム（複数スロットにわたるTB、DMRSバンドリングなど）をPDSCHに適用できるか検討する。</p>
-</div>
-
-<div class="proposal">
-<p><strong>Proposal 4:</strong> PDCCHのカバレッジを強化するために、以下のソリューションを検討する:</p>
-<ul>
-<li>PDCCH繰り返しの強化（システム情報をスケジュールするPDCCHなど）</li>
-<li>CORESETシンボル数とアグリゲーションレベルの増加</li>
-<li>DCIサイズの削減（2段階DCIなど）</li>
-</ul>
-</div>
-
-<h3>2.3. システムレベル評価と強化</h3>
-<p>LEO-600セット1-1とセット1-3では、100%のカバレッジ率を達成しつつ、SSBとSIB1の周期性を20 msに維持できる。セット1-2では、SSBとSIB1の周期性を160 msに維持することで100%のカバレッジ率を達成できる。</p>
-
-<div class="observation">
-<p><strong>Observation 11:</strong> LEO-600セット1-1とセット1-3のFR1では、N1=N2=0、N3=1058の場合、カバレッジ率は100%、滞留時間は2 ms、再訪問時間は20 ms、SSBとSIB1の周期性は20 ms。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 12:</strong> LEO-600セット1-1とセット1-3のFR1では、N1=0、N2=846、N3=212の場合、カバレッジ率は100%、N3ビームフットプリントでの滞留時間は6 ms、再訪問時間は20 ms、SSBとSIB1の周期性は20 ms。</p>
-</div>
-
-<div class="observation">  
-<p><strong>Observation 13:</strong> LEO-600セット1-2のFR1では、N1=N2=0、N3=1058の場合、カバレッジ率は100%、滞留時間は2.4 ms、再訪問時間は160 ms、SSBとSIB1の周期性は160 ms。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 14:</strong> LEO-600セット1-2のFR1では、N1=0、N2=846、N3=212の場合、カバレッジ率は100%、N3ビームフットプリントでの滞留時間は8.4 ms、再訪問時間は160 ms、SSBとSIB1の周期性は160 ms。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 15:</strong> LEO-600セット1-2のFR1では、N1=N3=0、N2=320の場合、カバレッジ率は30%、N2ビームフットプリントでの滞留時間は1 ms、再訪問時間は20 ms、SSBとSIB1の周期性は20 ms。</p>
-</div>
-
-<div class="observation">
-<p><strong>Observation 16:</strong> デフォルトのSSB周期を大幅に増やすと、UE実装の複雑さが大幅に増し、後方互換性の問題が生じる。</p>
-</div>
-
-<div class="proposal">
-<p><strong>Proposal 5:</strong> RAN1は、リリース18のネットワークエネルギー節約技術（セルDTX/DRXなど）をNR NTNに適合するように修正（ビームベースの運用など）して使用し、システムレベルのダウンリンクカバレッジ強化を検討する。</p>
-</div>
-
-<h2>3. 結論</h2>
-<p>本寄書では、ダウンリンクカバレッジ強化に関する見解を提供した。観察事項と提案は上記の通りである。</p>
+<table>
+  <tr>
+    <th>セクション</th>
+    <th>内容</th>
+  </tr>
+  <tr>
+    <td>1. はじめに</td>
+    <td>
+      <ul>
+        <li>RAN#103会合でリリース19 NR NTNのWIDが改訂され、ダウンリンクカバレッジ強化が目的の1つとなった</li>
+        <li>RAN1#116bis会合では、PDCCHおよびPDSCHのカバレッジ評価に関する合意がなされた</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>2. 議論</td>
+    <td>
+      <table>
+        <tr>
+          <th>サブセクション</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>2.1. リンクレベル評価</td>
+          <td>
+            <ul>
+              <li>RAN1#116の合意に従い、ダウンリンクカバレッジ性能の3段階のリンクレベル研究が実施された</li>
+              <li>RAN1#116bis会合では、各衛星ペイロードパラメータセットのCNRが観測された</li>
+            </ul>
+            <table>
+              <tr>
+                <th>観察事項/提案</th>
+                <th>内容</th>
+              </tr>
+              <tr class="observation">
+                <td>Observation 1</td>
+                <td>2% BLERにおいて、VoIPのPDSCHに必要なSNRは、7 PRBで8回の繰り返しの場合-12.7 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 2</td>
+                <td>10% BLERにおいて、3 kbpsのPDSCHに必要なSNRは、1 PRBで8回の繰り返しと120/1024のコーディングレートの場合-10.4 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 3</td>
+                <td>10% BLERにおいて、1 MbpsのPDSCHに必要なSNRは、25 PRBで193/1024のコーディングレートで繰り返しなしの場合-4.9 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 4</td>
+                <td>10% BLERにおいて、Msg2 PDSCHに必要なSNRは、スケーリングファクター1、1/2、1/4の場合、それぞれ3、6、12 PRBで3 DMRSシンボルと120/1024のコーディングレートで-6.1、-8.8、-11.2 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 5</td>
+                <td>10% BLERにおいて、Msg4 PDSCHに必要なSNRは、23 PRBで193/1024のコーディングレートで1、2、4回の繰り返しの場合、それぞれ-4.8 dB、-7.4 dB、-10.0 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 6</td>
+                <td>10% BLERにおいて、SIB1 PDSCHに必要なSNRは、ペイロードサイズが800ビットと1280ビットの場合、24 PRBでそれぞれ-5.8 dBと-3.7 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 7</td>
+                <td>10% BLERにおいて、SIB19のPDSCHに必要なSNRは、24 PRBで120/1024のコーディングレートの場合-6.7 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 8</td>
+                <td>1% BLERにおいて、PDCCHに必要なSNRは、アグリゲーションレベル8、4、2、1の場合、それぞれ-7.9、-5.5、-2.4、1.7 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 9</td>
+                <td>1% BLERにおいて、PBCHに必要なSNRは、80 msの4つのSSBの組み合わせの場合-12.1 dB</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 10</td>
+                <td>
+                  LEO-600セット1-3パラメータでは、以下のチャネルにカバレッジギャップが存在する:
+                  <ul>
+                    <li>1 MbpsのPDSCH: 5.0 dB</li>
+                    <li>スケーリングファクター1のPDSCH Msg2: 3.8 dB</li>
+                    <li>スケーリングファクター1/2のPDSCH Msg2: 1.1 dB</li>
+                    <li>PDSCH Msg4: 5.1 dB</li>
+                    <li>PDSCH SIB1: 4.1 dB</li>
+                    <li>PDSCH SIB19: 3.2 dB</li>
+                    <li>PDCCH: 2.0 dB</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>2.2. リンクレベル強化</td>
+          <td>
+            <table>
+              <tr>
+                <th>提案</th>
+                <th>内容</th>
+              </tr>
+              <tr class="proposal">
+                <td>Proposal 1</td>
+                <td>少なくともPDCCH、PDSCH Msg4、PDSCH SIB1、PDSCH SIB19のカバレッジを強化する必要がある。PDSCH Msg2のカバレッジを強化する必要があるかどうかをさらに評価する。</td>
+              </tr>
+              <tr class="proposal">
+                <td>Proposal 2</td>
+                <td>PDSCH Msg4とPDSCH SIB1のカバレッジを強化するために、PDSCH繰り返しの導入を検討する。</td>
+              </tr>
+              <tr class="proposal">
+                <td>Proposal 3</td>
+                <td>PDSCHのカバレッジを強化するために、PUSCHの性能向上に使用されるスキーム（複数スロットにわたるTB、DMRSバンドリングなど）をPDSCHに適用できるか検討する。</td>
+              </tr>
+              <tr class="proposal">
+                <td>Proposal 4</td>
+                <td>
+                  PDCCHのカバレッジを強化するために、以下のソリューションを検討する:
+                  <ul>
+                    <li>PDCCH繰り返しの強化（システム情報をスケジュールするPDCCHなど）</li>
+                    <li>CORESETシンボル数とアグリゲーションレベルの増加</li>
+                    <li>DCIサイズの削減（2段階DCIなど）</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>2.3. システムレベル評価と強化</td>
+          <td>
+            <table>
+              <tr>
+                <th>観察事項/提案</th>
+                <th>内容</th>
+              </tr>
+              <tr class="observation">
+                <td>Observation 11</td>
+                <td>LEO-600セット1-1とセット1-3のFR1では、N1=N2=0、N3=1058の場合、カバレッジ率は100%、滞留時間は2 ms、再訪問時間は20 ms、SSBとSIB1の周期性は20 ms。</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 12</td>
+                <td>LEO-600セット1-1とセット1-3のFR1では、N1=0、N2=846、N3=212の場合、カバレッジ率は100%、N3ビームフットプリントでの滞留時間は6 ms、再訪問時間は20 ms、SSBとSIB1の周期性は20 ms。</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 13</td>
+                <td>LEO-600セット1-2のFR1では、N1=N2=0、N3=1058の場合、カバレッジ率は100%、滞留時間は2.4 ms、再訪問時間は160 ms、SSBとSIB1の周期性は160 ms。</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 14</td>
+                <td>LEO-600セット1-2のFR1では、N1=0、N2=846、N3=212の場合、カバレッジ率は100%、N3ビームフットプリントでの滞留時間は8.4 ms、再訪問時間は160 ms、SSBとSIB1の周期性は160 ms。</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 15</td>
+                <td>LEO-600セット1-2のFR1では、N1=N3=0、N2=320の場合、カバレッジ率は30%、N2ビームフットプリントでの滞留時間は1 ms、再訪問時間は20 ms、SSBとSIB1の周期性は20 ms。</td>
+              </tr>
+              <tr class="observation">
+                <td>Observation 16</td>
+                <td>デフォルトのSSB周期を大幅に増やすと、UE実装の複雑さが大幅に増し、後方互換性の問題が生じる。</td>
+              </tr>
+              <tr class="proposal">
+                <td>Proposal 5</td>
+                <td>RAN1は、リリース18のネットワークエネルギー節約技術（セルDTX/DRXなど）をNR NTNに適合するように修正（ビームベースの運用など）して使用し、システムレベルのダウンリンクカバレッジ強化を検討する。</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>3. 結論</td>
+    <td>
+      本寄書では、ダウンリンクカバレッジ強化に関する見解を提供した。観察事項と提案は上記の通りである。
+    </td>
+  </tr>
+</table>
 
 <h2>参考文献</h2>
 <ol>
-<li>RP-240775, "Revised WID: Non-Terrestrial Networks (NTN) for NR Phase 3," Mar. 2024.</li>
-<li>Chairman's Notes, 3GPP TSG RAN WG1 #116bis Meeting, Apr. 2024.</li>
-<li>Chairman's Notes, 3GPP TSG RAN WG1 #116 Meeting, Feb. 2024.</li>
-<li>3GPP TR 38.821, Solutions for NR to support non-terrestrial networks (NTN), v16.2.0, Apr. 2023.</li>
-<li>R1-2401993, "FL Summary #3: NR-NTN downlink coverage enhancements," Apr. 2024.</li>
-<li>3GPP TR 38.864, Study on network energy savings for NR, v18.1.0, Mar. 2023.</li>
-<li>RP-230566, "WID revision: Network energy savings for NR," Mar. 2023.</li>
+  <li>RP-240775, "Revised WID: Non-Terrestrial Networks (NTN) for NR Phase 3," Mar. 2024.</li>
+  <li>Chairman's Notes, 3GPP TSG RAN WG1 #116bis Meeting, Apr. 2024.</li>
+  <li>Chairman's Notes, 3GPP TSG RAN WG1 #116 Meeting, Feb. 2024.</li>
+  <li>3GPP TR 38.821, Solutions for NR to support non-terrestrial networks (NTN), v16.2.0, Apr. 2023.</li>
+  <li>R1-2401993, "FL Summary #3: NR-NTN downlink coverage enhancements," Apr. 2024.</li>
+  <li>3GPP TR 38.864, Study on network energy savings for NR, v18.1.0, Mar. 2023.</li>
+  <li>RP-230566, "WID revision: Network energy savings for NR," Mar. 2023.</li>
 </ol>
 </body>
 </html>
