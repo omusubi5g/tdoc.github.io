@@ -11,7 +11,7 @@
 
 # RAN1 #117
 - [R1-2404205 Work plan for Rel-19 NR_NTN_Ph3](https://omusubi5g.github.io/tdoc.github.io/RAN1_117/R1-2404205.html)
-- 
+
 # RAN2 #126
 - [R2-2404680 Discussion on regenerative payload(QC)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2404680.html)
 - [R2-2405126 Overview of Regenerative payload(HUAWEI)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2405126.html)
