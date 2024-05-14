@@ -12,7 +12,7 @@
 # RAN1 #117
 - [R1-2404205 Work plan for Rel-19 NR_NTN_Ph3](https://omusubi5g.github.io/tdoc.github.io/RAN1_117/R1-2404205.html)
 - [R1-2404307 Discussion on NR-NTN Downlink Coverage Enhancement](https://omusubi5g.github.io/tdoc.github.io/RAN1_117/R1-2404307.html)
-- [Discussion on downlink coverage enhancements for NR NTN(R1-2405090 (MediaTek)	R1-2404307 (Apple)	R1-2403938 (Huawei)	R1-2404607 (Xiaomi)	R1-2403989 (Ericsson))](https://omusubi5g.github.io/tdoc.github.io/RAN1_117/downcovenh.html)
+- [Discussion on downlink coverage enhancements for NR NTN](https://omusubi5g.github.io/tdoc.github.io/RAN1_117/downcovenh.html)
 # RAN2 #126
 - [R2-2404680 Discussion on regenerative payload(QC)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2404680.html)
 - [R2-2405126 Overview of Regenerative payload(HUAWEI)](https://omusubi5g.github.io/tdoc.github.io/RAN2_126/R2-2405126.html)
