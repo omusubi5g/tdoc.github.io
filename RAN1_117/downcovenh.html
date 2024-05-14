@@ -1,0 +1,201 @@
+<h1>Discussion on downlink coverage enhancements for NR NTN</h1>
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+</style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>議論ポイント</th>
+    <th>R1-2405090 (MediaTek)</th>
+    <th>R1-2404307 (Apple)</th>
+    <th>R1-2403938 (Huawei)</th>
+    <th>R1-2404607 (Xiaomi)</th>
+    <th>R1-2403989 (Ericsson)</th>
+  </tr>
+  <tr>
+    <td>ビーム配置とABS</td>
+    <td>提案なし</td>
+    <td>提案なし</td>
+    <td>提案なし</td>  
+    <td>提案なし</td>
+    <td>
+      <ul>
+        <li>UVプレーンによるビーム配置は、正確な干渉計算や高次のスポットビーム配置に適さない</li>
+        <li>ABSの定義がHPBWと結合しており、ビーム数やSNR/SIRのバランス最適化ができない</li>
+        <li>ABSを√n倍すると、セル面積はn倍となり、必要なビーム数を減らせる</li> 
+        <li>ABS拡大により、必要なTRFを減らせ、revisit timeに対するdwell timeを延ばせる</li>
+        <li>ABS拡大(0.1157、86.6kmビームサイズ)を検討すべき</li>
+      </ul>  
+    </td>   
+  </tr>
+  <tr>
+    <td>SSB周期とカバレッジ</td>
+    <td>
+      <ul>
+        <li>狭ビーム(Set 1-2): SSB周期320msで96.8%のカバレッジ率と96.9%のビーム効率</li>
+        <li>狭ビーム(Set 1-1/1-3): SSB周期80msで96.6%のカバレッジ率と87.5%のビーム効率</li>
+        <li>ワイドビーム(Set 1-2): SSB周期80msで96.8%のカバレッジ率と96.9%のビーム効率</li>
+        <li>ワイドビーム(Set 1-1/1-3): SSB周期80msで100%のカバレッジ率と87.5%のビーム効率</li>
+        <li>DL同期の遅延は、システム障害を避けるためナローワビームの典型的なカバレッジ時間より短くすべき</li>
+        <li>UE動作を変更し、デフォルト周期20msでN~SSB~個のSSBビームホッピングを想定し、1つのビームのみを使用することをサポート</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Set 1-1とSet 1-3 (N1=N2=0, N3=1058): SSB/SIB1周期20ms、カバレッジ率100%、滞在時間2ms、リビジット時間20ms</li>
+        <li>Set 1-1とSet 1-3 (N1=0, N2=846, N3=212): SSB/SIB1周期20ms、カバレッジ率100%、滞在時間6ms(N3)、リビジット時間20ms</li>
+        <li>Set 1-2 (N1=N2=0, N3=1058): SSB/SIB1周期160ms、カバレッジ率100%、滞在時間2.4ms、リビジット時間160ms</li>
+        <li>Set 1-2 (N1=0, N2=846, N3=212): SSB/SIB1周期160ms、カバレッジ率100%、滞在時間8.4ms(N3)、リビジット時間160ms</li>
+        <li>Set 1-2 (N1=N3=0, N2=320): SSB/SIB1周期20ms、カバレッジ率30%、滞在時間1ms(N2)、リビジット時間20ms</li>
+        <li>SSB周期の延長はUE実装の複雑さを増大させ、後方互換性の問題がある</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>SSB周期延長によるビームホッピングは、3つのLEO600kmパラメータセットでシステムレベルのカバレッジを向上させる</li>
+        <li>SSB周期延長によるビームホッピングは、システムの共通制御チャネルのオーバーヘッドも削減できる</li>
+        <li>SSB周期とSIBブロードキャスト期間の延長により、VoIP/IM/FTP3のユーザスループット、IM/FTPのセルスループットが向上する</li>
+        <li>Rel-17/18サービスビームについては後方互換性のため20msのSSB周期を使用し、その他のビームについてはSSB周期を延長してカバレッジを広げる</li>
+        <li>SIB1/SIB19は、拡張したSSB周期を用いてもSet1-1/2の要件を満たす</li>
+        <li>PDSCH 1Mbps/VoIPも、640msの時間・周波数誤差下でSet1-1/2の要件を満たす(SSB640ms周期の最悪ケース)</li>
+        <li>専用PDCCHも、SSB周期拡張によるインペアメントでSet1-1/2の要件を満たす</li>
+        <li>SSB周期拡張時、UEはTRSを使って伝送性能を改善できる</li>  
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>同時アクティブビーム率が低いため、Set1-1/1-2/1-3ではSSBビームスイープが必要</li>
+        <li>SSBビームスイープ問題の解決策:
+          <ul>
+            <li>S帯のSSB数増加とSSBパターン変更</li>  
+            <li>SSBインデックスを特定エリア/セルに関連付け</li>
+            <li>初期セル選択時のデフォルトSSB周期の仮定を変更</li>
+          </ul>
+        </li>
+      </ul>
+    </td>   
+    <td>
+      <ul>
+        <li>ビームホッピングのSSB周期20msは、初期アクセス、RACH msg1/2送信に必要な物理チャネル/信号送信を保証</li>
+        <li>SSB周期20ms超の場合、仕様変更が必要で、レガシーUEへの影響あり</li>  
+        <li>少なくともSSB周期20msをビームホッピングで使用すべき</li>
+        <li>SSB周期20ms超の場合、以下を検討すべき:
+          <ul>
+            <li>仕様への影響</li>
+            <li>レガシーUEとの後方互換性</li>
+            <li>同期ラスター</li>
+            <li>MIB周期</li>
+            <li>PBCHコンバイニング</li>  
+            <li>性能ロス/ゲイン</li>
+          </ul>
+        </li>     
+      </ul>
+    </td>  
+  </tr>
+  <tr>
+    <td>リンクレベルでのカバレッジギャップ</td>  
+    <td>
+      <ul>
+        <li>導入部分と結論部分で、リンクレベルの評価について言及あり</li>
+        <li>具体的なカバレッジギャップの数値は示されていない</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>PDSCH with 1 Mbps: 5.0 dB</li>
+        <li>PDSCH Msg2 (scaling factor 1): 3.8 dB</li>
+        <li>PDSCH Msg2 (scaling factor 1/2): 1.1 dB</li>
+        <li>PDSCH Msg4: 5.1 dB</li>
+        <li>PDSCH SIB1: 4.1 dB</li>
+        <li>PDSCH SIB19: 3.2 dB</li>
+        <li>PDCCH: 2.0 dB</li>
+        <li>少なくともPDCCH、PDSCH Msg4、PDSCH SIB1、PDSCH SIB19のカバレッジ向上が必要</li>
+        <li>PDSCH Msg2のカバレッジ向上が必要か、さらなる評価が必要</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Set1-1/1-2ではすべてのDLチャネルでカバレッジギャップはない</li>
+        <li>Set1-3では、EIRPが低すぎるためSSBも機能しない</li>
+        <li>SSBが機能しないシナリオでは、他のDLチャネルのリンクレベルカバレッジ向上は検討不要</li>
+        <li>Set1-3のアクティブビーム数を106から42に減らし、SSBにギャップが出ないようにすべき</li>
+      </ul>  
+    </td>
+    <td>
+      <ul>
+        <li>最大ドップラー周波数ドリフトを考慮しない場合、Set1-1/1-2ではSIB19取得前のチャネルにギャップなし</li>
+        <li>Set1-3では、PDCCH/SIB1 PDSCH/SIB19 PDSCH/Msg4 PDSCHにギャップあり</li>  
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Set1-1/1-2では、BLER目標に対し、SSB/PDCCH/PDSCHが要件を満たす。SSBに対し、PDCCHは6.5dB、PDSCHは0.1～6.1dB(メッセージ種別による)のギャップ</li>
+        <li>Set1-3では、SSB/PDSCH Msg2のみが要件を満たし、PDCCH/PDSCH Msg4/SIB1/SIB19は満たさない</li>
+        <li>Set1-3の設定を見直すか、Set1-1/1-2を優先すべき</li>  
+      </ul>
+    </td>   
+  </tr>
+  <tr>
+    <td>カバレッジ向上のための技術</td>
+    <td>具体的な技術提案はなし</td>    
+    <td>
+      <ul>
+        <li>PDSCH Msg4、PDSCH SIB1のカバレッジ向上のためPDSCH繰り返しの導入を検討</li>
+        <li>PDSCHカバレッジ向上のため、PUSCH向上技術（複数スロットにわたるTB、DMRSバンドリングなど）のPDSCHへの適用を検討</li>
+        <li>PDCCHカバレッジ向上のため、以下を検討:
+          <ul>
+            <li>PDCCH繰り返しの強化（システム情報をスケジューリングするPDCCHなど）</li>
+            <li>CORESETシンボル数と集約レベルの増加</li>
+            <li>DCIサイズの削減（2段階DCIなど）</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>ビームホッピング伝送とSSB周期延長により、システムレベルのカバレッジ率が向上する</li>
+        <li>NR NTN UEの初期アクセス時のデフォルトSSB周期を拡張し、システムレベルのカバレッジ率向上をサポートする</li>
+        <li>Rel-19ではSIB1で少なくとも320msのSSB周期を導入し、システムカバレッジを広げる</li>
+        <li>高密度ユーザエリアには短めのSSB周期(20ms)、低密度エリアには延長されたSSB周期を使う</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>PDCCHカバレッジ向上の可能な解決策は、繰り返し/ペイロード削減/AL増加</li>
+        <li>共通PDSCHカバレッジ向上の直接的な解決策は、繰り返し</li>
+      </ul>  
+    </td>
+    <td>
+      <ul>  
+        <li>DLカバレッジ向上評価ではFRF=1, 3をベースラインとし、ビームホッピングの性能と仕様影響を比較検討すべき</li>
+        <li>DLカバレッジ向上のシステムレベル評価では、HPBWを増加せずにABSを拡大したビーム配置を検討すべき</li>
+        <li>ビームホッピングでは、仕様影響を制限するため、低～中程度のTRF(適度なdwell timeが可能)を検討すべき</li>
+      </ul>   
+    </td>
+  </tr>
