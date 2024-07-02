@@ -1,5 +1,6 @@
-## 3GPP寄書要約
+## 3GPP寄書要約 
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
+[6G/NTNニュースアーカイブはこちら](https://omusubi5g.github.io/tdoc.github.io/news/news_archive.html)
 
 - [RAN1 #117](#ran1-117)
 - [RAN2 #126](#ran2-126)
