@@ -11,7 +11,8 @@
             h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
             table { width: 100%; border-collapse: collapse; margin-top: 20px; }
             th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-            th { background-color: #f2f2f2; color: #333; }
+            th { background-color: #f2f2f2; color: #333; cursor: pointer; }
+            th:hover { background-color: #ddd; }
             tr:nth-child(even) { background-color: #f9f9f9; }
             a { color: #3498db; text-decoration: none; }
             a:hover { text-decoration: underline; }
@@ -21,776 +22,723 @@
   <h1>
    ニュース記事アーカイブ
   </h1>
-  <table>
-   <tr>
-    <th>
-     日付
-    </th>
-    <th>
-     タイトル
-    </th>
-    <th>
-     要約
-    </th>
-    <th>
-     ソース
-    </th>
-    <th>
-     キーワード
-    </th>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://spacenews.com/blue-origin-stoke-space-selected-by-u-s-space-force-to-compete-for-small-satellite-missions/">
-      Blue Origin, Stoke Space selected by U.S. Space Force to compete for small satellite missions
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="200" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/GPyhFwNWcAATty8-scaled.jpeg?fit=300%2C200&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+  <table id="newsTable">
+   <thead>
+    <tr>
+     <th onclick="sortTable(0)">
+      日付
+     </th>
+     <th onclick="sortTable(1)">
+      タイトル
+     </th>
+     <th onclick="sortTable(2)">
+      要約
+     </th>
+     <th onclick="sortTable(3)">
+      ソース
+     </th>
+     <th onclick="sortTable(4)">
+      キーワード
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://spacenews.com/blue-origin-stoke-space-selected-by-u-s-space-force-to-compete-for-small-satellite-missions/">
+       Blue Origin, Stoke Space selected by U.S. Space Force to compete for small satellite missions
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="200" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/GPyhFwNWcAATty8-scaled.jpeg?fit=300%2C200&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="" class="attachment-rss-image-size size-rss-image-size w...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://spacenews.com/sentinel-2c-ready-for-transatlantic-trip-to-farewell-vega-launch/">
-      Sentinel-2C ready for transatlantic trip to farewell Vega launch
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="169" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/unnamed.jpg?fit=300%2C169&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://spacenews.com/sentinel-2c-ready-for-transatlantic-trip-to-farewell-vega-launch/">
+       Sentinel-2C ready for transatlantic trip to farewell Vega launch
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="169" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/unnamed.jpg?fit=300%2C169&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="" class="attachment-rss-image-size size-rss-image-size wp-post-image" he...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://spacenews.com/chinese-satellite-manufacturer-minospace-raises-137-million/">
-      Chinese satellite manufacturer MinoSpace raises $137 million
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="143" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/minospace-facility-render-june2024.jpg?fit=300%2C143&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://www.rcrwireless.com/20240703/5g/path-to-6g-envisioning-next-gen-use-cases-for-2030-and-beyond">
+       Path to 6G: Envisioning next-gen use cases for 2030 and beyond
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;A summary of the recent 3GPP SA1 IMT-2030 use cases workshop Last month, 3GPP held a Stage 1 workshop on IMT-2030 use cases in Rotterdam, Netherlands. A diverse group of vertical organizations and regional research alliances tasked to drive the technology advancement towards 6G were invited to pr...
+     </td>
+     <td>
+      RCR Wireless News
+     </td>
+     <td>
+      6G, 3gpp
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/manufacturing/2024/07/03/endurosat-to-build-botswanas-first-satellite/">
+       EnduroSat to Build Botswana’s First Satellite
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;EnduroSat has signed a landmark deal in Africa which will see it help to build Botswana’s first-ever satellite. EnduroSat will work with The Botswana International University of Science and Technology (BIUST) to build BOTSAT-1, the country’s first satellite. EnduroSat announced the deal, July 3. ...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/connectivity/2024/07/03/spacex-now-has-more-than-100-direct-to-cell-satellites-in-orbit/">
+       SpaceX Now Has More Than 100 Direct-to-Cell Satellites in Orbit
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;SpaceX now has more than 100 direct-to-cell satellites in orbit after a July 3 Starlink launch.  SpaceX launched the first Starlink sats equipped with direct-to-cell capabilities in January of this year and has quickly ramped up to more than 100. These satellites are designed to communicate direc...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/people/2024/07/03/mda-space-is-searching-for-a-new-cfo/">
+       MDA Space is Searching for a New CFO
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;MDA Space is now looking for a new chief financial officer (CFO) as the company’s CFO Vito Culmone is leaving the company. Culmone, who had been with MDA Space for more than three years, is joining sustainable architecture, engineering, and environmental consulting company Stantec.  MDA Space app...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/launch/2024/07/03/nasa-selects-spacex-to-launch-cosi-science-mission/">
+       NASA Selects SpaceX to Launch COSI Science Mission
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;NASA selected SpaceX’s Falcon 9 rocket to launch the COSI Compton Spectrometer and Imager mission. NASA announced the $69 million firm-fixed-price contract on July 2. The COSI mission is currently targeted to launch in August 2027 from Cape Canaveral Space Force Station. COSI is a wide-field gamm...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://www.6gworld.com/exclusives/will-changes-in-the-6g-business-environment-knock-out-the-dinosaurs/">
+       Will Changes In The 6G Business Environment Knock Out The Dinosaurs?
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;We are a long way away from the business environment at the turn of the millennium, back when 2G mobile phones were still new and whole new business worlds seemed ripe for conquest. In the intervening years, we have seen the bursting of the dotcom bubble, the rise of the app economy, the fall of ...
+     </td>
+     <td>
+      Welcome to 6GWorld
+     </td>
+     <td>
+      6G
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://spacenews.com/chinese-satellite-manufacturer-minospace-raises-137-million/">
+       Chinese satellite manufacturer MinoSpace raises $137 million
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="143" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/minospace-facility-render-june2024.jpg?fit=300%2C143&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="" class="attachment-rss-image-size size-rss-i...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://spacenews.com/increasingly-feasible-on-orbit-servicing-challenging-road-to-market/">
-      Increasingly feasible, on-orbit servicing has a challenging road to market
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="Northrop Grumman&amp;#039;s MEV-1 snapped this picture of Intelsat-901 prior to docking with the satellite." class="attachment-medium size-medium wp-post-image" height="178" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2020/04/ERuI_RcW4Aobw2g.png?fit=300%2C178&amp;amp;ssl=1" wid...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://spacenews.com/endurosat-to-build-botswanas-debut-satellite/">
-      EnduroSat gets order for Botswana’s debut satellite
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="200" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/EnduroSat-and-BIUST-teams-meeting-in-Botswana-scaled.jpg?fit=300%2C200&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://spacenews.com/increasingly-feasible-on-orbit-servicing-challenging-road-to-market/">
+       Increasingly feasible, on-orbit servicing has a challenging road to market
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="Northrop Grumman&amp;#039;s MEV-1 snapped this picture of Intelsat-901 prior to docking with the satellite." class="attachment-medium size-medium wp-post-image" height="178" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2020/04/ERuI_RcW4Aobw2g.png?fit=300%2C178&amp;amp;ssl=1" wid...
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://spacewatch.global/2024/07/tesat-selected-by-esa-for-6g-satellite-precursor/#new_tab">
+       TESAT Selected by ESA for 6G Satellite Precursor – Spacewatch Global
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;The post &lt;a href="https://spacewatch.global/2024/07/tesat-selected-by-esa-for-6g-satellite-precursor/#new_tab"&gt;TESAT Selected by ESA for 6G Satellite Precursor &amp;#8211; Spacewatch Global&lt;/a&gt; appeared first on &lt;a href="https://www.6gworld.com"&gt;Welcome to 6GWorld&lt;/a&gt;.&lt;/p&gt;
+     </td>
+     <td>
+      Welcome to 6GWorld
+     </td>
+     <td>
+      satellite, 6G
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-03
+     </td>
+     <td>
+      <a href="https://spacenews.com/endurosat-to-build-botswanas-debut-satellite/">
+       EnduroSat gets order for Botswana’s debut satellite
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="200" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/EnduroSat-and-BIUST-teams-meeting-in-Botswana-scaled.jpg?fit=300%2C200&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="" class="attachment-rss-ima...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://www.rcrwireless.com/20240703/5g/path-to-6g-envisioning-next-gen-use-cases-for-2030-and-beyond">
-      Path to 6G: Envisioning next-gen use cases for 2030 and beyond
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;A summary of the recent 3GPP SA1 IMT-2030 use cases workshop Last month, 3GPP held a Stage 1 workshop on IMT-2030 use cases in Rotterdam, Netherlands. A diverse group of vertical organizations and regional research alliances tasked to drive the technology advancement towards 6G were invited to pr...
-    </td>
-    <td>
-     RCR Wireless News
-    </td>
-    <td>
-     6G, 3gpp
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/manufacturing/2024/07/03/endurosat-to-build-botswanas-first-satellite/">
-      EnduroSat to Build Botswana’s First Satellite
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;EnduroSat has signed a landmark deal in Africa which will see it help to build Botswana’s first-ever satellite. EnduroSat will work with The Botswana International University of Science and Technology (BIUST) to build BOTSAT-1, the country’s first satellite. EnduroSat announced the deal, July 3. ...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/connectivity/2024/07/03/spacex-now-has-more-than-100-direct-to-cell-satellites-in-orbit/">
-      SpaceX Now Has More Than 100 Direct-to-Cell Satellites in Orbit
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;SpaceX now has more than 100 direct-to-cell satellites in orbit after a July 3 Starlink launch.  SpaceX launched the first Starlink sats equipped with direct-to-cell capabilities in January of this year and has quickly ramped up to more than 100. These satellites are designed to communicate direc...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/people/2024/07/03/mda-space-is-searching-for-a-new-cfo/">
-      MDA Space is Searching for a New CFO
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;MDA Space is now looking for a new chief financial officer (CFO) as the company’s CFO Vito Culmone is leaving the company. Culmone, who had been with MDA Space for more than three years, is joining sustainable architecture, engineering, and environmental consulting company Stantec.  MDA Space app...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/launch/2024/07/03/nasa-selects-spacex-to-launch-cosi-science-mission/">
-      NASA Selects SpaceX to Launch COSI Science Mission
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;NASA selected SpaceX’s Falcon 9 rocket to launch the COSI Compton Spectrometer and Imager mission. NASA announced the $69 million firm-fixed-price contract on July 2. The COSI mission is currently targeted to launch in August 2027 from Cape Canaveral Space Force Station. COSI is a wide-field gamm...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://www.6gworld.com/exclusives/will-changes-in-the-6g-business-environment-knock-out-the-dinosaurs/">
-      Will Changes In The 6G Business Environment Knock Out The Dinosaurs?
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;We are a long way away from the business environment at the turn of the millennium, back when 2G mobile phones were still new and whole new business worlds seemed ripe for conquest. In the intervening years, we have seen the bursting of the dotcom bubble, the rise of the app economy, the fall of ...
-    </td>
-    <td>
-     Welcome to 6GWorld
-    </td>
-    <td>
-     6G
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-03
-    </td>
-    <td>
-     <a href="https://spacewatch.global/2024/07/tesat-selected-by-esa-for-6g-satellite-precursor/#new_tab">
-      TESAT Selected by ESA for 6G Satellite Precursor – Spacewatch Global
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;The post &lt;a href="https://spacewatch.global/2024/07/tesat-selected-by-esa-for-6g-satellite-precursor/#new_tab"&gt;TESAT Selected by ESA for 6G Satellite Precursor &amp;#8211; Spacewatch Global&lt;/a&gt; appeared first on &lt;a href="https://www.6gworld.com"&gt;Welcome to 6GWorld&lt;/a&gt;.&lt;/p&gt;
-    </td>
-    <td>
-     Welcome to 6GWorld
-    </td>
-    <td>
-     satellite, 6G
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-02
-    </td>
-    <td>
-     <a href="https://spacenews.com/can-altpnt-really-replace-gps/">
-      Can “AltPNT” Really Replace GPS?
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="An AI-generated image illustrating futuristic navigation satellites orbiting Earth. Image generated using DALL-E" class="attachment-medium size-medium wp-post-image" height="171" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/DALL·E-2024-06-28-15.00.04-An-image-for...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-02
-    </td>
-    <td>
-     <a href="https://spacenews.com/orbit-fab-completes-ground-test-of-satellite-fueling-payload/">
-      Orbit Fab completes ground test of satellite fueling payload
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="222" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/Orbit-Fabs-GRIP-active-refueling-interface-left-moves-toward-RAFTI-refueling-port-during-simulation-tests-at-AFRL-Lab-at-Kirtland-AFB.jpg?fit=300%2C222...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-02
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/opinion/2024/07/02/staring-at-the-problem-of-space-debris/">
-      Staring at the Problem of Space Debris
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;For at least two decades, there has been rising recognition and concern about a problem for our industry.  Not a little problem. A big, hairy bodacious problem that could put our entire business out of business. It’s the problem of keeping things in Earth orbit from smashing into other things. Sp...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-02
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/technology/2024/07/02/orbit-fab-completes-tests-of-its-grip-refueling-nozzle/">
-      Orbit Fab Completes Tests of its GRIP Refueling Nozzle
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;Orbit Fab has completed testing its refueling payload and GRIP capture and refueling nozzle. The company announced Tuesday that it conducted numerous tests with government representatives at the Air Force Research Lab’s (AFRL’s) simulation facilities at Kirtland Air Force Base in Albuquerque, New...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-02
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/government-military/2024/07/02/vyoma-wins-2-european-defence-fund-contracts/">
-      Vyoma Wins 2 European Defence Fund Contracts
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;German startup Vyoma will participate in two European Commission contracts focused on European intelligence sovereignty. Both awards, the EMISSARY and STAALION projects, are under the European Defence Fund (EDF) program.  Vyoma leverages ground-based data and soon will use space-based data for au...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-02
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/sustainability/2024/07/02/ororatech-to-use-satellite-tech-to-help-greek-wildfire-response/">
-      OroraTech to Use Satellite Tech to Help Greek Wildfire Response
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;OroraTech, the German satellite data company, will now play a key role in helping emergency services and the government in Greece as they fight wildfires, a major problem in Greece.  It has won a contract from the European Space Agency (ESA) to support the Greek National Satellites Space Program ...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-02
-    </td>
-    <td>
-     <a href="https://www.6gworld.com/exclusives/fcc-kicks-off-security-council-with-ai-at-centre-and-6g-in-mind/">
-      FCC Kicks Off Security Council with AI at Centre and 6G in Mind
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;The Federal Communications Commission (FCC) has officially launched its 9th Communications Security, Reliability, and Interoperability Council (CSRIC). Last Friday, CSRIC members held the group&amp;#8217;s first meeting. The most recurrent topic, by far, was artificial intelligence. Several Commissio...
-    </td>
-    <td>
-     Welcome to 6GWorld
-    </td>
-    <td>
-     6G
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://spacenews.com/turion-wins-space-force-contract-for-debris-capture-technology/">
-      Turion wins Space Force contract for debris-capture technology
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="168" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/mothership_infographic_simple_v2.jpg?fit=300%2C168&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-02
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/opinion/2024/07/02/staring-at-the-problem-of-space-debris/">
+       Staring at the Problem of Space Debris
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;For at least two decades, there has been rising recognition and concern about a problem for our industry. Not a little problem. A big, hairy bodacious problem that could put our entire business out of business. It’s the problem of keeping things in Earth orbit from smashing into other things. Spa...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-02
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/technology/2024/07/02/orbit-fab-completes-tests-of-its-grip-refueling-nozzle/">
+       Orbit Fab Completes Tests of its GRIP Refueling Nozzle
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;Orbit Fab has completed testing its refueling payload and GRIP capture and refueling nozzle. The company announced Tuesday that it conducted numerous tests with government representatives at the Air Force Research Lab’s (AFRL’s) simulation facilities at Kirtland Air Force Base in Albuquerque, New...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-02
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/government-military/2024/07/02/vyoma-wins-2-european-defence-fund-contracts/">
+       Vyoma Wins 2 European Defence Fund Contracts
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;German startup Vyoma will participate in two European Commission contracts focused on European intelligence sovereignty. Both awards, the EMISSARY and STAALION projects, are under the European Defence Fund (EDF) program.  Vyoma leverages ground-based data and soon will use space-based data for au...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-02
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/sustainability/2024/07/02/ororatech-to-use-satellite-tech-to-help-greek-wildfire-response/">
+       OroraTech to Use Satellite Tech to Help Greek Wildfire Response
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;OroraTech, the German satellite data company, will now play a key role in helping emergency services and the government in Greece as they fight wildfires, a major problem in Greece.  It has won a contract from the European Space Agency (ESA) to support the Greek National Satellites Space Program ...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-02
+     </td>
+     <td>
+      <a href="https://spacenews.com/can-altpnt-really-replace-gps/">
+       Can “AltPNT” Really Replace GPS?
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="An AI-generated image illustrating futuristic navigation satellites orbiting Earth. Image generated using DALL-E" class="attachment-medium size-medium wp-post-image" height="171" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/DALL·E-2024-06-28-15.00.04-An-image-for...
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-02
+     </td>
+     <td>
+      <a href="https://www.6gworld.com/exclusives/fcc-kicks-off-security-council-with-ai-at-centre-and-6g-in-mind/">
+       FCC Kicks Off Security Council with AI at Centre and 6G in Mind
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;The Federal Communications Commission (FCC) has officially launched its 9th Communications Security, Reliability, and Interoperability Council (CSRIC). Last Friday, CSRIC members held the group&amp;#8217;s first meeting. The most recurrent topic, by far, was artificial intelligence. Several Commissio...
+     </td>
+     <td>
+      Welcome to 6GWorld
+     </td>
+     <td>
+      6G
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-02
+     </td>
+     <td>
+      <a href="https://spacenews.com/orbit-fab-completes-ground-test-of-satellite-fueling-payload/">
+       Orbit Fab completes ground test of satellite fueling payload
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="222" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/Orbit-Fabs-GRIP-active-refueling-interface-left-moves-toward-RAFTI-refueling-port-during-simulation-tests-at-AFRL-Lab-at-Kirtland-AFB.jpg?fit=300%2C222...
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-01
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/space-economy/2024/07/01/the-exploration-company-aims-to-bring-more-competition-to-the-space-capsule-market/">
+       The Exploration Company Aims to Bring More Competition to the Space Capsule Market
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;The world of commercial space exploration is in its early stages and likely to see significant progress over the next decade. One European venture, The Exploration Company (TEC), aims to be a leader here. The company designs spacecraft and produces space capsules. Its first small capsule, Bikini,...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-01
+     </td>
+     <td>
+      <a href="https://www.satellitetoday.com/connectivity/2024/07/01/dhruva-space-to-offer-kineis-iot-services-in-india/">
+       Dhruva Space to Offer Kinéis IoT Services in India
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;Indian space startup Dhruva Space and Kinéis have signed a joint technological and commercial partnership to bring the French IoT company’s connectivity to India.  Dhruva Space will provide Kinéis IoT services in India once the service is launched and develop new applications and services tailore...
+     </td>
+     <td>
+      Via Satellite
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-01
+     </td>
+     <td>
+      <a href="https://www.lightreading.com/satellite/ast-spacemobile-partners-with-at-t-verizon-on-broadband-coverage">
+       AST SpaceMobile partners with AT&amp;amp;T, Verizon on broadband coverage
+      </a>
+     </td>
+     <td>
+      Under its agreements with the two carriers, AT&amp;amp;T and Verizon together will share with AST SpaceMobile a portion of their respective bands of 850MHz low-band spectrum to enable nationwide satellite coverage. #pressrelease
+     </td>
+     <td>
+      lightreading
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-01
+     </td>
+     <td>
+      <a href="https://spacenews.com/turion-wins-space-force-contract-for-debris-capture-technology/">
+       Turion wins Space Force contract for debris-capture technology
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="168" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/mothership_infographic_simple_v2.jpg?fit=300%2C168&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="" class="attachment-rss-image-size size-rss-ima...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://spacenews.com/spacex-to-launch-yahsat-satellites/">
-      SpaceX to launch Yahsat satellites
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="169" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/06/Yahsat-2GEOs-scaled.jpg?fit=300%2C169&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-01
+     </td>
+     <td>
+      <a href="https://spacenews.com/spacex-to-launch-yahsat-satellites/">
+       SpaceX to launch Yahsat satellites
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="169" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/06/Yahsat-2GEOs-scaled.jpg?fit=300%2C169&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="" class="attachment-rss-image-size size-rss-image-size wp-po...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite, GEO
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://spacenews.com/h3-launches-alos-4-advanced-earth-observation-satellite/">
-      H3 launches ALOS-4 advanced Earth observation satellite
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="173" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/H3-3rd-ALOS-4-liftoff-1july2024.jpg?fit=300%2C173&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite, GEO
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-01
+     </td>
+     <td>
+      <a href="https://spacenews.com/h3-launches-alos-4-advanced-earth-observation-satellite/">
+       H3 launches ALOS-4 advanced Earth observation satellite
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="173" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/07/H3-3rd-ALOS-4-liftoff-1july2024.jpg?fit=300%2C173&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="" class="attachment-rss-image-size size-rss-imag...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/space-economy/2024/07/01/the-exploration-company-aims-to-bring-more-competition-to-the-space-capsule-market/">
-      The Exploration Company Aims to Bring More Competition to the Space Capsule Market
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;The world of commercial space exploration is in its early stages and likely to see significant progress over the next decade. One European venture, The Exploration Company (TEC), aims to be a leader here. The company designs spacecraft and produces space capsules. Its first small capsule, Bikini,...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/connectivity/2024/07/01/dhruva-space-to-offer-kineis-iot-services-in-india/">
-      Dhruva Space to Offer Kinéis IoT Services in India
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;Indian space startup Dhruva Space and Kinéis have signed a joint technological and commercial partnership to bring the French IoT company’s connectivity to India.  Dhruva Space will provide Kinéis IoT services in India once the service is launched and develop new applications and services tailore...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/launch/2024/07/01/japans-h3-rocket-launches-alos-4-satellite/">
-      Japan’s H3 Rocket Launches ALOS-4 Satellite
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;The Japan Aerospace Exploration Agency (JAXA) launched the ALOS-4 Earth observation satellite aboard the H3 rocket on Monday. JAXA confirmed post-launch that the mission was successful.  The H3 mission took off from the Tanegashima Space Center at 12:06 p.m. JST on July 1. The satellite separated...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/cybersecurity/2024/07/01/oq-technology-wins-contract-for-eu-cybersecurity-project/">
-      OQ Technology Wins Contract for EU Cybersecurity Project
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;Satellite IoT company OQ Technology has received a contract for an EU project dealing with 5G cybersecurity policies. It is for Security Assessments for Networks and Services in 5G, also known as SAND5G. The company’s subsidiary in Greece, OQ Technology Hellas, received the contract and will work...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/connectivity/2024/07/01/measat-signs-india-broadcast-deal/">
-      Measat Signs India Broadcast Deal
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;Measat has signed a new broadcasting deal with one of the India’s largest media companies. Sun TV Network will have its 37 channels broadcast via the Measat-3D satellite. These channels broadcast in seven languages, will reach over 140 million households in India and extend to audiences in the As...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://www.lightreading.com/satellite/ast-spacemobile-partners-with-at-t-verizon-on-broadband-coverage">
-      AST SpaceMobile partners with AT&amp;amp;T, Verizon on broadband coverage
-     </a>
-    </td>
-    <td>
-     Under its agreements with the two carriers, AT&amp;amp;T and Verizon together will share with AST SpaceMobile a portion of their respective bands of 850MHz low-band spectrum to enable nationwide satellite coverage. #pressrelease
-    </td>
-    <td>
-     lightreading
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-07-01
-    </td>
-    <td>
-     <a href="https://wirelesswire.jp/2024/07/86770/">
-      ドイツテレコム、ミリ波5Gサービスを産業顧客向けに提供開始
-     </a>
-    </td>
-    <td>
-     ドイツテレコムは6月13日、26GHz帯を利用したミリ波5Gの産業向けユースケースのトライアルに成功したことを発表。
-    </td>
-    <td>
-     WirelessWire News
-    </td>
-    <td>
-     6G
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-29
-    </td>
-    <td>
-     <a href="https://spacenews.com/eumetsat-moves-weather-satellite-from-ariane-6-to-falcon-9/">
-      Eumetsat moves weather satellite from Ariane 6 to Falcon 9
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="MTG weather satellites" class="attachment-medium size-medium wp-post-image" height="169" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/06/mtg-3g.jpg?fit=300%2C169&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-07-01
+     </td>
+     <td>
+      <a href="https://wirelesswire.jp/2024/07/86770/">
+       ドイツテレコム、ミリ波5Gサービスを産業顧客向けに提供開始
+      </a>
+     </td>
+     <td>
+      ドイツテレコムは6月13日、26GHz帯を利用したミリ波5Gの産業向けユースケースのトライアルに成功したことを発表。
+     </td>
+     <td>
+      WirelessWire News
+     </td>
+     <td>
+      6G
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-06-29
+     </td>
+     <td>
+      <a href="https://spacenews.com/eumetsat-moves-weather-satellite-from-ariane-6-to-falcon-9/">
+       Eumetsat moves weather satellite from Ariane 6 to Falcon 9
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="MTG weather satellites" class="attachment-medium size-medium wp-post-image" height="169" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/06/mtg-3g.jpg?fit=300%2C169&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="MTG weather satellites" class="attachment-rss-image...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-29
-    </td>
-    <td>
-     <a href="https://spacenews.com/spacex-launches-nros-second-batch-of-small-satellites/">
-      SpaceX launches second batch of satellites for NRO’s proliferated constellation
-     </a>
-    </td>
-    <td>
-     &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="174" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/06/GRONX9EboAAfeqP.jpeg?fit=300%2C174&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-06-29
+     </td>
+     <td>
+      <a href="https://spacenews.com/spacex-launches-nros-second-batch-of-small-satellites/">
+       SpaceX launches second batch of satellites for NRO’s proliferated constellation
+      </a>
+     </td>
+     <td>
+      &lt;figure&gt;&lt;img alt="" class="attachment-medium size-medium wp-post-image" height="174" src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/06/GRONX9EboAAfeqP.jpeg?fit=300%2C174&amp;amp;ssl=1" width="300" /&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;img alt="" class="attachment-rss-image-size size-rss-image-size wp-post-...
-    </td>
-    <td>
-     SpaceNews
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-28
-    </td>
-    <td>
-     <a href="https://www.lightreading.com/5g/china-telcos-foreshadow-ai-services-at-mwc-shanghai">
-      China telcos foreshadow AI services at MWC Shanghai
-     </a>
-    </td>
-    <td>
-     All four Chinese operators have 5G-A plans but shared few specifics during MWC Shanghai.
-    </td>
-    <td>
-     lightreading
-    </td>
-    <td>
-     5G-A
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-28
-    </td>
-    <td>
-     <a href="https://www.satellitetoday.com/technology/2024/06/28/gilat-receives-14m-in-orders-for-ifc-products/">
-      Gilat Receives $14M in Orders for IFC Products
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;Gilat Satellite Networks reported that it has recently secured more than $14 million in orders from service providers and system integrators for its in-flight connectivity (IFC) products and solutions.  These include orders for network equipment, solid state power amplifiers (SSPAs), and addition...
-    </td>
-    <td>
-     Via Satellite
-    </td>
-    <td>
-     satellite
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-27
-    </td>
-    <td>
-     <a href="https://www.lightreading.com/network-technology/5g-standalone-deployments-the-value-of-observability-and-real-time-data">
-      5G Standalone Deployments: The Value of Observability and Real-time Data
-     </a>
-    </td>
-    <td>
-     5G Standalone (SA) is not a standalone network.  Because of its powerful dual-stack cloud native 4G and 5G nodes infrastructure, it manages devices’ signaling journey across different radio technologies – 5G SA, 5G NSA, 4G, and non-3GPP access networks.
-    </td>
-    <td>
-     lightreading
-    </td>
-    <td>
-     3gpp
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-27
-    </td>
-    <td>
-     <a href="https://www.6gworld.com/industry-news/6g-flagships-researcher-creates-receiver-front-end-working-at-300-ghz/">
-      6G Flagship’s Researcher Creates Receiver Front End Working at 300 GHz
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;Sumit Singh, a researcher supported by the Academy of Finland’s 6G Flagship programme, has developed a highly efficient receiver front end capable of operating close to the maximum oscillation frequency of semiconductor technology. According to 6G Flagship, the front end works at a high frequency...
-    </td>
-    <td>
-     Welcome to 6GWorld
-    </td>
-    <td>
-     6G
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-26
-    </td>
-    <td>
-     <a href="https://nextgalliance.org/white_papers/spectrum-needs-for-6g/#new_tab">
-      Spectrum Needs for 6G – Next G Alliance
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;The post &lt;a href="https://nextgalliance.org/white_papers/spectrum-needs-for-6g/#new_tab"&gt;Spectrum Needs for 6G &amp;#8211; Next G Alliance&lt;/a&gt; appeared first on &lt;a href="https://www.6gworld.com"&gt;Welcome to 6GWorld&lt;/a&gt;.&lt;/p&gt;
-    </td>
-    <td>
-     Welcome to 6GWorld
-    </td>
-    <td>
-     6G
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-26
-    </td>
-    <td>
-     <a href="https://www.6gworld.com/exclusives/world-economic-forum-hails-fundamental-6g-technologies/">
-      World Economic Forum Hails Fundamental 6G Technologies
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;The World Economic Forum at its meeting in Dalian, China, has released its annual Top 10 Emerging Technologies that will positively impact society in the next three to five years. Of these ten emerging technologies, three are closely linked to the development of 6G. These are: Integrated Sensing ...
-    </td>
-    <td>
-     Welcome to 6GWorld
-    </td>
-    <td>
-     6G
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-18
-    </td>
-    <td>
-     <a href="https://www.5gamericas.org/nokia-and-google-cloud-collaborate-to-help-developers-worldwide-create-5g-applications-faster-with-telco-apis/">
-      Nokia and Google Cloud collaborate to help developers worldwide create 5G applications faster with telco APIs
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;Nokia Media Release &amp;#124; 18 June 2024 Espoo, Finland – Nokia today announced that it is expanding its collaboration with Google Cloud to give developers around the world the network [&amp;#8230;]&lt;/p&gt;
+     </td>
+     <td>
+      SpaceNews
+     </td>
+     <td>
+      satellite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-06-28
+     </td>
+     <td>
+      <a href="https://www.lightreading.com/5g/china-telcos-foreshadow-ai-services-at-mwc-shanghai">
+       China telcos foreshadow AI services at MWC Shanghai
+      </a>
+     </td>
+     <td>
+      All four Chinese operators have 5G-A plans but shared few specifics during MWC Shanghai.
+     </td>
+     <td>
+      lightreading
+     </td>
+     <td>
+      5G-A
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-06-27
+     </td>
+     <td>
+      <a href="https://www.lightreading.com/network-technology/5g-standalone-deployments-the-value-of-observability-and-real-time-data">
+       5G Standalone Deployments: The Value of Observability and Real-time Data
+      </a>
+     </td>
+     <td>
+      5G Standalone (SA) is not a standalone network.  Because of its powerful dual-stack cloud native 4G and 5G nodes infrastructure, it manages devices’ signaling journey across different radio technologies – 5G SA, 5G NSA, 4G, and non-3GPP access networks.
+     </td>
+     <td>
+      lightreading
+     </td>
+     <td>
+      3gpp
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-06-27
+     </td>
+     <td>
+      <a href="https://www.6gworld.com/industry-news/6g-flagships-researcher-creates-receiver-front-end-working-at-300-ghz/">
+       6G Flagship’s Researcher Creates Receiver Front End Working at 300 GHz
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;Sumit Singh, a researcher supported by the Academy of Finland’s 6G Flagship programme, has developed a highly efficient receiver front end capable of operating close to the maximum oscillation frequency of semiconductor technology. According to 6G Flagship, the front end works at a high frequency...
+     </td>
+     <td>
+      Welcome to 6GWorld
+     </td>
+     <td>
+      6G
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-06-26
+     </td>
+     <td>
+      <a href="https://nextgalliance.org/white_papers/spectrum-needs-for-6g/#new_tab">
+       Spectrum Needs for 6G – Next G Alliance
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;The post &lt;a href="https://nextgalliance.org/white_papers/spectrum-needs-for-6g/#new_tab"&gt;Spectrum Needs for 6G &amp;#8211; Next G Alliance&lt;/a&gt; appeared first on &lt;a href="https://www.6gworld.com"&gt;Welcome to 6GWorld&lt;/a&gt;.&lt;/p&gt;
+     </td>
+     <td>
+      Welcome to 6GWorld
+     </td>
+     <td>
+      6G
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-06-18
+     </td>
+     <td>
+      <a href="https://www.5gamericas.org/nokia-and-google-cloud-collaborate-to-help-developers-worldwide-create-5g-applications-faster-with-telco-apis/">
+       Nokia and Google Cloud collaborate to help developers worldwide create 5G applications faster with telco APIs
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;Nokia Media Release &amp;#124; 18 June 2024 Espoo, Finland – Nokia today announced that it is expanding its collaboration with Google Cloud to give developers around the world the network [&amp;#8230;]&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.5gamericas.org/nokia-and-google-cloud-collaborate-to-help-develope...
-    </td>
-    <td>
-     5G Americas
-    </td>
-    <td>
-     5G-A
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2024-06-10
-    </td>
-    <td>
-     <a href="https://www.5gamericas.org/nokia-makes-worlds-first-immersive-voice-and-audio-call-with-new-3gpp-immersive-voice-and-audio-services-codec/">
-      Nokia Makes World’s First Immersive Voice and Audio Call with New 3GPP Immersive Voice and Audio Services Codec
-     </a>
-    </td>
-    <td>
-     &lt;p&gt;Nokia Media Release &amp;#124; June 10, 2024 Nokia makes world’s first immersive voice and audio call 10 June 2024Espoo, Finland – Nokia makes the world’s first live immersive voice and audio call [&amp;#8230;]&lt;/p&gt;
+     </td>
+     <td>
+      5G Americas
+     </td>
+     <td>
+      5G-A
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2024-06-10
+     </td>
+     <td>
+      <a href="https://www.5gamericas.org/nokia-makes-worlds-first-immersive-voice-and-audio-call-with-new-3gpp-immersive-voice-and-audio-services-codec/">
+       Nokia Makes World’s First Immersive Voice and Audio Call with New 3GPP Immersive Voice and Audio Services Codec
+      </a>
+     </td>
+     <td>
+      &lt;p&gt;Nokia Media Release &amp;#124; June 10, 2024 Nokia makes world’s first immersive voice and audio call 10 June 2024Espoo, Finland – Nokia makes the world’s first live immersive voice and audio call [&amp;#8230;]&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.5gamericas.org/nokia-makes-worlds-first-immersive-voice-a...
-    </td>
-    <td>
-     5G Americas
-    </td>
-    <td>
-     3gpp
-    </td>
-   </tr>
+     </td>
+     <td>
+      5G Americas
+     </td>
+     <td>
+      3gpp
+     </td>
+    </tr>
+   </tbody>
   </table>
+  <script>
+   function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("newsTable");
+            switching = true;
+            dir = "asc";
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount ++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+  </script>
  </body>
 </html>
