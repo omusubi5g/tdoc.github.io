@@ -22,6 +22,7 @@
   <h1>
    ニュース記事アーカイブ
   </h1>
+  <input type="text" id="filterInput" placeholder="入力キーワードでフィルタリング">
   <table id="newsTable">
    <thead>
     <tr>
@@ -7993,42 +7994,72 @@
    </tbody>
   </table>
   <script>
-   function sortTable(n) {
-            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-            table = document.getElementById("newsTable");
-            switching = true;
-            dir = "asc";
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[n];
-                    y = rows[i + 1].getElementsByTagName("TD")[n];
-                    if (dir == "asc") {
-                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                            shouldSwitch = true;
-                            break;
-                        }
-                    } else if (dir == "desc") {
-                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                            shouldSwitch = true;
-                            break;
-                        }
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("newsTable");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
                     }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    switchcount ++;
-                } else {
-                    if (switchcount == 0 && dir == "asc") {
-                        dir = "desc";
-                        switching = true;
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
                     }
                 }
             }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount ++;
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
         }
-  </script>
+    }
+
+    function filterTable() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filterInput");
+        filter = input.value.toLowerCase();
+        table = document.getElementById("newsTable");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            var titleColumn = tr[i].getElementsByTagName("td")[1];
+            var summaryColumn = tr[i].getElementsByTagName("td")[2];
+            var keywordColumn = tr[i].getElementsByTagName("td")[4];
+            
+            if (titleColumn && summaryColumn && keywordColumn) {
+                var titleValue = titleColumn.textContent || titleColumn.innerText;
+                var summaryValue = summaryColumn.textContent || summaryColumn.innerText;
+                var keywordValue = keywordColumn.textContent || keywordColumn.innerText;
+                
+                if (titleValue.toLowerCase().indexOf(filter) > -1 ||
+                    summaryValue.toLowerCase().indexOf(filter) > -1 ||
+                    keywordValue.toLowerCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById("filterInput").addEventListener("keyup", filterTable);
+    </script>
  </body>
 </html>
