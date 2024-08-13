@@ -16,14 +16,14 @@
         tr:nth-child(even) { background-color: #f9f9f9; }
         a { color: #3498db; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        #keywordFilter { margin-bottom: 10px; padding: 5px; width: 200px; }
+        #filterInput { margin-bottom: 10px; padding: 5px; width: 300px; }
   </style>
  </head>
  <body>
   <h1>
    ニュース記事アーカイブ
   </h1>
-  <input id="keywordFilter" placeholder="キーワードでフィルタ" type="text"/>
+  <input id="filterInput" placeholder="タイトル、要約、キーワードで検索..." type="text"/>
   <table id="newsTable">
    <thead>
     <tr>
@@ -868,16 +868,24 @@
 
     function filterTable() {
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("keywordFilter");
+        input = document.getElementById("filterInput");
         filter = input.value.toLowerCase();
         table = document.getElementById("newsTable");
         tr = table.getElementsByTagName("tr");
 
         for (i = 1; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[4];  // キーワード列のインデックス
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+            var titleColumn = tr[i].getElementsByTagName("td")[1];
+            var summaryColumn = tr[i].getElementsByTagName("td")[2];
+            var keywordColumn = tr[i].getElementsByTagName("td")[4];
+            
+            if (titleColumn && summaryColumn && keywordColumn) {
+                var titleValue = titleColumn.textContent || titleColumn.innerText;
+                var summaryValue = summaryColumn.textContent || summaryColumn.innerText;
+                var keywordValue = keywordColumn.textContent || keywordColumn.innerText;
+                
+                if (titleValue.toLowerCase().indexOf(filter) > -1 ||
+                    summaryValue.toLowerCase().indexOf(filter) > -1 ||
+                    keywordValue.toLowerCase().indexOf(filter) > -1) {
                     tr[i].style.display = "";
                 } else {
                     tr[i].style.display = "none";
@@ -886,7 +894,7 @@
         }
     }
 
-    document.getElementById("keywordFilter").addEventListener("keyup", filterTable);
+    document.getElementById("filterInput").addEventListener("keyup", filterTable);
   </script>
  </body>
 </html>
