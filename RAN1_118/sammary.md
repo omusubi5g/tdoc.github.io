@@ -1,4 +1,6 @@
 3GPP RAN1 #118会議のTDocリスト全体を基に、全社と全トピックの寄書数を分析し、各社の注力分野を分析します
+
+
 **全社トピック分析表**
 
 | 企業名 | Ambient IoT | AI/ML for NR Air Interface | NR MIMO | NR-NTN | ISAC | NR duplex | NR Mob | Network Energy Saving | NR Maintenance | 合計 |
