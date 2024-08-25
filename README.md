@@ -2,6 +2,7 @@
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
 [6G/NTNニュースアーカイブはこちら](https://omusubi5g.github.io/tdoc.github.io/news/news_archive.html)
 
+- [RAN1 #118](#ran1-118)
 - [RAN1 #117](#ran1-117)
 - [RAN2 #126](#ran2-126)
 - [Workshop on IMT-2030 Use Cases](#workshop-on-imt-2030-use-cases)
@@ -9,6 +10,9 @@
 - [RAN2 #125bis](#ran2-125bis)
 - [RAN4 #110bis](#ran4-110bis)
 - [RAN #103](#ran-103)
+- 
+# RAN1 #118
+- [寄書数分析](https://omusubi5g.github.io/tdoc.github.io/RAN1_118/summary.html)
 
 # RAN1 #117
 - [R1-2404205 Work plan for Rel-19 NR_NTN_Ph3](https://omusubi5g.github.io/tdoc.github.io/RAN1_117/R1-2404205.html)
