@@ -10,7 +10,8 @@
 - [RAN2 #125bis](#ran2-125bis)
 - [RAN4 #110bis](#ran4-110bis)
 - [RAN #103](#ran-103)
-- 
+
+
 # RAN1 #118
 - [寄書数分析](https://omusubi5g.github.io/tdoc.github.io/RAN1_118/summary.html)
 
