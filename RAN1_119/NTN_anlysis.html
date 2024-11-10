@@ -1,0 +1,280 @@
+
+
+            <!DOCTYPE html>
+            <html lang="ja">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>文書分析レポート</title>
+                <style>
+                    :root {
+                        --primary-color: #2c3e50;
+                        --secondary-color: #3498db;
+                        --background-color: #f5f7fa;
+                        --card-background: #ffffff;
+                        --text-color: #333333;
+                        --border-color: #e1e4e8;
+                    }
+
+                    body {
+                        font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+                        line-height: 1.6;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 20px;
+                        background-color: var(--background-color);
+                        color: var(--text-color);
+                    }
+
+                    .card {
+                        background-color: var(--card-background);
+                        border-radius: 8px;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        margin: 20px 0;
+                        padding: 20px;
+                    }
+
+                    h1, h2, h3, h4, h5, h6 {
+                        color: var(--primary-color);
+                        border-bottom: 2px solid var(--border-color);
+                        padding-bottom: 0.3em;
+                        margin-top: 1.5em;
+                        margin-bottom: 0.8em;
+                    }
+
+                    .meta-info {
+                        color: #666;
+                        font-size: 0.9em;
+                        margin-bottom: 20px;
+                    }
+
+                    .table-container {
+                        overflow-x: auto;
+                        margin: 20px 0;
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        padding: 1px;
+                    }
+
+                    .analysis-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin: 0;
+                        background: white;
+                        min-width: 600px;
+                    }
+
+                    .analysis-table th {
+                        background-color: #f8f9fa;
+                        color: var(--primary-color);
+                        font-weight: bold;
+                        padding: 12px 16px;
+                        border: 1px solid var(--border-color);
+                        white-space: nowrap;
+                    }
+
+                    .analysis-table td {
+                        padding: 10px 16px;
+                        border: 1px solid var(--border-color);
+                        line-height: 1.5;
+                    }
+
+                    .analysis-table tr:nth-child(even) {
+                        background-color: #f8f9fa;
+                    }
+
+                    .text-left { text-align: left; }
+                    .text-center { text-align: center; }
+                    .text-right { text-align: right; }
+
+                    .nav-tabs {
+                        display: flex;
+                        margin-bottom: 20px;
+                        border-bottom: 2px solid var(--border-color);
+                        background-color: var(--card-background);
+                        border-radius: 8px 8px 0 0;
+                        padding: 10px 10px 0 10px;
+                    }
+
+                    .nav-tab {
+                        padding: 12px 24px;
+                        cursor: pointer;
+                        margin-right: 5px;
+                        border: 1px solid var(--border-color);
+                        border-bottom: none;
+                        border-radius: 8px 8px 0 0;
+                        background-color: #f8f9fa;
+                        color: #666;
+                    }
+
+                    .nav-tab:hover {
+                        background-color: #e9ecef;
+                    }
+
+                    .nav-tab.active {
+                        background-color: var(--card-background);
+                        border-bottom: 2px solid var(--card-background);
+                        margin-bottom: -2px;
+                        color: var(--primary-color);
+                        font-weight: bold;
+                    }
+
+                    .tab-content {
+                        display: none;
+                        background-color: var(--card-background);
+                        border-radius: 0 0 8px 8px;
+                        padding: 20px;
+                    }
+
+                    .tab-content.active {
+                        display: block;
+                    }
+
+                    blockquote {
+                        border-left: 4px solid var(--secondary-color);
+                        margin: 1em 0;
+                        padding: 0.5em 1em;
+                        background-color: #f8f9fa;
+                    }
+
+                    code {
+                        background-color: #f8f9fa;
+                        padding: 0.2em 0.4em;
+                        border-radius: 3px;
+                        font-family: monospace;
+                    }
+
+                    ul, ol {
+                        padding-left: 2em;
+                        margin: 1em 0;
+                    }
+
+                    li {
+                        margin: 0.5em 0;
+                    }
+
+                    .priority-high {
+                        border-left: 4px solid #e74c3c;
+                    }
+
+                    .priority-medium {
+                        border-left: 4px solid #f39c12;
+                    }
+
+                    .priority-low {
+                        border-left: 4px solid #2ecc71;
+                    }
+
+                    @media (max-width: 768px) {
+                        body {
+                            padding: 10px;
+                        }
+                        .card {
+                            padding: 15px;
+                        }
+                        .nav-tab {
+                            padding: 8px 16px;
+                        }
+                    }
+                </style>
+                <script>
+                    function showTab(tabId) {
+                        document.querySelectorAll('.tab-content').forEach(tab => {
+                            tab.classList.remove('active');
+                        });
+                        document.querySelectorAll('.nav-tab').forEach(tab => {
+                            tab.classList.remove('active');
+                        });
+                        document.getElementById(tabId).classList.add('active');
+                        document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+                    }
+                </script>
+            </head>
+            <body>
+                <h1>文書分析レポート</h1>
+                <p class="meta-info">生成日時: 2024-11-10 14:28:46</p>
+                
+                <div class="card">
+                    <h2>文書横断分析の概要</h2>
+                    <p><strong>1. 全体概要表</strong></p>
+<p><div class="table-container"> <table class="analysis-table"> <thead> <tr> <th class="text-left">文書名</th> <th class="text-left">著者</th> <th class="text-left">主要な主張</th> <th class="text-left">結論</th> <th class="text-left">キーワード</th> </tr> </thead> <tbody> <tr> <td class="text-left">R1-2409434 NR NTN Downlink coverage enhancements.docx</td> <td class="text-left">Thales</td> <td class="text-left">システムレベルとリンクレベルでのNR NTNダウンリンクカバレッジの強化</td> <td class="text-left">SSB周期の延長、チャンネルラスタの変更、リンクレベルの強化</td> <td class="text-left">NR NTN、ダウンリンクカバレッジ、SSB周期、リンクレベル強化</td> </tr> <tr> <td class="text-left">R1-2409726 Discussion on DL coverage enhancement for NR NTN.docx</td> <td class="text-left">ZTE Corporation、Sanechips</td> <td class="text-left">システムレベルとリンクレベルでのNR NTNダウンリンクカバレッジの強化</td> <td class="text-left">320msのSSB周期のサポート、PDCCH反復、PDSCH反復</td> <td class="text-left">NR NTN、ダウンリンクカバレッジ、SSB周期、PDCCH反復、PDSCH反復</td> </tr> <tr> <td class="text-left">R1-2409831 Discussion on NR-NTN DL coverage enhancement.docx</td> <td class="text-left">LG Electronics</td> <td class="text-left">システムレベルとリンクレベルでのNR NTNダウンリンクカバレッジの強化</td> <td class="text-left">SSB周期の延長、ワイドビームフットプリントのサポート、セルクDTX/DRX操作の強化、PDCCH/メッセージ4 PDSCH/メッセージ4 PDSCHの強化</td> <td class="text-left">NR NTN、ダウンリンクカバレッジ、SSB周期、ワイドビームフットプリント、PDCCH強化、PDSCH強化</td> </tr> <tr> <td class="text-left">R1-2409978_ Further consideration on downlink coverage enhancement for NR NTN.docx</td> <td class="text-left">CATT</td> <td class="text-left">システムレベルとリンクレベルでのNR NTNダウンリンクカバレッジの強化</td> <td class="text-left">SSB周期の延長、ビームホーピング、PDCCHおよびPDSCHの強化</td> <td class="text-left">NR NTN、ダウンリンクカバレッジ、SSB周期、ビームホーピング、PDCCH強化、PDSCH強化</td> </tr> </tbody> </table> </div></p>
+<p><strong>2. 共通テーマと論点</strong> <ul> <li>NR NTNにおけるダウンリンクカバレッジの向上</li> <li>SSB周期の延長</li> <li>PDCCHとPDSCHの強化</li> <li>システムレベルとリンクレベルの強化</li> </ul> <strong>3. 主張の比較表</strong></p>
+<p><div class="table-container"> <table class="analysis-table"> <thead> <tr> <th class="text-left">テーマ</th> <th class="text-left">各文書の立場・主張</th> </tr> </thead> <tbody> <tr> <td class="text-left">SSB周期</td> <td class="text-left">R1-2409434: 160ms以上延長しない</td> <td class="text-left">R1-2409726: 320ms</td> <td class="text-left">R1-2409831: 160msec以上延長</td> <td class="text-left">R1-2409978: 320msまで延長</td> </tr> <tr> <td class="text-left">PDCCH反復</td> <td class="text-left">R1-2409434: インタースロットPDCCH</td> <td class="text-left">R1-2409726: インタースロットPDCCH</td> <td class="text-left">R1-2409831: 候補を複数使用</td> <td class="text-left">R1-2409978: 1つの追加検索スペースを使用した0型の反復</td> </tr> <tr> <td class="text-left">PDSCH反復</td> <td class="text-left">R1-2409434: メッセージ4、SIB1、SIB19</td> <td class="text-left">R1-2409726: メッセージ4</td> <td class="text-left">R1-2409831: メッセージ4</td> <td class="text-left">R1-2409978: メッセージ4、PDSCh係数のスケーリングファクター</td> </tr> </tbody> </table> </div></p>
+<p><strong>4. 相違点の分析</strong></p>
+<p><strong>主な意見の相違</strong> <ul> <li><strong>SSB周期:</strong> R1-2409434は160ms以上延長しないのに対し、他の3つの文書は320msの延長を提案している。</li> <li><strong>PDCCH反復:</strong> R1-2409434はインタースロットPDCCHを提案する一方、R1-2409978は1つの追加検索スペースを使用した0タイプの反復を提案している。</li> </ul> <strong>対立する意見</strong></p>
+<p>文書間に対立する意見はありません。</p>
+<p><strong>5. 共通認識</strong> <ul> <li>NR NTNのダウンリンクカバレッジの向上が必要である。</li> </ul> <strong>6. 課題・今後の展望</strong> <ul> <li><strong>システムレベルの強化:</strong> SSB周期の延長による影響の対処、ビームホーピングの活用、RRM測定ウィンドウ構成の調整。</li> <li><strong>リンクレベルの強化:</strong> PDCCHとPDSCHの反復手順の最適化、繰り返し数のスケーリングファクターの導入。</li> <li><strong>標準化作業:</strong> 提案された強化策の仕様への組み込み。</li> </ul></p>
+                </div>
+
+                <div class="nav-tabs">
+                    <div class="nav-tab active" onclick="showTab('tab-summary')">個別要約</div>
+                    <div class="nav-tab" onclick="showTab('tab-themes')">テーマ別分析</div>
+                    <div class="nav-tab" onclick="showTab('tab-discussion')">議論ポイント</div>
+                </div>
+            
+                <div id="tab-summary" class="tab-content active">
+                    <h2>個別文書の要約</h2>
+            
+                    <div class="card">
+                        <h3>R1-2409434 NR NTN Downlink coverage enhancements.docx</h3>
+                        <div class="summary-content">
+                            <p><strong>著者:</strong> <ul> <li>Thales</li> </ul> <strong>概要:</strong> この文書は、NR NTN のダウンリンクカバレッジを向上させるための提案を議論するものです。システムレベルとリンクレベルの両方でのカバレッジの強化を検討しています。</p>
+<p><strong>主要な主張:</strong> <ol> <li>SSB の周期を 160ms 以上に延長しないこと。</li> <li>チャンネルのチャネルラスタを変更し、セル探索時間の短縮を検討すること。</li> <li>SSB の周期が 160ms の場合、Rel-17 および Rel-18 UE はセル接続を維持できる。</li> <li>-8 dB CNR のカバレッジを向上させることを検討する。</li> <li>次のチャンネルのリンクレベルの強化を検討する:</li> </ol>    - PDCCH (目標カバレッジギャップの低減: 2 dB) <ul> <li>Msg4 を使用した PDSCH (目標カバレッジギャップの低減: 2.8 dB)</li> <li>SIB1 を使用した PDSCH (目標カバレッジギャップの低減: 4.6 dB)</li> <li>SIB19 を使用した PDSCH (目標カバレッジギャップの低減: 1.1 dB)</li> </ul><ol> <li>Msg4 を使用した PDSCH のリンクレベルの向上:</li> </ol>    - PDSCH リピートをサポートする。 <ul> <li>手続き、信号、繰り返し率の影響を検討する。</li> </ul><ol> <li>SIB1/SIB19 を使用した PDSCH のリンクレベルの向上:</li> </ol>    - PDSCH リピートをサポートする。 <ul> <li>手続き、信号、関連する時間リソースの決定、繰り返し率の影響を検討する。</li> </ul><ol> <li>Type0-PDCCH CSS リンクレベルの強化:</li> </ol>    - 連携された候補をサポートする。 <ul> <li>2 番目の候補のリンクの仕組みを検討する。</li> </ul><ol> <li>その他の CSS タイプの PDCCH リンクレベルの強化:</li> </ol>    - Type0A-PDCCH、Type1-PDCCH、Type2-PDCCH の繰り返しをサポートする。 <ul> <li>候補の設定を検討する。</li> </ul> <strong>結論:</strong> 文書では、SSB の周期、セル探索の複雑性、後方互換性、リンクレベルの強化に関する提案をまとめています。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>R1-2409726 Discussion on DL coverage enhancement for NR NTN.docx</h3>
+                        <div class="summary-content">
+                            <p><strong>著者:</strong> <ul> <li>ZTE Corporation</li> <li>Sanechips</li> </ul> <strong>概要:</strong> この文書では、非地上ネットワーク（NTN）におけるNRのダウンリンクカバレッジ強化のシステムレベルとリンクレベルの分析が提供されており、SSB周期、ワイド/ナロービーム、非対称DL/ULビーム、PDCCH、PDSCHの改善に関する提案が含まれています。</p>
+<p><strong>主要な主張:</strong></p>
+<ol> <li><strong>SSB周期:</strong> 320msのSSB周期をサポートすることで、NTNのコマーシャライゼーションの必要性と動機付けを正当化するのに十分なゲインが得られる。</li> <li><strong>PDCCH:</strong> インタースロットPDCCH反復が、PDCCH CSSリンクレベルの強化に優先的に採用されるべきである。</li> <li><strong>PDSCH:</strong> Msg4を持つPDSCHの反復がリンクレベルの強化のためにサポートされるべきであり、SIB1とSIB19を持つPDSCHの反復も同じアプローチを使用して強化されるべきである。</li> </ol> <strong>結論:</strong> さまざまな技術を分析し、NTNにおけるDLカバレッジを向上するための提案を行い、システムレベルとリンクレベルの両方でenhancementが必要であることが強調されています。
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>R1-2409831 Discussion on NR-NTN DL coverage enhancement.docx</h3>
+                        <div class="summary-content">
+                            <p><strong>著者:</strong> LG Electronics</p>
+<p><strong>概要:</strong> 本文は、NR NTN（非地上ネットワーク）のダウンリンクカバレッジ向上のためのシステムレベルとリンクレベルのメカニズムを議論しています。SSB周期の延長、ワイドビームフットプリントのサポート、セルクDTX/DRX操作の強化、PDCCH/メッセージ4 PDSCH/Msg4 PDSCHの強化など、カバレッジ向上のためのさまざまな提案を調査しています。</p>
+<p><strong>主要な主張:</strong></p>
+<ol> <li><strong>SSB周期の延長:</strong> SSB周期を160msec以上に延長し、アクティブビーム比を減らす。</li> <li><strong>ワイドビームフットプリント:</strong> コンポーネントビームフットプリントのグループ化により、SSB検出を確保し、ワイドビームフットプリントでの送信をサポートする。</li> <li><strong>セルクDTX/DRX操作強化:</strong> RRCアイドルUEに対するDTX/DRXメカニズムをサポートし、CSI-RS、PDSCH、SSBなどのターゲット信号/チャネルを選択し、セルまたはビームフットプリントレベルで構成を強化する。</li> <li><strong>メッセージ4 PDSCH の強化</strong>: DAIフィールドを使用して伝送の繰り返し回数を示すか、PDSCH-ConfigCommonで繰り返し番号パラメータを使用する。</li> <li><strong>PDCCHの強化</strong>: 検索空間のリンクを許可し、PDCCH候補を複数使用することで、伝送の繰り返しをサポートする。</li> </ol> <strong>結論:</strong> 本文は、NR NTNのダウンリンクカバレッジを向上させるためのさまざまなオプションを提案しています。これらは、アクティブビーム比の要件を満たし、カバレッジとネットワーク効率を向上させることを目的としています。RAN1は、提案されたオプションから適切なオプションを選択し、仕様の開発を進めることが期待されています。
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>R1-2409978_ Further consideration on downlink coverage enhancement for NR NTN.docx</h3>
+                        <div class="summary-content">
+                            <p><strong>著者:</strong> CATT</p>
+<p><strong>概要:</strong></p>
+<p>本文書では、非地球静止軌道（NGSO）衛星を使用したNR NTNのダウンリンクカバレッジを強化するためのシステムレベルとリンクレベルの強化について検討しています。提案されたソリューションには、SSB周期の延長、ビームホーピング、PDCCHおよびPDSCHの強化が含まれます。</p>
+<p><strong>主要な主張:</strong></p>
+<ol> <li><strong>システムレベルの強化:</strong></li> </ol>   - 320msまでのSSB周期の延長 <ul> <li>PDCCH監視機会、SIBスケジュールウィンドウ、SIB周期などの仕様への影響に対処する</li> <li>ビームホーピングを有効活用するためのROマッピングの修正</li> <li>RRM測定ウィンドウ構成の調整</li> <li>ビーム幅の拡大（ただし、仕様の変更は不要）</li> </ul> <ol> <li><strong>リンクレベルの強化:</strong></li> </ol>   - PDCCHの繰り返し（1つの追加検索スペースを使用した0型の繰り返し） <ul> <li>R19 UEが追加検索スペースを監視できるようにするためのPBCHの1ビットの予約</li> <li>3GPP Msg4の繰り返し（4回の繰り返しで-8.8dBの復調閾値を達成）</li> <li>PDSCHの繰り返し係数のMsg2スケーリングファクターを使用した暗黙的な表示</li> </ul> <strong>結論:</strong>
+<p>提案された強化策は、NR NTNのダウンリンクカバレッジの改善に役立ち、衛星ベースのサービスの範囲を拡大します。</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="tab-themes" class="tab-content">
+                    <h2>テーマ別分析</h2>
+            
+                <div class="card">
+                    <p><strong>1. 全体概要表</strong></p>
+<p><div class="table-container"> <table class="analysis-table"> <thead> <tr> <th class="text-left">文書名</th> <th class="text-left">著者</th> <th class="text-left">主要な主張</th> <th class="text-left">結論</th> <th class="text-left">キーワード</th> </tr> </thead> <tbody> <tr> <td class="text-left">R1-2409434 NR NTN Downlink coverage enhancements.docx</td> <td class="text-left">Thales</td> <td class="text-left">システムレベルとリンクレベルでのNR NTNダウンリンクカバレッジの強化</td> <td class="text-left">SSB周期の延長、チャンネルラスタの変更、リンクレベルの強化</td> <td class="text-left">NR NTN、ダウンリンクカバレッジ、SSB周期、リンクレベル強化</td> </tr> <tr> <td class="text-left">R1-2409726 Discussion on DL coverage enhancement for NR NTN.docx</td> <td class="text-left">ZTE Corporation、Sanechips</td> <td class="text-left">システムレベルとリンクレベルでのNR NTNダウンリンクカバレッジの強化</td> <td class="text-left">320msのSSB周期のサポート、PDCCH反復、PDSCH反復</td> <td class="text-left">NR NTN、ダウンリンクカバレッジ、SSB周期、PDCCH反復、PDSCH反復</td> </tr> <tr> <td class="text-left">R1-2409831 Discussion on NR-NTN DL coverage enhancement.docx</td> <td class="text-left">LG Electronics</td> <td class="text-left">システムレベルとリンクレベルでのNR NTNダウンリンクカバレッジの強化</td> <td class="text-left">SSB周期の延長、ワイドビームフットプリントのサポート、セルクDTX/DRX操作の強化、PDCCH/メッセージ4 PDSCH/メッセージ4 PDSCHの強化</td> <td class="text-left">NR NTN、ダウンリンクカバレッジ、SSB周期、ワイドビームフットプリント、PDCCH強化、PDSCH強化</td> </tr> <tr> <td class="text-left">R1-2409978_ Further consideration on downlink coverage enhancement for NR NTN.docx</td> <td class="text-left">CATT</td> <td class="text-left">システムレベルとリンクレベルでのNR NTNダウンリンクカバレッジの強化</td> <td class="text-left">SSB周期の延長、ビームホーピング、PDCCHおよびPDSCHの強化</td> <td class="text-left">NR NTN、ダウンリンクカバレッジ、SSB周期、ビームホーピング、PDCCH強化、PDSCH強化</td> </tr> </tbody> </table> </div></p>
+<p><strong>2. 共通テーマと論点</strong> <ul> <li>NR NTNにおけるダウンリンクカバレッジの向上</li> <li>SSB周期の延長</li> <li>PDCCHとPDSCHの強化</li> <li>システムレベルとリンクレベルの強化</li> </ul> <strong>3. 主張の比較表</strong></p>
+<p><div class="table-container"> <table class="analysis-table"> <thead> <tr> <th class="text-left">テーマ</th> <th class="text-left">各文書の立場・主張</th> </tr> </thead> <tbody> <tr> <td class="text-left">SSB周期</td> <td class="text-left">R1-2409434: 160ms以上延長しない</td> <td class="text-left">R1-2409726: 320ms</td> <td class="text-left">R1-2409831: 160msec以上延長</td> <td class="text-left">R1-2409978: 320msまで延長</td> </tr> <tr> <td class="text-left">PDCCH反復</td> <td class="text-left">R1-2409434: インタースロットPDCCH</td> <td class="text-left">R1-2409726: インタースロットPDCCH</td> <td class="text-left">R1-2409831: 候補を複数使用</td> <td class="text-left">R1-2409978: 1つの追加検索スペースを使用した0型の反復</td> </tr> <tr> <td class="text-left">PDSCH反復</td> <td class="text-left">R1-2409434: メッセージ4、SIB1、SIB19</td> <td class="text-left">R1-2409726: メッセージ4</td> <td class="text-left">R1-2409831: メッセージ4</td> <td class="text-left">R1-2409978: メッセージ4、PDSCh係数のスケーリングファクター</td> </tr> </tbody> </table> </div></p>
+<p><strong>4. 相違点の分析</strong></p>
+<p><strong>主な意見の相違</strong> <ul> <li><strong>SSB周期:</strong> R1-2409434は160ms以上延長しないのに対し、他の3つの文書は320msの延長を提案している。</li> <li><strong>PDCCH反復:</strong> R1-2409434はインタースロットPDCCHを提案する一方、R1-2409978は1つの追加検索スペースを使用した0タイプの反復を提案している。</li> </ul> <strong>対立する意見</strong></p>
+<p>文書間に対立する意見はありません。</p>
+<p><strong>5. 共通認識</strong> <ul> <li>NR NTNのダウンリンクカバレッジの向上が必要である。</li> </ul> <strong>6. 課題・今後の展望</strong> <ul> <li><strong>システムレベルの強化:</strong> SSB周期の延長による影響の対処、ビームホーピングの活用、RRM測定ウィンドウ構成の調整。</li> <li><strong>リンクレベルの強化:</strong> PDCCHとPDSCHの反復手順の最適化、繰り返し数のスケーリングファクターの導入。</li> <li><strong>標準化作業:</strong> 提案された強化策の仕様への組み込み。</li> </ul></p>
+                </div>
+                
+                </div>
+                <div id="tab-discussion" class="tab-content">
+                    <h2>議論ポイント</h2>
+            
+                </div>
+            </body>
+            </html>
+            
