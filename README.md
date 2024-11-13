@@ -2,6 +2,7 @@
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
 [6G/NTNニュースアーカイブはこちら](https://omusubi5g.github.io/tdoc.github.io/news/news_archive.html)
 
+- [RAN1 #119](#ran1-119)
 - [RAN1 #118](#ran1-118)
 - [RAN1 #117](#ran1-117)
 - [RAN2 #126](#ran2-126)
@@ -13,6 +14,7 @@
 
 # RAN1 #119
 - [寄書分析自動化お試し](https://omusubi5g.github.io/tdoc.github.io/RAN1_119/NTN_analysis.html)
+
 # RAN1 #118
 - [寄書数分析](https://omusubi5g.github.io/tdoc.github.io/RAN1_118/summary.html)
 
