@@ -2,6 +2,7 @@
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
 [6G/NTNニュースアーカイブはこちら](https://omusubi5g.github.io/tdoc.github.io/news/news_archive.html)
 
+- [SA #106](#sa-106)
 - [RAN1 #119](#ran1-119)
 - [RAN1 #118](#ran1-118)
 - [RAN1 #117](#ran1-117)
@@ -11,6 +12,9 @@
 - [RAN2 #125bis](#ran2-125bis)
 - [RAN4 #110bis](#ran4-110bis)
 - [RAN #103](#ran-103)
+
+# SA #106
+- [SP-241627 5GA_Rel-20 - Views and priorities from Satellite community](https://omusubi5g.github.io/tdoc.github.io/SA106/ntn_summary.html)
 
 # RAN1 #119
 - [寄書分析自動化お試し](https://omusubi5g.github.io/tdoc.github.io/RAN1_119/NTN_analysis.html)
