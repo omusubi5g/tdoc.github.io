@@ -1,93 +1,112 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>5G-Advanced Rel-20 衛星コミュニティの展望と優先事項（詳細解説：研究開発の視点を含む）</title>
 <style>
-body {
-  font-family: sans-serif;
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+
+.summary-table th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
 }
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+
+.summary-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
 }
-th {
-  background-color: #f2f2f2;
+
+.summary-table tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.category {
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+.title {
+    text-align: center;
+    color: #1B5E20;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 </style>
-</head>
-<body>
 
-<h1>5G-Advanced Rel-20 衛星コミュニティの展望と優先事項（詳細解説：研究開発の視点を含む）</h1>
+<h1 class="title">3GPP Release 20 衛星通信の主要検討項目</h1>
 
-<table>
-  <thead>
+<table class="summary-table">
     <tr>
-      <th>優先事項</th>
-      <th>詳細な説明</th>
-      <th>技術的課題/検討事項</th>
-      <th>研究開発の視点</th>
-      <th>動機/便益</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>マルチオービット衛星アクセス</td>
-      <td>GEO、MEO、LEO衛星の特性を活かし、シームレスな接続性と最適なサービス提供を実現。</td>
-      <td>異なる軌道間のハンドオーバー管理、QoS/QoE保証</td>
-      <td>・軌道間ハンドオーバーにおける遅延・切断の最小化<br>・複数衛星からの同時受信によるスループット向上<br>・AI/MLを活用した動的なリソース割り当て</td>
-      <td>グローバルカバレッジ、接続性向上、リソース効率最大化</td>
+        <th>検討項目</th>
+        <th>詳細内容</th>
     </tr>
     <tr>
-      <td>UE-衛星-UE 通信の残りの側面</td>
-      <td>Rel-19で対応したIMSに加え、非IMSサービス、ローミング、ミッションクリティカル通信（1対N）をサポート。</td>
-      <td>非IMSサービスのためのアーキテクチャ、衛星アクセスにおけるローミングの実現方法</td>
-      <td>・衛星リンクを考慮した遅延耐性のある非IMSサービスプロトコルの開発<br>・衛星と地上ネットワーク間のシームレスなローミング手順の確立<br>・効率的なグループ通信プロトコルの開発と実装</td>
-      <td>災害救助の強化、柔軟な通信手段、ミッションクリティカル通信</td>
+        <td class="category">1. マルチオービット対応</td>
+        <td>
+            - GEO、MEO、LEO衛星の特性を活かした統合運用<br>
+            - 海事・航空分野での継続的な接続性確保<br>
+            - 省電力運用とカバレッジの最適化<br>
+            - 衛星軌道間のシームレスな切り替え
+        </td>
     </tr>
     <tr>
-      <td>IoT-NTN 向けの 5GC サポート</td>
-      <td>EPCのみのサポートから5GCへの拡張により、NR-NTNとIoT-NTNの統合を促進。</td>
-      <td>5GCとIoT-NTNデバイス間のインターフェース定義、省電力化</td>
-      <td>・NB-IoT/eMTC over NTNにおける5GCとの統合アーキテクチャ<br>・低消費電力かつ高信頼な通信プロトコルの開発<br>・大量のIoTデバイスの接続管理手法</td>
-      <td>統合されたIoTサービス、多様なIoTアプリへの対応</td>
+        <td class="category">2. UE-衛星間通信の拡張</td>
+        <td>
+            - IMS以外のサービス対応<br>
+            - VPN等の非IMS通信のサポート<br>
+            - ローミング対応<br>
+            - ミッションクリティカルな1対N通信
+        </td>
     </tr>
     <tr>
-      <td>レジリエント通知</td>
-      <td>衛星アクセス経由で、圏外ユーザーへの不在着信モバイルサービスの通知を確実に配信。</td>
-      <td>地上ネットワークとの連携、信頼性の高い配信メカニズム</td>
-      <td>・衛星と地上ネットワーク間の効率的なメッセージングプロトコルの開発<br>・遅延耐性のあるストア＆フォワードメカニズムの検討<br>・災害時における優先的なメッセージ配信</td>
-      <td>緊急時における確実な情報伝達、ユーザー体験向上</td>
+        <td class="category">3. IoT-NTN対応</td>
+        <td>
+            - 5GCでのIoT-NTNサポート<br>
+            - NB-IoTとeMTCの統合<br>
+            - 5G NR-NTNとIoT-NTNの統合運用
+        </td>
     </tr>
     <tr>
-      <td>未登録 UE への衛星経由のブロードキャストサービス</td>
-      <td>ブロードキャストレシーバーのみを持つUEへの公共サービスの配信を実現。</td>
-      <td>未登録UEへの効率的な配信メカニズム、セキュリティ</td>
-      <td>・GEO衛星を活用した広域ブロードキャスト技術<br>・ブロードキャストメッセージの認証・暗号化技術<br>・緊急警報の優先配信メカニズム</td>
-      <td>公共安全確保、災害時における迅速な情報伝達</td>
+        <td class="category">4. レジリエント通知機能</td>
+        <td>
+            - 衛星アクセス時の到達不能ユーザーへの通知サービス<br>
+            - IoT NTNとNR NTN両方での実装
+        </td>
     </tr>
     <tr>
-      <td>GEO 衛星アクセスを使用した IMS 音声通話</td>
-      <td>GEO衛星アクセス特有の伝送速度と遅延を考慮した高品質な音声通話を実現。</td>
-      <td>低ビットレートコーデックの選定と最適化、遅延の影響軽減</td>
-      <td>・衛星リンクに最適な低ビットレート音声コーデックの開発と評価<br>・遅延の影響を最小限に抑えるためのエコーキャンセレーション技術<br>・音声品質評価手法の確立</td>
-      <td>GEO衛星アクセスにおける高品質音声通話、カバレッジ拡大</td>
+        <td class="category">5. 未登録UEへの放送サービス</td>
+        <td>
+            - 災害時などの緊急警報配信<br>
+            - レガシーVSATからの移行支援<br>
+            - 移動プラットフォームやカーダイレクト向けサービス
+        </td>
     </tr>
     <tr>
-      <td>緊急 SMS</td>
-      <td>地上/衛星アクセス両方で緊急SMSをサポート。緊急サービスの種類に応じたルーティング、ローミング時の対応などを検討。</td>
-      <td>緊急SMSのためのアーキテクチャ、位置情報の取得と活用</td>
-      <td>・衛星アクセスを考慮した緊急SMSのためのアーキテクチャ設計<br>・GNSS非依存な位置情報特定技術の検討<br>・ローミング時の緊急SMSルーティング最適化</td>
-      <td>緊急時における多様な通信手段、迅速な対応</td>
+        <td class="category">6. GEO衛星でのIMS音声通話</td>
+        <td>
+            - 低データレート(1-3kbps)での音声通話実現<br>
+            - QoSポリシーの最適化<br>
+            - 遅延を考慮した音声コーデックの定義
+        </td>
     </tr>
-  </tbody>
+    <tr>
+        <td class="category">7. 緊急SMS</td>
+        <td>
+            - 地上・衛星共通の緊急SMS機能<br>
+            - IPベース(IMS)とNASベースの両方式対応<br>
+            - 各国規制に基づく緊急センターへのルーティング
+        </td>
+    </tr>
 </table>
 
-</body>
-</html>
+<div style="margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-left: 4px solid #4CAF50;">
+    <h3 style="color: #2E7D32; margin-top: 0;">主な開発動機：</h3>
+    <ul style="margin-bottom: 0;">
+        <li>商用展開に必要な基本機能の実装</li>
+        <li>3GPP NR NTNに基づく将来の衛星コンステレーション対応</li>
+        <li>新しいビジネス機会・サービスの創出</li>
+    </ul>
+</div>
