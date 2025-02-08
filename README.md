@@ -15,6 +15,7 @@
 - [RAN #103](#ran-103)
 
 # 6G WS
+- [6GWS-250016 T-Mobile's Overall vision & priorities for Next Generation](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250016.html)
 - [6GWS-250017 T-Mobile's Vision & Priorities for Next Generation RAN](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250017.html)
 - [6GWS-250018 T-Mobile View on System Architecture & Core Network for 6G](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250018.html)
 
