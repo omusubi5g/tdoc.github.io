@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th, .table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f7fafc;
+    font-weight: 600;
+  }
+  
+  .section-header {
+    background-color: #edf2f7;
+    font-weight: 600;
+  }
+  
+  .subsection {
+    padding-left: 20px;
+  }
+  
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <table class="table">
+    <tr>
+      <th colspan="2">文書基本情報</th>
+    </tr>
+    <tr>
+      <td width="20%">著者</td>
+      <td>T-Mobile Advanced & Emerging Technologies</td>
+    </tr>
+    <tr>
+      <td>寄書番号</td>
+      <td>6GWS-250018</td>
+    </tr>
+    <tr>
+      <td>タイトル</td>
+      <td>T-Mobile View on System Architecture & Core Network for 6G</td>
+    </tr>
+    <tr>
+      <td>発表場所・時期</td>
+      <td>3GPP 6Gワークショップ 2025年3月 (仁川、韓国)</td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">6Gの進化の方向性</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>柔軟で信頼できるプラットフォームへの変革</li>
+          <li>新サービスの導入を可能にする</li>
+          <li>ネットワーク効率の最適化</li>
+          <li>コアネットワークへの追加投資を最小限に抑制</li>
+          <li>全国展開済みの5G SAネットワークを活用した進化</li>
+          <li>Day 1からの規制およびレガシーサービスのサポート
+            <ul class="subsection">
+              <li>複雑なフォールバックスキームや混合アーキテクチャを回避</li>
+            </ul>
+          </li>
+          <li>TCO削減のためのネットワーク運用・管理の簡素化</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">顧客信頼の維持</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>セキュリティ要件：
+            <ul class="subsection">
+              <li>顧客データとIDの保護</li>
+              <li>オンライン脅威からの保護</li>
+              <li>デフォルトでのセキュリティ設計</li>
+              <li>量子耐性サイバーセキュリティ</li>
+            </ul>
+          </li>
+          <li>信頼性要件：
+            <ul class="subsection">
+              <li>ネットワークカバレッジと可用性への期待の増大</li>
+              <li>物理的・デジタル世界の統合</li>
+              <li>レジリエンスと生存性の確保</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">サービス展開計画</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>Day 1サービス：
+            <ul class="subsection">
+              <li>レガシーサービスのサポート</li>
+              <li>ネイティブ6G音声</li>
+              <li>固定無線アクセス（FWA）</li>
+              <li>規制サービス（WEA、E911、LI）</li>
+              <li>Vo6Gローミング</li>
+            </ul>
+          </li>
+          <li>将来展開サービス：
+            <ul class="subsection">
+              <li>Computing as a Service</li>
+              <li>統合センシングと通信</li>
+              <li>LPWA/IIOT/Ambient IOT</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">コアネットワークの考慮事項</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>5GCの再利用：
+            <ul class="subsection">
+              <li>6G機能をサポート可能な既存NF：UDM、PCF、NEF、NRF、NSSF、SCP、NSSAF、EASDF、NSACF、AUSF</li>
+              <li>6G機能のために変更が必要な可能性のあるNF：AMF、SMF、UPF、NWDAF、N3IWF</li>
+              <li>6G/5Gコアネットワークとの統合強化が必要なIMS</li>
+            </ul>
+          </li>
+          <li>インテリジェント制御/ユーザプレーン最適化：
+            <ul class="subsection">
+              <li>AIによるリソース、スライス等の効率的な割り当て</li>
+              <li>サービス認識の向上</li>
+              <li>APIドリブンのプログラマブルネットワーク</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">6G研究領域</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>5Gアーキテクチャを再利用する機能：
+            <ul class="subsection">
+              <li>RAN/CN機能分割</li>
+              <li>強化されたネットワークセキュリティとプライバシー</li>
+              <li>セキュリティインシデント管理</li>
+              <li>量子耐性暗号化と量子セーフセキュリティ</li>
+              <li>QoS強化と簡素化</li>
+            </ul>
+          </li>
+          <li>5Gアーキテクチャに影響を与える機能：
+            <ul class="subsection">
+              <li>非6Gアクセス技術との相互運用</li>
+              <li>NASプロトコル更新</li>
+              <li>UP/CPプロトコル更新</li>
+              <li>ベースラインおよび強化されたIMS音声</li>
+              <li>規制サービス</li>
+              <li>ローミングと相互接続</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">まとめ</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>5G SAネットワーク投資の活用と、柔軟で信頼できるネットワークプラットフォームへの進化</li>
+          <li>過去の世代からの教訓を活用した顧客体験の継続性確保</li>
+          <li>6G技術と機能の選択的導入
+            <ul class="subsection">
+              <li>顧客体験の向上に寄与するもの</li>
+              <li>効率性向上とTCO削減に貢献するもの</li>
+            </ul>
+          </li>
+          <li>実証可能な利点に基づく6Gサービスと機能の賢明な選択</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
