@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th, .table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f7fafc;
+    font-weight: 600;
+  }
+  
+  .section-header {
+    background-color: #edf2f7;
+    font-weight: 600;
+  }
+  
+  .subsection {
+    padding-left: 20px;
+  }
+  
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <table class="table">
+    <tr>
+      <th colspan="2">文書基本情報</th>
+    </tr>
+    <tr>
+      <td width="20%">著者</td>
+      <td>T-Mobile Advanced & Emerging Technologies</td>
+    </tr>
+    <tr>
+      <td>寄書番号</td>
+      <td>6GWS-250017</td>
+    </tr>
+    <tr>
+      <td>タイトル</td>
+      <td>T-Mobile's Vision & Priorities for Next Generation RAN</td>
+    </tr>
+    <tr>
+      <td>発表場所・時期</td>
+      <td>3GPP 6Gワークショップ 2025年3月 (仁川、韓国)</td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">5Gの展開から得られた教訓</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>4Gと5Gの間にRANネットワークアーキテクチャの根本的な違いはない</li>
+          <li>すべての新しいバーティカル向けに単一のRANパイプを使用する方式は商業的に実現不可能</li>
+          <li>従来のメカニズム（5QI、スライシング）はサービス品質制御が粗く静的すぎる</li>
+          <li>5G Advancedは新しいバーティカルに効果的に対応できない</li>
+          <li>FWA（固定無線アクセス）は成功しているが課題も存在</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">5G Advancedにおけるインテントベースの接続性</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>ネットワークスライシング：
+            <ul class="subsection">
+              <li>現在サポートされているが、静的でデバイスOSのサポートに依存</li>
+              <li>利点は限定的</li>
+            </ul>
+          </li>
+          <li>QoS (5QI)：
+            <ul class="subsection">
+              <li>静的で粗い制御のみ</li>
+              <li>KPIベースではない</li>
+            </ul>
+          </li>
+          <li>L4S：
+            <ul class="subsection">
+              <li>限定的なIPレベルの輻輳情報のみ</li>
+              <li>レイテンシ重視アプリケーション向けのRAN適応が可能</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">6G RANの戦略</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>基本原則：
+            <ul class="subsection">
+              <li>Day 1からのeMBBと音声サービスのサポート必須</li>
+              <li>5G/5GAで効果的にサポートできないユースケースに焦点</li>
+              <li>現在のプロトコルとRANアーキテクチャに制限されない仕様</li>
+            </ul>
+          </li>
+          <li>スケーラブルアーキテクチャ：
+            <ul class="subsection">
+              <li>特定のユースケースに最適化されたモジュラー型6Gアーキテクチャ</li>
+              <li>新しいスライスやモジュールの容易な追加を可能にする設計</li>
+              <li>AI-RANによる通信とコンピューティングの統合プラットフォーム</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">6G RANへの期待</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>スペクトラム：
+            <ul class="subsection">
+              <li>5Gから6Gへのクリーンな移行/共有（MRSS）</li>
+              <li>5Gのバンドコンビネーションとパワークラスの再利用</li>
+              <li>アンライセンススペクトラムの新機能活用</li>
+            </ul>
+          </li>
+          <li>性能向上：
+            <ul class="subsection">
+              <li>サービス固有のパフォーマンス向上</li>
+              <li>無線リンク効率の継続的な改善</li>
+              <li>新しい空中インターフェース/プロトコル</li>
+            </ul>
+          </li>
+          <li>運用とエネルギー効率：
+            <ul class="subsection">
+              <li>リアルタイムのカバレッジと容量計画のための機能</li>
+              <li>クラウドネイティブRANアーキテクチャ</li>
+              <li>サービス認識によるリアルタイム最適化</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">AI-RANと統合通信・コンピューティング</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>RAN機能：
+            <ul class="subsection">
+              <li>空中インターフェース、リンク適応、RRM、モビリティ管理</li>
+              <li>コンピューティングリソース管理</li>
+              <li>リアルタイムオーケストレーション</li>
+            </ul>
+          </li>
+          <li>新しいRAN機能：
+            <ul class="subsection">
+              <li>エッジコンピューティング</li>
+              <li>アプリ開発者向けプログラマブル機能</li>
+              <li>AIデータ収集、モデルトレーニング</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="section-header">
+      <td colspan="2">まとめ</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <li>5Gから6Gへの進化は既存サービスの継続的サポートに重要</li>
+          <li>固定無線アクセス（FWA）は新しい収益と市場機会を創出したが、長期的な成功には最適化が必要</li>
+          <li>6GのRANサービス認識により、顧客体験、リソース利用効率、新市場機会の創出が改善される</li>
+          <li>AI統合とクラウドネイティブアーキテクチャが6Gの成功の鍵となる</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
