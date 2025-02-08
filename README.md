@@ -2,6 +2,7 @@
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
 [6G/NTNニュースアーカイブはこちら](https://omusubi5g.github.io/tdoc.github.io/news/news_archive.html)
 
+- [6G WS](#6g-ws)
 - [SA #106](#sa-106)
 - [RAN1 #119](#ran1-119)
 - [RAN1 #118](#ran1-118)
@@ -12,6 +13,11 @@
 - [RAN2 #125bis](#ran2-125bis)
 - [RAN4 #110bis](#ran4-110bis)
 - [RAN #103](#ran-103)
+
+# 6G WS
+- [6GWS-250017 T-Mobile's Vision & Priorities for Next Generation RAN](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250017.html)
+- [6GWS-250018 T-Mobile View on System Architecture & Core Network for 6G](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250018.html)
+
 
 # SA #106
 - [SP-241627 5GA_Rel-20 - Views and priorities from Satellite community](https://omusubi5g.github.io/tdoc.github.io/SA106/ntn_summary.html)
