@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6GWS-250009 各章詳細解説</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #007bff;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #007bff;
+      color: #fff;
+      width: 25%;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    ul {
+      list-style: disc;
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>6GWS-250009 各章詳細解説</h1>
+
+  <!-- Executive Summary -->
+  <h2>Executive Summary</h2>
+  <table>
+    <tr>
+      <th>内容</th>
+      <td>
+        <p>本章では全体の概要を示し、6G実現に向けた主要な提案ポイントが簡潔にまとめられています。</p>
+        <ul>
+          <li>5G-Advancedの知見を活用し、エネルギー効率、スペクトル利用、干渉管理の強化を提案。</li>
+          <li>既存5G技術では解決が難しい問題に対して、具体的な改善策を提示。</li>
+          <li>小規模データ通信の最適化、統一されたキャリア運用、ネットワークスライシングの柔軟性の確保。</li>
+          <li>CSI取得やMIMO技術の強化、アップリンク性能の向上、完全なフレキシブルTDDの実装。</li>
+          <li>AI/MLの活用によるネットワーク管理の自動化。</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Chapter 1: Motivation and objectives -->
+  <h2>1. Motivation and objectives</h2>
+  <table>
+    <tr>
+      <th>概要</th>
+      <td>
+        <p>本章では、6Gが求められる背景とその目的について詳細に説明しています。</p>
+        <ul>
+          <li>5Gおよび5G-Advancedの現状の課題（エネルギー効率、スペクトル効率、アップリンク性能の限界など）を明確化。</li>
+          <li>実運用データやフィールドでの経験に基づいた技術的・運用上の改善ポイントの整理。</li>
+          <li>従来技術との比較から、6Gが実現すべき新たな進化の方向性の提示。</li>
+          <li><strong>1.1 Context:</strong> 5G普及状況、各周波数帯の利用、インフラの成熟度など、6G標準化に向けた前提条件の説明。</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Chapter 2: Better than legacy -->
+  <h2>2. Better than legacy</h2>
+  <table>
+    <tr>
+      <th>概要</th>
+      <td>
+        <p>本章は、6Gが従来技術（5G、LTEなど）に対してどのような優位性を発揮するか、具体的な改善策を多角的に論じています。</p>
+      </td>
+    </tr>
+    <tr>
+      <th>2.1 Better standardization process</th>
+      <td>
+        <ul>
+          <li>従来の標準化プロセスの課題：議論が紙上に留まり、実装可能性が不十分。</li>
+          <li>実装可能な機能に重点を置いたシンプルで明確な標準化プロセスの必要性。</li>
+          <li>特定周波数帯への適切な投資と、実装指標の導入提案。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.2 Energy efficiency</th>
+      <td>
+        <ul>
+          <li>ネットワークと端末のエネルギー消費削減のための技術。</li>
+          <li>シンボル単位のスリープモード、MIMOの部分停止、セルスリープの導入。</li>
+          <li>ダウンリンクパワー制御やUEのバッテリー消費低減の工夫。</li>
+          <li>エネルギー効率を設計上の重要指標として反映する必要性。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.3 Spectral efficiency</th>
+      <td>
+        <strong>2.3.1 Some thoughts about the 5G spectral efficiency:</strong>
+        <ul>
+          <li>5Gにおけるビームフォーミング、MU-MIMOの活用とフィールド測定値の乖離。</li>
+          <li>特にFDD帯では受動的アンテナの制約により、スペクトル効率向上が限定的。</li>
+        </ul>
+        <strong>2.3.2 About spectral efficiency improvement in 6G:</strong>
+        <ul>
+          <li>干渉管理の強化、複数キャリアの統合運用（統一キャリア方式）の提案。</li>
+          <li>小規模データパケットに最適なリソース割当ての仕組みの必要性。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.4 MIMO improvements</th>
+      <td>
+        <ul>
+          <li>FDDおよびTDD環境でのMIMO技術の向上策。</li>
+          <li>アクティブアンテナシステム（AAS）とパッシブアンテナのキャリブレーション問題の解決。</li>
+          <li>CSI取得の精度向上、新たなコードブック設計（例：Type 2コードブック）の検討。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.5 Better Uplink</th>
+      <td>
+        <ul>
+          <li>アップリンクにおけるカバレッジ不足とスループット低下の改善。</li>
+          <li>UEの2Tx（送信機）の有効活用、CP-OFDMとDFT-s-OFDMの最適な波形選択。</li>
+          <li>動的な送信器のスイッチングと集約機能の導入。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.6 Network slicing</th>
+      <td>
+        <ul>
+          <li>TACとスライス識別子（S-NSSAI）の連動を解消し、柔軟なスライス展開を実現。</li>
+          <li>UEがサポートするスライス情報を利用したセル選択・再選択の最適化。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.7 Voice service</th>
+      <td>
+        <ul>
+          <li>VoLTEからVoNRへの移行時における音声品質の維持・向上。</li>
+          <li>RANベースのコーデックレート動的適応により、悪条件下での通話品質確保。</li>
+          <li>新たなIVASコーデックの導入により、従来の音声サービスとの差別化。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.8 6G Interworking</th>
+      <td>
+        <ul>
+          <li>WiFiなど他ネットワークとの相互運用性向上、セルラー技術との連携強化。</li>
+          <li><strong>2.8.1 Interworking with WiFi:</strong> 異なる規格のWiFiとセルラーの連携を、リアルタイムなネットワーク条件に基づくセル選択やハンドオーバーの改善で実現。</li>
+          <li><strong>2.8.2 Interworking with legacy cellular technologies:</strong> LTE等従来技術との互換性を維持しながら6Gへのスムーズな移行を支援。</li>
+          <li><strong>2.8.3 Extended inter-RAT Dual Connectivity:</strong> 異なる無線アクセス技術間でのデュアルコネクティビティを拡張し、ユーザーのシームレスな接続を実現。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.9 Some deployment aspects</th>
+      <td>
+        <ul>
+          <li>6G導入時の現場運用上の課題、各提案機能の実装コストや運用上のトレードオフの検討。</li>
+          <li>現実的なネットワーク運用の制約に対する解決策の提示。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>2.10 Open, interoperable interfaces</th>
+      <td>
+        <ul>
+          <li>多様なベンダーやシステム間での相互運用を実現するためのオープンなインターフェースの確立。</li>
+          <li>エコシステム全体の技術革新と将来的な拡張性の向上を促進。</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Bibliography -->
+  <h2>Bibliography</h2>
+  <table>
+    <tr>
+      <th>内容</th>
+      <td>
+        <p>本章では、文書中で引用された各種文献、標準仕様、業界レポートなどが一覧となっており、提案内容の技術的根拠や実証データの裏付けとなっています。これにより、研究や実装における参考資料として機能します。</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>※ 上記は6GWS-250009文書に基づき、6Gの実現に向けた各章の詳細な解説をまとめたものです。各章で提案される技術的および運用上の改善策が、次世代無線ネットワークとしての6Gの構築に大きく寄与することが期待されます。</p>
+</div>
+</body>
+</html>
