@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6GWS-250041 NTNに関する6Gシステム推奨事項 詳細解説</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #007bff;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #007bff;
+      color: #fff;
+      width: 25%;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    ul {
+      list-style: disc;
+      margin: 0;
+      padding-left: 20px;
+    }
+    p {
+      margin: 0 0 10px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>6GWS-250041 NTNに関する6Gシステム推奨事項 詳細解説</h1>
+  
+  <!-- 基本情報 -->
+  <table>
+    <tr>
+      <th>文書番号</th>
+      <td>6GWS-250041</td>
+    </tr>
+    <tr>
+      <th>タイトル</th>
+      <td>Vision and priorities for 6G system for the support of satellite access</td>
+    </tr>
+    <tr>
+      <th>ソース</th>
+      <td>Thales</td>
+    </tr>
+    <tr>
+      <th>会議情報</th>
+      <td>
+        3GPP TSG RAN 6G Workshop Meeting<br>
+        Incheon, Republic of Korea, March 10-11th, 2025
+      </td>
+    </tr>
+    <tr>
+      <th>議題</th>
+      <td>Vision & priorities for next generation system architecture, core networks and protocols</td>
+    </tr>
+  </table>
+  
+  <!-- Introduction -->
+  <h2>Introduction</h2>
+  <table>
+    <tr>
+      <th>概要</th>
+      <td>
+        本文書は、6Gシステムにおいて衛星アクセス（NTN）を最適にサポートするための能力を提案するものです。<br>
+        6Gの対象サービス全般が、NTNの展開シナリオに適合する往復遅延や帯域幅の条件を満たす場合、衛星アクセスで提供可能と仮定しています。
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Recommendations on 6G system for the support of Satellite access (NTN) -->
+  <h2>Recommendations on 6G system for the support of Satellite access (NTN)</h2>
+  
+  <!-- Service -->
+  <table>
+    <tr>
+      <th>【Service】</th>
+      <td>
+        <p><strong>概要：</strong>6Gシステムが提供する全サービスは、NTNの特性（往復遅延・帯域幅）に適合する場合、衛星アクセスでサポート可能とする。</p>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Broadcasting service -->
+  <table>
+    <tr>
+      <th>【Broadcasting service】</th>
+      <td>
+        <p><strong>技術的課題：</strong><br>
+        衛星ネットワーク（NTN）では、無線セルが国境を越えて広がる可能性があり、放送サービスは各国の規制対象となる。</p>
+        <p><strong>推奨事項：</strong><br>
+        6Gシステムは、衛星アクセスによる放送サービスに対して、対象地域に限定するジオフェンス機能を提供すること。</p>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Network architecture: Mesh connectivity -->
+  <table>
+    <tr>
+      <th>【Network architecture: Mesh connectivity】</th>
+      <td>
+        <p><strong>技術的課題：</strong><br>
+        フィーダリンクが利用できない地域（例：海洋、リンク障害時）でもサービス提供が必要。<br>
+        また、同一または隣接の衛星でサービスされるUE間（UE – Satellite – UE）の遅延最適化が求められる。</p>
+        <p><strong>推奨事項：</strong><br>
+        6Gシステムは、フィーダリンクの有無に関わらず、セキュリティ要件を満たしながらUE間のメッシュ接続（UE-SAT-UE）をサポートすること。</p>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Network architecture: Network entry/idle mode and connected mode across orbit -->
+  <table>
+    <tr>
+      <th>【Network architecture: Network entry/idle mode and connected mode across orbit】</th>
+      <td>
+        <p><strong>技術的課題：</strong><br>
+        マルチ軌道のスペースセグメントにおいて、RRC接続状態、シグナリング最適化、トラフィックパターンに応じ、GSO（静止衛星）とNGSO（低軌道衛星）の利用を使い分ける必要がある。</p>
+        <p><strong>推奨事項：</strong><br>
+        6Gシステムは、マルチ軌道衛星ネットワーク環境下で、柔軟にGSOおよびNGSOアクセスを利用してUEをサービスする機能をサポートすること。</p>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Network architecture: Access and backhaul via satellite -->
+  <table>
+    <tr>
+      <th>【Network architecture: Access and backhaul via satellite】</th>
+      <td>
+        <p><strong>技術的課題：</strong><br>
+        衛星アクセスを利用して、航空機、船舶、列車などの搭載ネットワークへのバックホールサービスも提供する必要がある。</p>
+        <p><strong>推奨事項：</strong><br>
+        6Gシステムは、最大1Gbpsの高容量バックホール接続をサポートし、ノード間リンク管理および輸送ソリューションを含むバックホール機能を提供すること。</p>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Network architecture: Space edge computing -->
+  <table>
+    <tr>
+      <th>【Network architecture: Space edge computing】</th>
+      <td>
+        <p><strong>技術的課題：</strong><br>
+        特定のサービス衛星からコンテンツ配信や統合通信・センシング（Integrated Communication And Sensing）などのローカルサービスを提供できる能力が必要。</p>
+        <p><strong>推奨事項：</strong><br>
+        6Gシステムアーキテクチャは、衛星上でエッジ機能を展開できるようにするとともに、次のサービス衛星へのコンテキスト転送をサポートすること。</p>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Conclusion -->
+  <h2>Conclusion</h2>
+  <table>
+    <tr>
+      <th>結論・提案</th>
+      <td>
+        <ul>
+          <li>Proposal 1: 上記の推奨事項を6Gシステムの定義に反映するよう、TSG-SAに検討を求める。</li>
+          <li>Proposal 2: 6Gコアネットワークにおける衛星アクセスのサポートを最優先で検討するよう提案。</li>
+          <li>Proposal 3: その他の推奨事項について、6Gのどのリリースで対応すべきか、さらに議論するよう求める。</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  
+  <p>※ 本文書は、6GWS-250041 NTNに関する議論および提案事項をまとめたもので、衛星アクセスを6Gの主要機能として確立するための方向性を示しています。</p>
+  
+</div>
+</body>
+</html>
