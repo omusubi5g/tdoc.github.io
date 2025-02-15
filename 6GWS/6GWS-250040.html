@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6GWS-250040 NTN 対応6G RAT 提案内容詳細</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #007bff;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #007bff;
+      color: #fff;
+      width: 25%;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    ul {
+      list-style: disc;
+      margin: 0;
+      padding-left: 20px;
+    }
+    p {
+      margin: 0 0 10px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>6GWS-250040 NTN 対応6G RAT 提案内容詳細</h1>
+  
+  <!-- ドキュメント情報 -->
+  <table>
+    <tr>
+      <th>寄書番号</th>
+      <td>6GWS-250040</td>
+    </tr>
+    <tr>
+      <th>タイトル</th>
+      <td>Vision and priorities for 6G RAT to support NTN</td>
+    </tr>
+    <tr>
+      <th>ソース</th>
+      <td>Thales</td>
+    </tr>
+    <tr>
+      <th>会議情報</th>
+      <td>
+        3GPP TSG RAN 6G Workshop Meeting<br>
+        Incheon, Republic of Korea, March 10-11th, 2025
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Introduction -->
+  <h2>Introduction</h2>
+  <table>
+    <tr>
+      <th>概要</th>
+      <td>
+        本文書は、NTN（非地上ネットワーク、衛星アクセス）に最適な6G無線アクセス技術（RAT）の候補として、新たな能力や機能の提案を行っています。<br>
+        各種軌道タイプ、ペイロード、サービスリンク周波数帯、端末種別などのNTN展開シナリオに対応するための技術的要求事項が整理されています。
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Chapter 1: Radio link characteristics -->
+  <h2>1. Radio link characteristics</h2>
+  <table>
+    <tr>
+      <th>セクション</th>
+      <td>
+        <ul>
+          <li><strong>GNSS独立動作（GSO/NGSO対応）</strong>
+            <ul>
+              <li>【技術課題】：GSOおよび高度300km以上のNGSOにおいて、拡張かつ変動するドップラーシフトと遅延が発生。</li>
+              <li>【提案】：6G RATはGNSS受信機を搭載しないUEでも動作できるよう、堅牢な周波数・タイミング同期およびフレーミング方式を提供する。</li>
+            </ul>
+          </li>
+          <li><strong>低マルチパス伝搬</strong>
+            <ul>
+              <li>【技術課題】：伝搬チャネルはほぼ直線状（LOS）で、多重経路が少ない。</li>
+              <li>【提案】：小規模なマルチパス環境に最適な信号構成を可能にする。</li>
+            </ul>
+          </li>
+          <li><strong>Extended coverage</strong>
+            <ul>
+              <li>【技術課題】：軽い屋内環境や車両内でのサービス提供が求められる。</li>
+              <li>【提案】：5G NRよりも高い最大結合損失(MCL)を実現する拡張カバレッジモードを採用。</li>
+            </ul>
+          </li>
+          <li><strong>Satellite service allocated spectrum</strong>
+            <ul>
+              <li>【技術課題】：衛星サービスに割り当てられた、ペアド/アンペアド両方の周波数帯での運用。</li>
+              <li>【提案】：FDDおよびTDD方式の両方に対応し、RTD（往復遅延）が大きく変動する環境にも適応可能とする。</li>
+            </ul>
+          </li>
+          <li><strong>Satellite Propagation impairments</strong>
+            <ul>
+              <li>【技術課題】：ヘリコプターのブレードや、道路脇、列車の軌道、樹木の影などによる短期間の深いフェード現象。</li>
+              <li>【提案】：短時間・周期的なブロッケージやフェードを軽減するため、インタリービング技術などを活用した堅牢な伝送方式を採用。<br>
+              ※CSIなしでのマルチキャスト／ブロードキャスト伝送にも対応。</li>
+            </ul>
+          </li>
+          <li><strong>Enhanced error floor without HARQ</strong>
+            <ul>
+              <li>【技術課題】：長い伝搬遅延のため、HARQ（再送制御）を使用するとQoSがさらに低下。</li>
+              <li>【提案】：非常に低いSNR下でも、10^-6以下のBLER（ブロック誤り率）を達成する高効率FECを実装し、物理層での再送を不要にする。</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Chapter 2: Access related satellite specifics -->
+  <h2>2. Access related satellite specifics</h2>
+  <table>
+    <tr>
+      <th>セクション</th>
+      <td>
+        <ul>
+          <li><strong>Efficient grant free access protocol</strong>
+            <ul>
+              <li>【技術課題】：多数の端末が同時に低帯域サービスを送信する際のアクセス密度向上。</li>
+              <li>【提案】：既存の2段階ランダムアクセス（2SRA）プロトコルを参考に、効率的なグラントフリーアクセス方式を実装。</li>
+            </ul>
+          </li>
+          <li><strong>TN/NTN mobility</strong>
+            <ul>
+              <li>【技術課題】：接続中のハンドオーバー時に生じる遅延差により、シームレスな移動性が難しい。</li>
+              <li>【提案】：リアルタイムサービスでの中断を最小限にするため、同時多重接続や拡張レイヤー2/2.5トリガーモビリティ機能を導入。</li>
+            </ul>
+          </li>
+          <li><strong>Space segment constraints (Extension of satellite footprint)</strong>
+            <ul>
+              <li>【技術課題】：衛星搭載RF出力の制約により、全ビームの同時照射が困難。</li>
+              <li>【提案】：制御チャネル（SSBに類似）の周期延長やビームホッピング技術により、広域カバレッジを実現。</li>
+            </ul>
+          </li>
+          <li><strong>Flexible RAN functional split</strong>
+            <ul>
+              <li>【技術課題】：衛星搭載機器の電力制約や、フィーダリンクの遅延・帯域幅の変動に対応する必要性。</li>
+              <li>【提案】：搭載可能な最小限のRAN機能を選択できるよう、各種基局機能の分割（functional split）に柔軟性を持たせる。</li>
+            </ul>
+          </li>
+          <li><strong>Enhanced Security</strong>
+            <ul>
+              <li>【技術課題】：オンボードでの一時的自律運用に伴い、量子コンピュータ攻撃にも耐性のある非対称暗号方式が必要。</li>
+              <li>【提案】：量子耐性のある暗号プリミティブを用いたハイブリッド認証・鍵交換方式を採用する。</li>
+            </ul>
+          </li>
+          <li><strong>4G NB-IoT_NTN, 5G NR_NTN and 6G radio access coexistence in same beams</strong>
+            <ul>
+              <li>【技術課題】：移行期間中、5G対応NTNと6G対応NTNの共存が求められる。</li>
+              <li>【提案】：同一のスペースセグメント内で、6G UEとレガシーUE（NB-IoT_NTN/NR_NTN）の双方にサービス提供できる設計とする。</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Chapter 3: Service -->
+  <h2>3. Service</h2>
+  <table>
+    <tr>
+      <th>セクション</th>
+      <td>
+        <ul>
+          <li><strong>Multi connectivity/carrier aggregation</strong>
+            <ul>
+              <li>【技術課題】：高周波帯での低リンク可用性環境下でも、高信頼性のブロードバンド接続を提供する方法。</li>
+              <li>【提案】：低周波衛星アクセス技術と高周波衛星アクセス技術、または衛星とモバイルアクセス技術間での同時デュアル接続／キャリア集約を実現。</li>
+            </ul>
+          </li>
+          <li><strong>GNSS free Positioning Navigation and Timing</strong>
+            <ul>
+              <li>【技術課題】：IoT端末などでGNSS利用がバッテリー消費に与える影響。</li>
+              <li>【提案】：GNSSに依存しない3GPP方式の位置測定技術を採用し、端末のバッテリー寿命を延長する。</li>
+            </ul>
+          </li>
+          <li><strong>Enhanced network verified UE location service</strong>
+            <ul>
+              <li>【技術課題】：NTN環境では広範なセルエリアにまたがるため、国境を越えたサービスに対応した高精度な位置情報取得が必要。</li>
+              <li>【提案】：典型的なTNセルサイズ程度の精度でUEの位置を信頼性高く特定できる仕組みを提供する。</li>
+            </ul>
+          </li>
+          <li><strong>Broadcasting service</strong>
+            <ul>
+              <li>【技術課題】：NTNにおいてセルエリアが国境をまたぐ場合、放送サービスが各国規制に従う必要がある。</li>
+              <li>【提案】：対象地域に限定したジオフェンス機能を持つ放送サービスを提供する。</li>
+            </ul>
+          </li>
+          <li><strong>Diversity of Terminals</strong>
+            <ul>
+              <li>さまざまな端末（IoT、ウェアラブル、車両、ドローン、航空機、海洋、鉄道、建物内など）への接続性を確保。</li>
+              <li><strong>UE with directive antenna</strong>
+                <ul>
+                  <li>【技術課題】：指向性アンテナを持つ非携帯端末（例：VSAT）の場合、正確な衛星指向が必須。</li>
+                  <li>【提案】：初期アンテナ指向のための補助情報を端末に提供する。</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Chapter 4: Conclusion -->
+  <h2>4. Conclusion</h2>
+  <table>
+    <tr>
+      <th>概要</th>
+      <td>
+        <p>本章では、上記提案事項を踏まえた6G RATの定義に関する3つの提案がまとめられています。</p>
+        <ul>
+          <li><strong>Proposal 1:</strong> 上記の全提案事項を6G無線インターフェース／アクセス技術の定義に反映する。</li>
+          <li><strong>Proposal 2:</strong> 特に「Radio link characteristics」の項目（GNSS独立動作、衛星サービス用スペクトラム、低マルチパス、伝搬障害、拡張カバレッジ、HARQ不要時のエラー対策）を優先的にRel-20/21の作業項目として検討。</li>
+          <li><strong>Proposal 3:</strong> その他の提案事項（グラントフリーアクセス、共存、TN/NTNモビリティ、マルチ接続、衛星フットプリント拡張、GNSSフリーPNT、オンボード電力制約、ネットワーク検証位置情報サービス、RAN分割、放送サービス、セキュリティ、指向性アンテナ支援）について、どのリリースで対応するかをさらに議論する。</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  
+  <p>※ 上記は、6GWS-250040文書に基づき、NTN対応の6G無線アクセス技術に求められる各種能力と提案事項を整理・解説したものです。各セクションで示される技術的課題とそれに対する具体的な解決策は、次世代6Gシステムの実現に向けた重要な要素となります。</p>
+  
+</div>
+</body>
+</html>
