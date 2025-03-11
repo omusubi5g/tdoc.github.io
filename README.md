@@ -21,6 +21,7 @@
 - [6GWS-250018 T-Mobile View on System Architecture & Core Network for 6G](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250018.html)
 - [6GWS-250040 Vision and priorities for 6G RAT to support NTN](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250040.html)
 - [6GWS-250041 Vision and priorities for 6G system for the support of satellite access](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250041.html)
+- [6GWS-250238 3GPP_6G_Workshop_Summary](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250238.html)
 
 # SA #106
 - [SP-241627 5GA_Rel-20 - Views and priorities from Satellite community](https://omusubi5g.github.io/tdoc.github.io/SA106/ntn_summary.html)
