@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3GPP NTN 各Releaseまとめ</title>
+    <style>
+        /* CSSスタイル */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7; /* 行間を少し広げました */
+            margin: 30px; /* 余白を少し広げました */
+            color: #444; /* 文字色を少し落ち着いた色にしました */
+            font-size: 1.05em; /* 基本フォントサイズを少し大きくしました */
+        }
+        h1, h2, h3 {
+            margin-top: 2.5em; /* 見出し上の余白を増やしました */
+            margin-bottom: 1.2em; /* 見出し下の余白を増やしました */
+            color: #2c3e50; /* 見出しの色を変更しました */
+        }
+        h1 {
+            font-size: 2.4em; /* メインタイトルをさらに大きくしました */
+            font-weight: bold; /* 太字にしました */
+            color: #34495e; /* メインタイトルの色を少し濃くしました */
+            text-align: center; /* 中央揃えにしました */
+            margin-bottom: 1.5em;
+        }
+        h2 {
+            font-size: 1.8em; /* セクションタイトルを少し大きくしました */
+            border-bottom: 2px solid #bdc3c7; /* 下線を追加しました */
+            padding-bottom: 0.3em;
+        }
+        h3 {
+            font-size: 1.5em; /* サブセクションタイトルのサイズを調整しました */
+            color: #557f9e; /* サブセクションタイトルの色を変更しました */
+        }
+        h4 {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-top: 1.8em;
+            margin-bottom: 0.8em;
+        }
+        p {
+            margin-bottom: 1.2em;
+        }
+        .section {
+            margin-bottom: 3em; /* セクション間の余白を増やしました */
+            padding: 20px; /* パディングを増やしました */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .subsection {
+            margin-left: 25px; /* サブセクションの左マージンを増やしました */
+            margin-bottom: 1.5em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5em;
+            margin-bottom: 1.5em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 少し影をつけました */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px; /* パディングを増やしました */
+            text-align: left;
+        }
+        th {
+            background-color: #34495e; /* ヘッダーの背景色を濃くしました */
+            color: white; /* ヘッダーの文字色を白にしました */
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* 偶数行に背景色をつけました */
+        }
+        a {
+            color: #3498db; /* リンクの色を変更しました */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .source {
+            font-size: 0.9em; /* ソースのフォントサイズを少し小さくしました */
+            color: #777;
+        }
+        ul {
+            margin-bottom: 1.2em;
+        }
+        li {
+            margin-bottom: 0.6em;
+        }
+    </style>
+</head>
+<body>
+    <h1>3GPPにおけるNTNに関する各Releaseでの合意事項と議論内容の概要：SA/RAN/CT</h1>
+
+    <div class="section">
+        <h2>1. はじめに</h2>
+        <p>第3世代パートナーシッププロジェクト（3GPP）は、モバイル通信プロトコルの開発を行う複数の標準化機関をまとめる包括的な用語です <span class="source">[source: 17]</span>。その活動は、組織パートナーと市場表現パートナーによって支えられています <span class="source">[source: 17]</span>。3GPPの作業は、無線アクセスネットワーク（RAN）、サービスとシステムアスペクト（SA）、コアネットワークと端末（CT）という3つの主要なストリームに組織されています <span class="source">[source: 17]</span>。3GPPの標準はリリースとして構造化されており、各リリースには多数の技術仕様と技術レポートが含まれています <span class="source">[source: 17]</span>。</p>
+        <p>非地上系ネットワーク（NTN）は、通常8〜50kmの高度で運用される無人航空機システム（UAS）、高高度プラットフォーム（HAP）、または様々な構成の衛星を使用して、伝送機器の中継ノードまたは基地局を搭載するネットワークまたはネットワークセグメントです <span class="source">[source: 7]</span>。衛星軌道には、低軌道（LEO）、中軌道（MEO）、静止軌道（GEO）、高楕円軌道（HEO）などがあります <span class="source">[source: 7]</span>。NTNは、地上ネットワークが利用できない地域への接続を提供し、サービスの継続性を高め、ネットワークの回復力を向上させる上で重要な役割を果たします <span class="source">[source: 4]</span>。</p>
+        <p>本レポートの目的は、3GPPにおけるNTNに関連する主要な合意事項と議論の内容を、各リリースごとに、SA、RAN、CTの各技術仕様グループ（TSG）に焦点を当てて詳細にまとめることです。</p>
+    </div>
+
+    <div class="section">
+        <h2>2. 3GPP技術仕様グループ（TSG）とNTN標準化の概要</h2>
+        <p>NTNの標準化において中心的な役割を果たす各TSGの責任範囲と重点分野は以下の通りです <span class="source">[source: 17]</span>。</p>
+        <h3>SA（サービスとシステムアスペクト）</h3>
+        <p>3GPPシステムのサービス要件と全体的なアーキテクチャを規定し、プロジェクト全体の調整を行います <span class="source">[source: 17]</span>。NTNにおいては、サービスレベルの要件定義、アーキテクチャの検討、管理・運用に関する検討などを担当します。</p>
+        <h3>RAN（無線アクセスネットワーク）</h3>
+        <p>無線インターフェースとプロトコルを担当し、UEとネットワーク間のエアインターフェースを規定します <span class="source">[source: 17]</span>。NTNにおいては、物理層、データリンク層、ネットワーク層における無線アクセス技術の仕様、無線リソース管理、RF性能などを担当します。</p>
+        <h3>CT（コアネットワークと端末）</h3>
+        <p>3GPPのコアネットワークと端末部分を規定し、コアネットワークプロトコルを含みます <span class="source">[source: 17]</span>。NTNにおいては、モビリティ管理、セッション管理、ネットワーク選択、端末の動作などを担当します。</p>
+        <p>NTNは、従来の地上ネットワーク（TN）と比較して、以下のような特有の技術的課題を提示します <span class="source">[source: 3]</span>。</p>
+        <ul>
+            <li>長い伝搬遅延: 特にGEO衛星では、往復遅延時間（RTT）が約550msにも及ぶことがあります <span class="source">[source: 3]</span>。</li>
+            <li>大きなドップラーシフトと変動: 特にLEOやMEO衛星では、衛星の高速移動により大きなドップラーシフトが発生し、その変動も大きくなります <span class="source">[source: 3]</span>。</li>
+            <li>大きなセルサイズと移動するセルパターン: NTNネットワークはTNよりもセルサイズが大きく、衛星の移動に伴いセルパターンも移動します <span class="source">[source: 3]</span>。</li>
+            <li>電波伝搬に対する大気圏の影響: 6GHz以上では対流圏の影響（吸収など）、6GHz以下では電離層の影響（反射、吸収など）が無視できません <span class="source">[source: 7]</span>。</li>
+            <li>TNとNTN間のサービス継続性: 地上ネットワークと非地上ネットワークの間で、サービスを途切れることなく提供する必要があります <span class="source">[source: 9]</span>。</li>
+            <li>UEの送信電力制限: NTNでは、UEの送信電力が限られている場合があります <span class="source">[source: 7]</span>。</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. 3GPPリリースごとのNTN標準化の進捗</h2>
+        <div class="subsection">
+            <h3>3.1. リリース14-16：基礎研究</h3>
+            <div class="subsection">
+                <h4>リリース14</h4>
+                <p>3GPPは、衛星および非地上ネットワークを介した地上ネットワークの拡張に関するユースケースと要件の研究を含む検討を開始しました <span class="source">[source: 7]</span>。これは、NTNの可能性と標準化の必要性が初期段階で認識されていたことを示しています。</p>
+            </div>
+            <div class="subsection">
+                <h4>リリース15</h4>
+                <p>最初の5Gの規範的要件を標準化したリリースであり、主に地上ネットワークに焦点が当てられました <span class="source">[source: 7]</span>。RAN主導のスタディアイテム（SI）「非地上ネットワークをサポートするためのNRの研究」（FS_NR_nonterr_nw）が開始され、TR 38.811が作成されました <span class="source">[source: 7]</span>。この研究は、ユースケースの概要、NTN用の3GPPチャネルモデルの適応、および展開シナリオの説明に焦点を当てました <span class="source">[source: 7]</span>。リリース15は、無線アクセスドメイン内でのNTN研究の正式な開始を示しています。</p>
+            </div>
+            <div class="subsection">
+                <h4>リリース16</h4>
+                <p>SAおよびRAN全体で、さらなるスタディアイテムが継続されました <span class="source">[source: 7]</span>。SAでは、SA1 SI「5Gにおける衛星アクセス利用の研究」（FS_5GSAT）により、ユースケースと潜在的なステージ1要件を分析したTR 22.822が作成されました <span class="source">[source: 7]</span>。RANでは、RAN3主導のSI「非地上ネットワーク（NTN）をサポートするためのNRのソリューションの研究」（FS_NR_NTN_solutions）により、主に透過的なGEOおよびLEOペイロードを使用した衛星アクセスに関するRANプロトコル/アーキテクチャへの影響に焦点を当てたTR 38.821が作成されました <span class="source">[source: 7]</span>。リリース16の会議と並行して、再生型ペイロードアーキテクチャに関する議論が始まりました <span class="source">[source: 12]</span>。リリース16では、NTNの調査範囲が広がり、サービスとシステムのアスペクトも含まれるようになり、より詳細なRANレベルの分析が行われました。</p>
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>3.2. リリース17：NTNに関する最初の規範的作業</h3>
+            <div class="subsection">
+                <h4>SA（サービスとシステムアスペクト） <span class="source">[source: 7]</span></h4>
+                <div class="subsection">
+                    <h5>SA1（サービス要件） <span class="source">[source: 7]</span></h5>
+                    <p>WI「5GSATのステージ1」（5GSAT）は、リリース16の調査結果をTS 22.261のステージ1要件に変換しました <span class="source">[source: 7]</span>。これには、サービス継続性、ローミング、ネットワーク選択、モビリティ、様々なサービス（低電力MIoTを含む）の衛星アクセス、遅延処理、衛星間リンク、QoS管理、マルチコネクティビティ、コンテンツ配信最適化、リレーUE、マルチキャスト/ブロードキャスト、NG-RAN共有、UE測位、および規制関連の側面に関する要件が含まれていました <span class="source">[source: 7]</span>。リリース17は、NTNのサービスレベル要件の最初の規範的な仕様であり、商用化に向けた重要な一歩を示しています。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA2（システムアーキテクチャ） <span class="source">[source: 7]</span></h5>
+                    <p>SI「5Gにおける衛星アクセス利用のアーキテクチャ側面に関する研究」（FS_5GSAT_ARCH）は、主要な課題とソリューションを特定しました <span class="source">[source: 7]</span>。課題には、ローミング、衛星バックホール、大規模および移動する衛星カバレッジエリアでのモビリティ管理、遅延とQoSの考慮事項、NGSO再生型ベースの衛星アクセスによるRANモビリティ、およびマルチコネクティビティシナリオが含まれていました <span class="source">[source: 7]</span>。WI「5GSAT_ARCH」における規範的なステージ2の作業により、透過的なペイロードベースのLEOおよびGEOシナリオ、UEの位置認識、および地球固定トラッキングエリアに焦点を当てたTS 23.501、TS 23.502、およびTS 23.503の更新が行われました <span class="source">[source: 7]</span>。SA2は、NTNを5Gコアネットワークに統合するためのアーキテクチャの基礎を築きました。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA5（管理とオーケストレーション） <span class="source">[source: 7]</span></h5>
+                    <p>SI「5Gネットワークにおける統合衛星コンポーネントによる管理とオーケストレーションの側面に関する研究」（FS_5GSAT_MO）は、参照管理アーキテクチャ、ユースケース、潜在的な要件、およびソリューションを分析しました <span class="source">[source: 7]</span>。移動する非地上gNB用のSONコンセプトの特定/拡張、パフォーマンス測定の適応、5Gネットワークリソースモデル（NRM）の拡張、および地上RANと非地上RAN間の負荷分散アプローチの特定が推奨されました <span class="source">[source: 7]</span>。SA5の作業は、NTNを既存のネットワーク管理フレームワークに効果的に統合し、管理できるようにすることを保証します。</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h4>RAN（無線アクセスネットワーク） <span class="source">[source: 7]</span></h4>
+                <div class="subsection">
+                    <p>WI「非地上ネットワーク（NTN）をサポートするためのNRのソリューション」（NR_NTN_solutions）は、透過的なペイロードとFR1におけるFDDに焦点を当て、TS 38.101-5/TS 38.108に新しいバンドn255（Lバンド）とn256（Sバンド）をもたらしました <span class="source">[source: 7]</span>。電力クラス3のハンドヘルドデバイスとGNSS機能を備えたUEがサポートされました <span class="source">[source: 7]</span>。HAPS運用については、NR動作バンドn1を追加の変更なしに適用できることが結論付けられました <span class="source">[source: 7]</span>。RANの規範的な作業により、NRを使用した直接衛星アクセスが現実のものとなりました。</p>
+                </div>
+                <div class="subsection">
+                    <h5>RAN1（物理層） <span class="source">[source: 7]</span></h5>
+                    <p>タイミング、同期、およびHARQの機能拡張が行われました <span class="source">[source: 7]</span>。ネットワークは、エフェメリス情報と共通のタイミングアドバンス（共通TA）パラメータをブロードキャストします <span class="source">[source: 7]</span>。UEは、GNSS位置と衛星エフェメリスを使用して、タイミングアドバンスとドップラーシフトを自律的に事前補償します <span class="source">[source: 7]</span>。共通TAとスケジューリングオフセットを使用して、いくつかのタイミング関係が拡張されました <span class="source">[source: 7]</span>。HARQフィードバックを無効にするか、HARQプロセスの数を増やすことで、失速を軽減できました <span class="source">[source: 7]</span>。RAN1におけるこれらの機能拡張は、NTNによってもたらされる物理層の課題に対処するために不可欠でした。</p>
+                </div>
+                <div class="subsection">
+                    <h5>RAN2（レイヤー2および3） <span class="source">[source: 7]</span></h5>
+                    <p>モビリティ管理が強化されました <span class="source">[source: 7]</span>。ハンドオーバーコマンドに衛星エフェメリスが提供され、UEはNTNと地上ネットワーク間のモビリティをサポートします <span class="source">[source: 4]</span>。条件付きハンドオーバー（CHO）の新しいトリガー条件（イベントA4、時間ベース、および位置ベース）が導入されました <span class="source">[source: 7]</span>。ネットワークは、複数のSS/PBCHブロック測定タイミング構成（SMTC）を並行して構成できます <span class="source">[source: 7]</span>。ネットワークまたはUE制御に基づいてSMTCの調整が可能です <span class="source">[source: 7]</span>。準地球固定セルシナリオは、アイドル/非アクティブモードでの時間ベースおよび位置ベースの測定をサポートします <span class="source">[source: 7]</span>。NR NTNセルで、PLMNごとに複数のトラッキングエリアコード（TAC）をブロードキャストできます <span class="source">[source: 7]</span>。UEは、粗い位置情報をNG-RANに報告できます <span class="source">[source: 7]</span>。RAN2におけるこれらの機能拡張は、地上ネットワークと非地上ネットワーク間のシームレスなモビリティを可能にするために不可欠です。</p>
+                </div>
+                <div class="subsection">
+                    <h5>RAN3（無線アクセスネットワークインターフェースとプロトコル） <span class="source">[source: 7]</span></h5>
+                    <p>主に透過的なペイロードを備えたGEOベースの衛星アクセスと、透過的または再生型ペイロードを備えたLEOベースの衛星アクセスに焦点が当てられました <span class="source">[source: 7]</span>。主にNGSO向けのサービスリンクとフィーダーリンクの切り替え手順が議論されました <span class="source">[source: 7]</span>。マップされたセルIDの使用やTACおよびTAIの報告など、NG-RANシグナリングの側面が取り上げられました <span class="source">[source: 7]</span>。UEの位置に基づくgNBによるAMFの再選択が検討されました <span class="source">[source: 7]</span>。エフェメリス情報やゲートウェイの場所など、NTN関連パラメータのO&M要件が定義されました <span class="source">[source: 7]</span>。RAN3の作業は、無線アクセスネットワークとコアネットワーク間のスムーズな相互作用を保証します。</p>
+                </div>
+                <div class="subsection">
+                    <h5>RAN4（無線性能とシステムアスペクト） <span class="source">[source: 7]</span></h5>
+                    <p>共存研究に基づいて、衛星アクセス運用をサポートするNRユーザー機器（UE）およびNR衛星アクセスノード（SAN）のFR1における最小RFおよび性能要件がTS 38.101-5およびTS 38.108で定義されました <span class="source">[source: 7]</span>。RAN4の作業は、NTNリンクの品質と信頼性を保証するために不可欠です。</p>
+                </div>
+                <div class="subsection">
+                    <h5>RAN5（モバイル端末適合性試験） <span class="source">[source: 7]</span></h5>
+                    <p>WI「NR_NTN_solutions_plus_CT-UEConTest」は、RAN2およびCT WGによって導入された機能のUEテストを実施しました <span class="source">[source: 7]</span>。適合性試験は、UEが3GPP仕様に準拠していることを保証し、NTNデバイスの相互運用性と品質を促進します。</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h4>CT（コアネットワークと端末） <span class="source">[source: 7]</span></h4>
+                <div class="subsection">
+                    <p>CT WGの関連するステージ3の作業は、REL-17 WI「5GSAT_ARCH-CT」で実施されました <span class="source">[source: 7]</span>。これには、衛星アクセス用のPLMN選択を研究したTR 24.821が含まれていました <span class="source">[source: 7]</span>。UEの位置の決定、共有/グローバルPLMN <span class="source">[source: 20]</span> IDの処理、および衛星アクセス用のPLMN検索などの課題に対処しました <span class="source">[source: 26]</span>。異なるMCCとグローバル/共有PLMN IDを持つシナリオが検討されました <span class="source">[source: 25]</span>。UEが物理的に位置する国のPLMNのコアネットワークの使用を強制する必要性について議論されました <span class="source">[source: 25]</span>。国際エリアでPLMNを選択するための手順が定義されました <span class="source">[source: 28]</span>。CTの作業は、NTNをサポートするために必要なコアネットワークの側面、特に非地上環境におけるPLMN選択の複雑さに対処することに焦点を当てました。</p>
+                </div>
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>3.3. リリース18：NTNの機能拡張と新機能</h3>
+            <div class="subsection">
+                <h4>SA（サービスとシステムアスペクト） <span class="source">[source: 7]</span></h4>
+                <div class="subsection">
+                    <h5>SA1</h5>
+                    <p>WI「5GSATB（5GSにおける衛星バックホール）のステージ1」は、衛星を5Gシステムのトランスポート/バックホールとして使用する場合のQoS制御と課金に関する要件をTS 22.261に追加しました <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA2</h5>
+                    <p>SI「5GSにおける衛星バックホールのサポートに関する研究」（FS_5GSATB）は、動的衛星バックホール、衛星エッジコンピューティング、および衛星搭載のUPFを介したローカルデータスイッチングのソリューションについて議論しました <span class="source">[source: 7]</span>。対応する規範的な作業（「5GSATBのステージ2」）は、TS 23.501、TS 23.502、およびTS 23.503におけるアーキテクチャ、手順、およびポリシーの機能拡張を対象としていました <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA3</h5>
+                    <p>SI「衛星アクセスのセキュリティ側面に関する研究」（FS_5GSAT_Sec）は、衛星カバレッジ情報がO&MによってのみAMFにプロビジョニングされ、AF承認に関する規範的な作業は不要であると結論付けました <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA5</h5>
+                    <p>SI「5GSにおける衛星の課金側面に関する研究」（FS_5GSAT_CH）および「IoT NTNの管理側面に関する研究」（FS_IoT_NTN）は、衛星アクセス、衛星バックホール、衛星バックホールによるエッジコンピューティングの加入者およびプロバイダー間の課金、衛星を介したSSC間通信の課金、およびIoT NTNの管理側面について研究しました <span class="source">[source: 6]</span>。規範的な作業は、「5GSATの課金側面」および「5GSにおける衛星バックホールの課金側面」で続きました <span class="source">[source: 7]</span>。</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h4>RAN（無線アクセスネットワーク） <span class="source">[source: 7]</span></h4>
+                <div class="subsection">
+                    <h5>RAN2</h5>
+                    <p>WI「NR NTN（非地上ネットワーク）の機能拡張」（NR_NTN_enh）は、以前のリリースからのNTN機能を強化することを目的とし、カバレッジ拡張、ネットワーク検証UE位置、NTN-TNおよびNTN-NTNモビリティとサービス継続性の機能拡張、および10 GHzを超えるバンドでのNR-NTN展開に焦点を当てました <span class="source">[source: 7]</span>。WI「IoT（インターネットオブシングス）NTN（非地上ネットワーク）の機能拡張」（IoT_NTN_enh）は、IoT NTNのパフォーマンス、測定とモビリティの機能拡張、不連続カバレッジの機能拡張、およびRRMの機能拡張に焦点を当てました <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>RAN4</h5>
+                    <p>WI「FR1（周波数範囲1）におけるNR NTN（非地上ネットワーク）用の30 MHzチャネル帯域幅」（NR_NTN_CBW_30MHz-Core）は、特定のNR NTNバンドに30 MHzのチャネル帯域幅を追加しました <span class="source">[source: 7]</span>。WI「NR用の衛星L-/Sバンドの導入」（NR_NTN_LSband）は、新しいFDD NTNバンド（n254）を指定しました <span class="source">[source: 7]</span>。WI「IoT NTN用の拡張Lバンドの導入」（IoT_NTN_extLband）および「IoT NTN運用用のFDD LTEバンド（L+Sバンド）の導入」（IoT_NTN_FDD_LS_band）は、NTN使用のために新しいLTEバンド（それぞれ253および254）を導入しました <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>RAN5</h5>
+                    <p>以前に導入されたNTN機能のUE適合性試験に関する作業が継続されました <span class="source">[source: 7]</span>。</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h4>CT（コアネットワークと端末） <span class="source">[source: 7]</span></h4>
+                <div class="subsection">
+                    <p>「衛星アクセスフェーズ2のための5GC/EPC機能拡張」（5GSAT_Ph2）および「5GSATB（5GSにおける衛星バックホール）のCTx側面」（5GSATB）に関連するステージ3の作業が実施されました <span class="source">[source: 7]</span>。WI「EPSにおけるNB-IoT/eMTC非地上ネットワークのCTx側面」（IoT_SAT_ARCH_EPS）は、REL-17 SA2 WIに対応するステージ3の変更を実現しました <span class="source">[source: 7]</span>。</p>
+                </div>
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>3.4. リリース19：NTNの継続的な取り組みと将来の方向性</h3>
+            <div class="subsection">
+                <h4>SA（サービスとシステムアスペクト） <span class="source">[source: 7]</span></h4>
+                <div class="subsection">
+                    <h5>SA1</h5>
+                    <p>SI「衛星アクセス - フェーズ3」（FS_5GSAT_Ph3）は、ストアアンドフォワード（S&F）運用、UE-衛星-UE通信、GNSS非依存運用、および測位機能拡張を含む、5G over Satelliteのさらなる機能拡張のためのユースケースと要件を検討します <span class="source">[source: 7]</span>。規範的なステージ1要件は、WI「衛星アクセス フェーズ3」（5GSAT_Ph3）で規定されました <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA2</h5>
+                    <p>SI「5Gアーキテクチャにおける衛星コンポーネントの統合 フェーズ3」（FS_5GSAT_ARCH_Ph3）は、再生型ペイロードの汎用アーキテクチャ、ストアアンドフォワード衛星運用、および5GS向けのUE-衛星-UE通信の機能拡張を検討します <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA3</h5>
+                    <p>SI「5G衛星アクセス フェーズ2のセキュリティ側面に関する研究」（FS_5GSAT_SEC_Ph2）は、再生型ペイロード、ストアアンドフォワード衛星運用、および5GS向けのUE-衛星-UE通信の機能拡張のセキュリティとプライバシーの側面を重点的に検討します <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA5</h5>
+                    <p>SI「NTNフェーズ2の管理側面に関する研究」（FS_NTN_OAM_Ph2）は、衛星再生型ペイロードの管理機能、ストアアンドフォワードおよびUE-衛星-UE通信の管理要件、NTNシナリオのエンドツーエンド管理、およびNTN-TNとNTN-NTNのモビリティ連携の管理機能拡張を対象とします <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>SA6</h5>
+                    <p>SI「衛星アクセス対応5Gサービスのアプリケーションイネーブルメントに関する研究」（FS_5GSAT_APP）は、衛星アクセス用のアプリケーション層ソリューションと、ミッションクリティカルサービスにおける衛星通信の利用を調査します <span class="source">[source: 7]</span>。</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h4>RAN（無線アクセスネットワーク） <span class="source">[source: 7]</span></h4>
+                <div class="subsection">
+                    <h5>RAN2</h5>
+                    <p>WI「NRフェーズ3の非地上ネットワーク（NTN）」（NR_NTN_Ph3）は、様々な衛星ペイロードパラメータに対するDLカバレッジの機能拡張、FR1-NTNにおけるアップリンク容量/スループットの機能拡張、NR NTNを介したブロードキャストサービスのサービスエリアのシグナリング、再生型ペイロードのサポート、およびFR1-NTNバンドで動作するNR NTNを備えたRedCap UEのサポートを目指しています <span class="source">[source: 7]</span>。</p>
+                </div>
+                <div class="subsection">
+                    <h5>RAN2</h5>
+                    <p>WI「インターネットオブシングス（IoT）フェーズ3の非地上ネットワーク（NTN）」（IoT_NTN_Ph3）は、フルeNBを再生型ペイロードとして使用したストアアンドフォワード衛星運用のサポート、およびアップリンク容量の機能拡張を含む、さらなる機能拡張に取り組みます <span class="source">[source: 7]</span>。</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h4>CT（コアネットワークと端末）</h4>
+                <p>提供された資料には、リリース19に関するCTの具体的な合意事項や議論は詳述されていません。ただし、SAとRANの作業に基づいて、特に再生型ペイロードとUE-衛星間通信に関連する新機能をサポートするために、CTがコアネットワークプロトコルと端末の動作の適応に関与することが予想されます。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. 主要な技術的洞察と進化</h2>
+        <p>各リリースを通じて、NTNの主要な技術的側面は進化してきました。</p>
+        <h3>ペイロードアーキテクチャ</h3>
+        <p>初期リリース（リリース17、リリース18）では透過型（ベンドパイプ）ペイロードが中心でしたが、リリース19では再生型ペイロード（衛星にgNBを搭載）が導入されました <span class="source">[source: 12]</span>。再生型ペイロードは、柔軟性、性能、カバレッジ、回復力、RTTにおいて透過型ペイロードよりも優れています <span class="source">[source: 12]</span>。特に、衛星間リンク、宇宙空間でのパケットスイッチング、ストアアンドフォワード機能において利点があります <span class="source">[source: 12]</span>。</p>
+        <h3>サポートされる周波数帯域</h3>
+        <p>リリース17では、主に低周波数帯域（LバンドおよびSバンド）に焦点が当てられていましたが <span class="source">[source: 7]</span>、リリース18では高周波数帯域（10 GHz超、Kaバンド）への拡張が行われ、将来のリリースでも計画されています <span class="source">[source: 7]</span>。高周波数帯域は、減衰の増加や高度なアンテナ技術の必要性といった課題を伴いますが、容量増加の機会も提供します <span class="source">[source: 19]</span>。</p>
+        <h3>遅延とドップラーシフトの処理</h3>
+        <p>リリース17の初期ソリューションでは、GNSSと衛星エフェメリスを使用したUEの補償、再設計されたタイミング関係、および増加したHARQプロセスに焦点が当てられました <span class="source">[source: 7]</span>。以降のリリースでは、様々なNTNシナリオと衛星軌道に合わせて、これらの側面をさらに最適化する取り組みが続けられています <span class="source">[source: 7]</span>。</p>
+        <h3>モビリティ管理</h3>
+        <p>リリース17の基本的なTN-NTNモビリティから、リリース18以降では、NTN-NTNモビリティやサービス継続性の機能拡張といった、より高度な概念へと進化しています <span class="source">[source: 4]</span>。特にLEO衛星では、大きな伝搬遅延と頻繁なハンドオーバーが課題となっています <span class="source">[source: 4]</span>。</p>
+    </div>
+
+    <div class="section">
+        <h2>表1：3GPPリリースごとの主要なNTN機能（SA、RAN、CT） <span class="source">[source: 23]</span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>リリース</th>
+                    <th>TSG</th>
+                    <th>主要な機能/合意事項</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="4">17</td>
+                    <td>SA</td>
+                    <td>サービス継続性、ローミング、ネットワーク選択、モビリティ、衛星アクセス（IoT含む）、遅延処理、衛星間リンク、QoS管理、マルチコネクティビティ、マルチキャスト/ブロードキャストなどのサービス要件を規定（TS 22.261）</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>透過型ペイロードベースのLEO/GEOシナリオ、UE位置認識、地球固定トラッキングエリアに焦点を当てた5Gコアアーキテクチャの更新（TS 23.501, 23.502, 23.503）</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>移動する非地上gNB用のSONコンセプト、パフォーマンス測定の適応、5Gネットワークリソースモデル（NRM）の拡張、負荷分散アプローチに関する推奨事項</td>
+                </tr>
+                <tr>
+                    <td>RAN</td>
+                    <td>FR1における透過型ペイロードとFDDに焦点を当て、新しいバンドn255（Lバンド）とn256（Sバンド）を定義（TS 38.101-5, 38.108）</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>RAN</td>
+                    <td>タイミング、同期、HARQの機能拡張、エフェメリス情報と共通TAのブロードキャスト、UEによるドップラーシフトの事前補償</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>RAN</td>
+                    <td>ハンドオーバーコマンドへの衛星エフェメリス提供、TN-NTNモビリティのサポート、CHOの新しいトリガー条件（時間ベース、位置ベース）</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>RAN</td>
+                    <td>GEO/LEO衛星アクセス（透過型ペイロード）、LEO衛星アクセス（再生型ペイロード）に関する手順、NG-RANシグナリングの側面、NTNパラメータのO&M要件</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>RAN</td>
+                    <td>衛星アクセスをサポートするNR UE/SANのFR1における最小RF/性能要件</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>RAN</td>
+                    <td>RAN2およびCT機能のUEテストを実施</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>CT</td>
+                    <td>衛星アクセス用のPLMN選択の研究（TR 24.821）、UE位置決定、グローバル/共有PLMN IDの処理、国際エリアでのPLMN選択手順</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">18</td>
+                    <td>SA</td>
+                    <td>衛星バックホール用のQoS制御と課金に関する要件をTS 22.261に追加</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>動的衛星バックホール、衛星エッジコンピューティング、ローカルデータスイッチングに関する議論、アーキテクチャ、手順、ポリシーの機能拡張</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>衛星カバレッジ情報はO&MによってAMFにプロビジョニングされると結論付け</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>衛星アクセス、バックホール、エッジコンピューティング、SSC間通信の課金、IoT NTNの管理に関する研究、関連する規範的な作業</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">18</td>
+                    <td>RAN</td>
+                    <td>カバレッジ、ネットワーク検証UE位置、NTN-TN/NTN-NTNモビリティ、サービス継続性、10 GHz超のNR-NTN、IoT NTNのパフォーマンス、測定、モビリティ、不連続カバレッジ、RRMの機能拡張</td>
+                </tr>
+                <tr>
+                    <td>RAN</td>
+                    <td>特定のNR NTNバンドに30 MHzのチャネル帯域幅を追加、新しいFDD NTNバンドn254を指定、IoT NTN用の新しいLTEバンド（253、254）を導入</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>RAN</td>
+                    <td>導入済みのNTN機能のUE適合性試験を継続</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>CT</td>
+                    <td>衛星アクセスフェーズ2および衛星バックホールの5GC/EPC機能拡張に関連するステージ3の作業、REL-17 SA2 WIに対応するIoT NTNのEPSアーキテクチャに関するステージ3の変更</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">19 (計画)</td>
+                    <td>SA</td>
+                    <td>S&F運用、UE-衛星-UE通信、GNSS非依存運用、測位機能拡張を含む、さらなる機能拡張のためのユースケースと要件を検討</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>再生型ペイロード、S&F、UE-衛星-UE通信の機能拡張を研究</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>再生型ペイロード、S&F、UE-衛星-UE通信のセキュリティとプライバシーを重点的に検討</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>再生型ペイロード、S&F、UE-衛星-UE通信の管理、エンドツーエンド管理、モビリティ連携を対象</td>
+                </tr>
+                <tr>
+                    <td>19 (計画)</td>
+                    <td>SA</td>
+                    <td>衛星アクセス用のアプリケーション層ソリューション、ミッションクリティカルサービスにおける衛星通信の利用を調査</td>
+                </tr>
+                <tr>
+                    <td>19 (計画)</td>
+                    <td>RAN</td>
+                    <td>DLカバレッジとUL容量の機能拡張、ブロードキャストサービスのサービスエリアのシグナリング、再生型ペイロードのサポート、FR1におけるNR NTNを備えたRedCap UEのサポート</td>
+                </tr>
+                <tr>
+                    <td>19 (計画)</td>
+                    <td>RAN</td>
+                    <td>再生型ペイロードとしてのフルeNBによるS&F運用のサポート、アップリンク容量の機能拡張を含む、IoT NTNのさらなる機能拡張</td>
+                </tr>
+                <tr>
+                    <td>19 (計画)</td>
+                    <td>CT</td>
+                    <td>SAおよびRANの作業に基づいて、特に再生型ペイロードとUE-衛星間通信に関連する新機能をサポートするために、コアネットワークプロトコルと端末の動作の適応に関与することが予想される</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>表2：3GPP NTNにおける透過型ペイロードと再生型ペイロードの比較 <span class="source">[source: 24]</span> <span class="source">[source: 25]</span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>特徴</th>
+                    <th>透過型ペイロード</th>
+                    <th>再生型ペイロード</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>アーキテクチャ</td>
+                    <td>衛星は無線リピータとして機能、gNBは地上に配置</td>
+                    <td>衛星に完全なgNBを搭載</td>
+                </tr>
+                <tr>
+                    <td>処理能力</td>
+                    <td>RFフィルタリング、周波数変換、増幅のみ</td>
+                    <td>復調/復号、スイッチング/ルーティング、符号化/変調などのオンボード処理機能</td>
+                </tr>
+                <tr>
+                    <td>主な利点</td>
+                    <td>ペイロードの複雑さを抑え、早期展開が可能</td>
+                    <td>柔軟性と性能の向上、グローバルカバレッジ、回復力の向上、RTTの短縮、高度な機能（S&Fなど）の基盤</td>
+                </tr>
+                <tr>
+                    <td>導入リリース</td>
+                    <td>リリース17、リリース18</td>
+                    <td>リリース19</td>
+                </tr>
+                <tr>
+                    <td>潜在的な欠点</td>
+                    <td>柔軟性と性能が限定的、衛星間リンクのサポートなし</td>
+                    <td>ペイロードの複雑さと消費電力のわずかな増加</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>5. 結論</h2>
+        <p>3GPPにおけるNTNの標準化は、リリース14の初期検討から始まり、リリース17で最初の規範的な作業が行われ、リリース18で機能拡張と新機能が導入され、リリース19ではさらに高度なシナリオが検討されています。各リリースにおいて、SA、RAN、CTの各技術仕様グループは、NTNの様々な側面に取り組み、サービス要件の定義から、無線インターフェースの最適化、コアネットワークの適応、そして適合性試験の実施まで、包括的な標準化を進めてきました。特に、透過型ペイロードから再生型ペイロードへの進化、サポートされる周波数帯域の拡大、遅延とドップラーシフトの処理の改善、そしてモビリティ管理の高度化は、NTNがグローバルなモバイルエコシステムに統合され、広範なカバレッジと革新的なサービスを様々な分野でサポートするための重要な進展を示しています <span class="source">[source: 4]</span>。</p>
+    </div>
+
+    <div class="section">
+        <h2>引用文献</h2>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/3GPP" target="_blank" rel="noopener noreferrer">3GPP - Wikipedia</a>, 3月 16, 2025にアクセス <span class="source">[source: 1]</span></li>
+            <li><a href="https://www.etsi.org/committee/1418-3gpp" target="_blank" rel="noopener noreferrer">Third Generation Partnership Project (3GPP) | 3GPP Standards - ETSI</a>, 3月 16, 2025にアクセス <span class="source">[source: 2]</span></li>
+            <li><a href="https://6g-ntn.eu/wp-content/uploads/sites/94/2023/09/2023_08_30_GlueTechSchool_Guidotti_v3.pdf" target="_blank" rel="noopener noreferrer">6g-ntn.eu</a>, 3月 16, 2025にアクセス <span class="source">[source: 3]</span></li>
+            <li><a href="https://www.3g4g.co.uk/3GPP/2024_11_26_NTN_3GPP_stds_5G-6G_PA4_bak.pdf" target="_blank" rel="noopener noreferrer">www.3g4g.co.uk</a>, 3月 16, 2025にアクセス <span class="source">[source: 4]</span></li>
+            <li><a href="https://3gppmeetings.atis.org/" target="_blank" rel="noopener noreferrer">3GPP Working Group Meetings: Dallas 2025 – 3GPP Meetings by ATIS</a>, 3月 16, 2025にアクセス <span class="source">[source: 5]</span></li>
+            <li><a href="https://www.etsi.org/technologies/3gpp-telecom-management" target="_blank" rel="noopener noreferrer">3GPP Telecom Management - ETSI</a>, 3月 16, 2025にアクセス <span class="source">[source: 6]</span></li>
+            <li><a href="https://www.3gpp.org/technologies/ntn-overview" target="_blank" rel="noopener noreferrer">Non-Terrestrial Networks (NTN) - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 7]</span></li>
+            <li><a href="https://www.ericsson.com/en/reports-and-papers/ericsson-technology-review/articles/3gpp-satellite-communication" target="_blank" rel="noopener noreferrer">Promising new 3GPP technology for satellite communication ...</a>, 3月 16, 2025にアクセス <span class="source">[source: 8]</span></li>
+            <li><a href="https://www.sto.nato.int/publications/STO%20Meeting%20Proceedings/STO-MP-IST-203/MP-IST-203-09P.pdf" target="_blank" rel="noopener noreferrer">NTN in 3GPP - Lessons learned</a>, 3月 16, 2025にアクセス <span class="source">[source: 9]</span></li>
+            <li><a href="https://www.3gpp.org/news-events/partner-news/ntn-rel17" target="_blank" rel="noopener noreferrer">NTN & Satellite in Rel-17 & 18 - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 10]</span></li>
+            <li><a href="https://www.rohde-schwarz.com/us/solutions/wireless-communications-testing/wireless-standards/5g-nr/non-terrestrial-networks-ntn/non-terrestrial-networks-ntn_256719.html" target="_blank" rel="noopener noreferrer">Non-terrestrial networks (NTN) - Rohde & Schwarz</a>, 3月 16, 2025にアクセス <span class="source">[source: 11]</span></li>
+            <li><a href="https://www.ericsson.com/en/blog/2024/10/ntn-payload-architecture" target="_blank" rel="noopener noreferrer">5G Non-Terrestrial Networks in 3GPP Rel-19 - Ericsson</a>, 3月 16, 2025にアクセス <span class="source">[source: 12]</span></li>
+            <li><a href="https://www.3gpp.org/dynareport/23501.htm" target="_blank" rel="noopener noreferrer">Specification # 23.501 - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 13]</span></li>
+            <li><a href="https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/16.06.00_60/ts_123501v160600p.pdf" target="_blank" rel="noopener noreferrer">ETSI TS 123 501 V16.6.0 (2020-10)</a>, 3月 16, 2025にアクセス <span class="source">[source: 14]</span></li>
+            <li><a href="https://www.3gpp.org/dynareport/23502.htm" target="_blank" rel="noopener noreferrer">Specification # 23.502 - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 15]</span></li>
+            <li><a href="https://www.etsi.org/deliver/etsi_ts/123500_123599/123502/17.05.00_60/ts_123502v170500p.pdf" target="_blank" rel="noopener noreferrer">TS 123 502 - V17.5.0 - 5G; Procedures for the 5G System (5GS) (3GPP TS 23.502 version 17.5.0 Release 17) - ETSI</a>, 3月 16, 2025にアクセス <span class="source">[source: 16]</span></li>
+            <li><a href="https://www.3gpp.org/specifications-technologies/browse-our-technologies" target="_blank" rel="noopener noreferrer">The Technologies Specified by 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 17]</span></li>
+            <li><a href="https://www.3gpp.org/dynareport/38-series.htm" target="_blank" rel="noopener noreferrer">3GPP specification series: 38series</a>, 3月 16, 2025にアクセス <span class="source">[source: 18]</span></li>
+            <li><a href="https://www.anritsu.com/en-us/test-measurement/solutions/non-terrestrial-networks-test?tm_navigation=solution" target="_blank" rel="noopener noreferrer">Non-Terrestrial Networks (NTNs) | Anritsu America</a>, 3月 16, 2025にアクセス <span class="source">[source: 19]</span></li>
+            <li><a href="https://www.3gpp.org/specifications-technologies/releases/release-17" target="_blank" rel="noopener noreferrer">Release 17 - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 20]</span></li>
+            <li><a href="https://www.3gpp.org/ftp/tsg_ct/WG1_mm-cc-sm_ex-CN1/TSGC1_131e/Inbox/drafts/C1-214286%5B5GSAT_ARCH-CT%5DUpdate%20the%20description%20for%20satellite%20access-r1.docx" target="_blank" rel="noopener noreferrer">C1-214286[5GSAT_ARCH-CT]Update the description for satellite access-r1.docx - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 21]</span></li>
+            <li><a href="https://portal.3gpp.org/desktopmodules/WorkItem/WorkItemDetails.aspx?workitemId=911030" target="_blank" rel="noopener noreferrer">WI #911030 - 3GPP Portal</a>, 3月 16, 2025にアクセス <span class="source">[source: 22]</span></li>
+            <li><a href="https://www.3gpp.org/DynaReport/WiCr--911030.htm" target="_blank" rel="noopener noreferrer">3GPP Work Item 5GSAT_ARCH-CT mapping to Specs</a>, 3月 16, 2025にアクセス <span class="source">[source: 23]</span></li>
+            <li><a href="https://www.3gpp.org/DynaReport/WiCr--890034.htm" target="_blank" rel="noopener noreferrer">3GPP Work Item 5GSAT_ARCH mapping to Specs</a>, 3月 16, 2025にアクセス <span class="source">[source: 24]</span></li>
+            <li><a href="https://www.3gpp.org/ftp/tsg_ct/WG1_mm-cc-sm_ex-CN1/TSGC1_130e/Inbox/drafts/24821-120-rm.doc" target="_blank" rel="noopener noreferrer">3GPP TR 24.821</a>, 3月 16, 2025にアクセス <span class="source">[source: 25]</span></li>
+            <li><a href="https://www.3gpp.org/ftp/tsg_ct/WG1_mm-cc-sm_ex-CN1/TSGC1_127bis-e/Inbox/Drafts/draft_rev02_of_C1-210064%20%20was%20C1-207598%20was%20C1-207099-same-country-MCC.doc" target="_blank" rel="noopener noreferrer">3GPP Change Request</a>, 3月 16, 2025にアクセス <span class="source">[source: 26]</span></li>
+            <li><a href="https://www.3gpp.org/DynaReport/24821.htm" target="_blank" rel="noopener noreferrer">Specification # 24.821 - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 27]</span></li>
+            <li><a href="https://www.3gpp.org/ftp/tsg_ct/WG1_mm-cc-sm_ex-CN1/TSGC1_127e/Inbox/Drafts/C1-207168-24.821-Solution_to_KI3_r1.doc" target="_blank" rel="noopener noreferrer">3GPP Change Request</a>, 3月 16, 2025にアクセス <span class="source">[source: 28]</span></li>
+            <li><a href="https://dutchguild.nl/event/62/attachments/83/206/DG_5GNTN_3GPP_TNO_ReljaDjapic_24042024.pdf" target="_blank" rel="noopener noreferrer">5g non-terrestrial networks</a>, 3月 16, 2025にアクセス <span class="source">[source: 29]</span></li>
+            <li><a href="ftp://www.3gpp.org/tsg_ct/WG3_interworking_ex-CN3/TSGC3_125/Inbox/Draft/WIDs/C3-225070r1_New%20WID%20on%20CT%20aspects%20of%205G%20System%20with%20Satellite%20Backhaul.docx" target="_blank" rel="noopener noreferrer">C3-225070r1_New WID on CT aspects of 5G System with Satellite Backhaul.docx - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 30]</span></li>
+            <li><a href="https://www.3gpp.org/ftp/tsg_ct/WG3_interworking_ex-CN3/TSGC3_126_Athens/Inbox/Drafts/5GSATB/C3-230506r02_%2029.512%20Rel-18%20Support%20of%20Dynamic%20Satellite%20Backhaul.docx" target="_blank" rel="noopener noreferrer">C3-230506r02_ 29.512 Rel-18 Support of Dynamic Satellite Backhaul.docx - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 31]</span></li>
+            <li><a href="https://www.3gpp.org/DynaReport/WI-List.htm" target="_blank" rel="noopener noreferrer">3GPP List of Work Items</a>, 3月 16, 2025にアクセス <span class="source">[source: 32]</span></li>
+            <li><a href="https://www.3gpp.org/specifications-technologies/releases/release-18" target="_blank" rel="noopener noreferrer">Release 18 - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 33]</span></li>
+            <li><a href="https://www.3gpp.org/ftp/tsg_ct/WG3_interworking_ex-CN3/TSGC3_126_Athens/Inbox/Drafts/5GSATB/C3-230506r01_%2029.512%20Rel-18%20Support%20of%20Dynamic%20Satellite%20Backhaul%2BComments.docx" target="_blank" rel="noopener noreferrer">C3-230506r01_ 29.512 Rel-18 Support of Dynamic Satellite Backhaul+Comments.docx - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 34]</span></li>
+            <li><a href="https://www.3gpp.org/technologies/rel18-sec" target="_blank" rel="noopener noreferrer">Rel-18 Security feature summary - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 35]</span></li>
+            <li><a href="https://www.3gpp.org/ftp/tsg_ran/TSG_RAN/TSGR_94e/Inbox/Drafts/Oct_REL-18_discussions/%5BRAN94e-R18Prep-13%5D/Draft%20RP-21xxxx%20WID%20IoT%20NTN%20Evolution.doc" target="_blank" rel="noopener noreferrer">WID Template - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 36]</span></li>
+            <li><a href="https://standards-tracker.5g-ppp.eu/online-tool-standards-tracker/3gpp-ran-plenary-debrief-june-2022" target="_blank" rel="noopener noreferrer">3GPP RAN Plenary Debrief June 2022 | 6GStart - Standards Tracker</a>, 3月 16, 2025にアクセス <span class="source">[source: 37]</span></li>
+            <li><a href="https://portal.3gpp.org/DesktopModules/CRs/CrDetails.aspx?CrId=527913" target="_blank" rel="noopener noreferrer">Change Request Details - 3GPP Portal</a>, 3月 16, 2025にアクセス <span class="source">[source: 38]</span></li>
+            <li><a href="https://www.3gpp.org/dynareport/38741.htm" target="_blank" rel="noopener noreferrer">Specification # 38.741 - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 39]</span></li>
+            <li><a href="https://www.3gpp.org/FTP/tsg_sa/WG2_Arch/TSGS2_160_Chicago_2023-11/INBOX/DRAFTS/FS_5GSAT_ARCH_Ph3/S2-23xxxxx%20FS_5GSAT_ARCH_Ph3_Key%20issue%20for%20WT%233%20-%20v2-withCCcomments.docx" target="_blank" rel="noopener noreferrer">S2-23xxxxx FS_5GSAT_ARCH_Ph3_Key issue for WT#3 - v2-withCCcomments.docx - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 40]</span></li>
+            <li><a href="https://www.3gpp.org/ftp/tsg_sa/WG2_Arch/TSGS2_160_Chicago_2023-11/INBOX/DRAFTS/FS_5GSAT_ARCH_Ph3/draft-S2-2313367%20-was-S2-2312461%20FS_5GSAT_ARCH_Ph3_Key%20issue%20for%20WT%233-%20v9.docx" target="_blank" rel="noopener noreferrer">draft-S2-2313367 -was-S2-2312461 FS_5GSAT_ARCH_Ph3_Key issue for WT#3- v9.docx - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 41]</span></li>
+            <li><a href="https://www.3gpp.org/news-events/3gpp-news/5g-ntn" target="_blank" rel="noopener noreferrer">5G Non-Terrestrial Networks - 3GPP</a>, 3月 16, 2025にアクセス <span class="source">[source: 42]</span></li>
+            <li><a href="https://5ghub.us/non-terrestrial-networks-in-3gpp-release-18-for-global-iot-expansion/" target="_blank" rel="noopener noreferrer">Non-Terrestrial Networks in 3GPP Release 18 for Global IoT Expansion</a>, 3月 16, 2025にアクセス <span class="source">[source: 43]</span></li>
+        </ul>
+    </div>
+
+</body>
+</html>
