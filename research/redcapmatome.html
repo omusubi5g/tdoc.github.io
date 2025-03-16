@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3GPP RedCap 各Releaseまとめ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.4em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            font-size: 1em;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+        .note {
+            color: orange;
+            font-style: italic;
+        }
+        .reference {
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>3GPPにおけるRedCapに関する各Releaseでの合意事項と議論内容（SA/RAN/CTまとめ）</h1>
+
+    <h2>1. はじめに:</h2>
+    <p>第5世代移動通信システム（5G）は、高速大容量通信（eMBB）、超高信頼・低遅延通信（URLLC）、多数接続（mMTC）という3つの主要なユースケースに対応するように設計されました。しかし、これら3つのカテゴリに当てはまらない、中程度のデータレート、低コスト、省電力といった要件を持つIoTデバイスやアプリケーションのニーズも存在します。このような背景から、3GPPはRelease 17において、これらのギャップを埋めるべく、新たなデバイスカテゴリである<span class="highlight">Reduced Capability（RedCap）</span>を導入しました <span class="reference">[1]</span>。RedCapは、従来の5G NRデバイスと比較して、デバイスの複雑さ、コスト、消費電力を削減しつつ、LTE-MやNB-IoTよりも高いデータレートと低い遅延を提供することを目的としています <span class="reference">[1]</span>。本レポートでは、3GPPの各ReleaseにおけるRedCapに関する合意事項や議論内容を、サービス＆システムアスペクト（SA）、無線アクセスネットワーク（RAN）、コアネットワーク＆ターミナル（CT）の各技術仕様グループ（TSG）別にまとめます。</p>
+
+    <h2>2. RedCapの目的と背景:</h2>
+    <p>RedCapは、ブロードバンドIoTと呼ばれることもある、新たな接続ニーズに対応するために導入されました <span class="reference">[9]</span>。具体的には、従来の5G NRデバイスよりも低コストかつ長寿命のバッテリーを必要とし、一方でNB-IoTやLTE-Mよりも高いデータレートと低い遅延を求めるユースケースがターゲットとされています <span class="reference">[1]</span>。RedCapデバイスは、監視カメラ、スマートグリッドデバイス、産業用センサー、スマートグラス、ヘルスモニタリングデバイス、その他のウェアラブルなど、多様なデバイスのワイヤレス接続を可能にします <span class="reference">[1]</span>。RedCapの導入により、5Gデバイスのエコシステムが拡大し、これまで5Gの仕様範囲外であった要件を持つユースケースにも対応できるようになります <span class="reference">[10]</span>。</p>
+
+    <h2>3. 3GPP Release 17におけるRedCapの合意事項:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>技術仕様グループ</th>
+                <th>合意事項</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>サービス＆システムアスペクト（SA）</th>
+                <td>
+                    <ul>
+                        <li>RedCapのエコシステムとフレームワークが定義された <span class="reference">[6]</span>。</li>
+                        <li>ネットワークがデバイスの能力を認識する原則が確立された <span class="reference">[6]</span>。</li>
+                        <li>省電力メカニズムが定義され、Release 15/16のメカニズムを補完する <span class="reference">[3]</span>。</li>
+                        <li>RedCapデバイスが5Gコアネットワーク（5GC）に接続する能力が規定された <span class="reference">[14]</span>。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>無線アクセスネットワーク（RAN）</th>
+                <td>
+                    <ul>
+                        <li>RedCap UEの最大帯域幅が規定された: FR1で最大20 MHz、FR2で最大100 MHz <span class="reference">[5]</span>。</li>
+                        <li>受信アンテナの最小数が削減され、1つの受信ブランチがサポートされる <span class="reference">[1]</span>。</li>
+                        <li>ダウンリンク（DL）MIMOレイヤーは最大1つまたは2つがサポートされる <span class="reference">[6]</span>。</li>
+                        <li>ダウンリンクとアップリンクの両方で最大64QAMの変調方式のみをサポートする <span class="reference">[1]</span>。</li>
+                        <li>FDDバンドでの半二重動作のサポートがオプションで規定された <span class="reference">[2]</span>。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>コアネットワーク＆ターミナル（CT）</th>
+                <td>
+                    <ul>
+                        <li>RRCアイドル状態およびRRC非アクティブ状態に対して拡張されたDRXサイクルが導入された <span class="reference">[6]</span>。</li>
+                        <li>RedCap UEに対して、近隣セルの無線リソース管理（RRM）測定の緩和が許可される場合がある <span class="reference">[6]</span>。</li>
+                        <li>システム情報（SIB1）における指示を使用して、通信事業者がRedCapデバイスのセルキャリアへのアクセスを禁止する機能が導入された <span class="reference">[14]</span>。</li>
+                        <li>RedCapデバイスがサポートする必要のあるデータ無線ベアラ（DRB）の最大数が16から8に削減された <span class="reference">[14]</span>。</li>
+                        <li>パケットデータユニットに関連するシーケンス番号（SN）の長さが18ビットから12ビットに削減された <span class="reference">[14]</span>。</li>
+                        <li>自動ネイバー関係（ANR）機能のサポートは必須ではなくなった <span class="reference">[14]</span>。</li>
+                        <li>RedCapデバイスは、5G LANまたはイーサネットPDU機能をサポートする <span class="reference">[3]</span>。</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. 3GPP Release 18におけるRedCapの機能拡張と進化（5G Advanced）:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>技術仕様グループ</th>
+                <th>機能拡張と進化</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>サービス＆システムアスペクト（SA）</th>
+                <td>
+                    <ul>
+                        <li>スマートシティやeヘルスなどの新たなユースケースに対応するため、高度なRedCap機能のシステムアーキテクチャが強化される <span class="reference">[6]</span>。</li>
+                        <li>RedCapデバイスの測位のサポートが主要な目標の1つである <span class="reference">[13]</span>。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>無線アクセスネットワーク（RAN）</th>
+                <td>
+                    <ul>
+                        <li><span class="highlight">eRedCap</span>が導入され、ダウンリンクとアップリンクの両方で最大10 Mbpsにピークデータレートが制限される <span class="reference">[1, 3]</span>。</li>
+                        <li>eRedCapデバイスは、低周波数帯域から中周波数帯域のみをサポートし、最大データチャネル帯域幅を約5 MHzに削減できる <span class="reference">[10]</span>。</li>
+                        <li>UEの複雑さをさらに軽減するための追加技術が検討される（帯域幅制限、ピークデータレート制限、処理時間延長など） <span class="reference">[16]</span>。</li>
+                        <li>バッテリー寿命をさらに延ばすための高度な省電力技術が期待される <span class="reference">[1]</span>。</li>
+                        <li>エネルギーハーベスティングソリューションの研究が行われる <span class="reference">[17]</span>。</li>
+                        <li>より多様な構成オプションが導入され、幅広いユースケースに対応する <span class="reference">[1]</span>。</li>
+                        <li>Release 16で導入された測位に関する参照信号、測定、手順が採用され、RedCapデバイスの測位をサポートする <span class="reference">[13]</span>。</li>
+                        <li>測位測定のための帯域幅アグリゲーションがサポートされる <span class="reference">[13]</span>。</li>
+                        <li>RedCap以外にも広範なRANの機能拡張が含まれる（5G MIMOの進化、AI/MLの導入など） <span class="reference">[18]</span>。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>コアネットワーク＆ターミナル（CT）</th>
+                <td>
+                    <ul>
+                        <li>高度なRedCapデバイスをサポートするためのコアネットワークと端末の仕様が進化する <span class="reference">[6]</span>。</li>
+                        <li>RedCapデバイスを消防士の個人用保護具（PPE）に組み込み、より正確な位置情報を特定できるようにする機能強化が行われる <span class="reference">[20]</span>。</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>5. 技術仕様と他技術との比較:</h2>
+    <p>以下の表は、3GPP Release 17およびRelease 18におけるRedCapの主要な技術仕様を比較したものです。</p>
+    <table>
+        <thead>
+            <tr>
+                <th>パラメータ</th>
+                <th>Release 17 仕様</th>
+                <th>Release 18 仕様</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>最大帯域幅 (FR1)</td>
+                <td>20 MHz</td>
+                <td>20 MHz または 5 MHz</td>
+            </tr>
+            <tr>
+                <td>最大帯域幅 (FR2)</td>
+                <td>100 MHz</td>
+                <td>100 MHz</td>
+            </tr>
+            <tr>
+                <td>最大データレート (DL)</td>
+                <td>85-225 Mbps (FDD), 50-130 Mbps (TDD)</td>
+                <td>10 Mbps (eRedCap)</td>
+            </tr>
+            <tr>
+                <td>最大データレート (UL)</td>
+                <td>90-120 Mbps (FDD), 35-45 Mbps (TDD)</td>
+                <td>10 Mbps (eRedCap)</td>
+            </tr>
+            <tr>
+                <td>最小受信アンテナ数 (FR1)</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>DL MIMOレイヤー数 (最大)</td>
+                <td>1 または 2</td>
+                <td>1 または 2</td>
+            </tr>
+            <tr>
+                <td>最大変調次数 (DL/UL)</td>
+                <td>64QAM (256QAM オプション)</td>
+                <td>64QAM (256QAM オプション)</td>
+            </tr>
+            <tr>
+                <td>半二重FDDサポート</td>
+                <td>オプション</td>
+                <td>オプション</td>
+            </tr>
+            <tr>
+                <td>eRedCap導入</td>
+                <td>なし</td>
+                <td>あり (ピークレート 10 Mbps)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>RedCapは、他の関連するセルラー技術と比較して、以下のような位置づけとなります <span class="reference">[1]</span>。ピークデータレートはLTE Cat-4と同程度ですが、5Gのネットワークスライシングや高度な測位などの利点を保持しています <span class="reference">[2]</span>。LTE Cat-1と比較すると、Release 17のRedCapはより高いデータレートを提供し、Release 18のeRedCapはLTE Cat-1に近いデータレートとなります <span class="reference">[3]</span>。NB-IoTやLTE-Mと比較すると、RedCapはより高いデータレートと低い遅延を提供しますが、電力消費はより高くなります <span class="reference">[1]</span>。eMBBと比較すると、RedCapはデータレートは低いものの、デバイスの複雑さとコスト、消費電力を大幅に削減できます <span class="reference">[1]</span>。このように、RedCapは、LPWA技術とフルスケールの5G eMBB機能の中間を埋める「ブロードバンドIoT」ソリューションとしての役割を果たします <span class="reference">[1]</span>。</p>
+
+    <h2>6. ユースケースと市場の可能性:</h2>
+    <p>RedCapは、産業用IoT、ウェアラブル、スマートシティ、ヘルスケア、自動車、ビデオ監視など、幅広いユースケースに対応できます <span class="reference">[1]</span>。具体的なアプリケーションとしては、スマートメーター、アセットトラッカー、スマートウォッチ、産業用センサー、セキュリティカメラ、AR/VRグラスなどが挙げられます <span class="reference">[1]</span>。RedCapは、これらのユースケースに対して、性能、コスト、電力効率のバランスが取れた最適なソリューションを提供します <span class="reference">[1]</span>。ウェアラブルデバイスだけでも、市場規模は数十億ドルに達すると推定されており <span class="reference">[9]</span>、RedCapはIoT市場全体の成長を促進する重要な役割を果たすと期待されています <span class="reference">[1]</span>。ただし、現時点ではRedCapモジュールのコストがLTEと比較して高いため、普及には課題も存在します <span class="reference">[4]</span>。しかし、Release 18で導入されるeRedCapは、より低コストなIoTデバイスへの5Gネットワーク移行を促進すると予想されています <span class="reference">[4]</span>。アジア（特に中国）や北米では、すでにRedCapの採用が進んでいます <span class="reference">[3]</span>。</p>
+
+    <h2>7. 課題、制限事項、今後の方向性:</h2>
+    <p>RedCapの普及には、モジュールのコストがLTEよりも高いという課題があります <span class="reference">[4]</span>。また、RedCapデバイスをサポートするためのネットワークインフラストラクチャの適応も必要となります <span class="reference">[1]</span>。デバイスの相互運用性を確保するための認証と標準化の課題も存在します <span class="reference">[1]</span>。RedCapデバイスのカバレッジとパフォーマンスの期待値は、フルスケールの5Gデバイスとは異なる可能性があるため、管理が重要です <span class="reference">[1]</span>。今後の方向性としては、将来の3GPPリリースでさらなる複雑さの削減が検討されています <span class="reference">[14]</span>。より広範なIoTアプリケーションをサポートするためのRedCapの継続的な進化も期待されています <span class="reference">[1]</span>。AI/MLを活用したRedCapデバイスとネットワークのさらなる最適化や <span class="reference">[17]</span>、エネルギーハーベスティングソリューションの研究も進められています <span class="reference">[17]</span>。</p>
+
+    <h2>8. 結論:</h2>
+    <p>3GPP Release 17およびRelease 18におけるRedCap技術に関する合意事項と議論内容は、SA、RAN、CTの各技術仕様グループにおいて、5Gエコシステムの拡大と多様なIoTアプリケーションへの対応に向けた重要な進展を示しています。Release 17では、RedCapの基本的なフレームワークと機能が確立され、Release 18では、eRedCapの導入やさらなる複雑さの削減、省電力機能の強化、測位機能の追加など、より高度な機能拡張が行われています。RedCapは、性能、コスト、電力効率のバランスを取りながら、広範なIoTユースケースに対応できる可能性を秘めており、さまざまな産業におけるイノベーションと新たな機会の創出を牽引することが期待されます。今後のRedCapの継続的な進化とその影響に注目が集まります。</p>
+
+    <h2>引用文献</h2>
+    <ul>
+        <li><span class="reference">[1]</span> Advancements in 5G NR Light (RedCap) Technology: A Deep Dive ..., 3月 16, 2025にアクセス、  https://5ghub.us/advancements-in-5g-nr-light-redcap-technology-a-deep-dive-into-3gpp-release-18-enhancements/</li>
+        <li><span class="reference">[2]</span> What is 5G RedCap? A Guide on 5G Reduced Capability - Cavli Wireless, 3月 16, 2025にアクセス、  https://www.cavliwireless.com/blog/wireless-by-design/what-is-5g-redcap.html</li>
+        <li><span class="reference">[3]</span> 5G RedCap - Rohde & Schwarz, 3月 16, 2025にアクセス、  https://www.rohde-schwarz.com/us/solutions/wireless-communications-testing/wireless-standards/5g-nr/5g-reduced-capability-redcap/redcap-testing_256448.html</li>
+        <li><span class="reference">[4]</span> 5G RedCap: Simplifying Cellular Connectivity for IoT Devices - ABI Research, 3月 16, 2025にアクセス、  https://www.abiresearch.com/blog/5g-redcap</li>
+        <li><span class="reference">[5]</span> What is 5G NR Light - Reduce Capability? - Techplayon, 3月 16, 2025にアクセス、  https://www.techplayon.com/5g-nr-light-redcap-nr-project-redcap/</li>
+        <li><span class="reference">[6]</span> A Glimpse into RedCap NR devices - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/technologies/nr-redcap-glimpse</li>
+        <li><span class="reference">[7]</span> The future of 5G RedCap powers device expansion - Avnet, 3月 16, 2025にアクセス、  https://www.avnet.com/wps/portal/us/resources/article/the-future-of-5g-redcap-powers-device-expansion/</li>
+        <li><span class="reference">[8]</span> 5G RedCap, completing the 3GPP puzzle and beyond - u-blox, 3月 16, 2025にアクセス、  https://www.u-blox.com/en/blogs/insights/5g-redcap</li>
+        <li><span class="reference">[9]</span> RedCap - expanding the 5G device ecosystem for consumers and industries - Ericsson, 3月 16, 2025にアクセス、  https://www.ericsson.com/en/reports-and-papers/white-papers/redcap-expanding-the-5g-device-ecosystem-for-consumers-and-industries</li>
+        <li><span class="reference">[10]</span> RedCap/eRedCap – standardizing simplified 5G IoT devices ..., 3月 16, 2025にアクセス、  https://www.ericsson.com/en/blog/2024/12/redcap-eredcap</li>
+        <li><span class="reference">[11]</span> 5G Evolution: 3 Advancements of 3GPP Releases 16, 17 and 18 - Telit Cinterion, 3月 16, 2025にアクセス、  https://www.telit.com/resources/whitepapers/5g-evolution-3gpp-advancements/</li>
+        <li><span class="reference">[12]</span> Landslide: Version 23.4 - Upgrades to 3GPP Release 17 Specifications with RedCap Support and Enhanced 5G Features, 3月 16, 2025にアクセス、  https://support.spirent.com/s/article/NWS10495</li>
+        <li><span class="reference">[13]</span> 5G Advanced positioning in 3GPP Release 18 - Ericsson, 3月 16, 2025にアクセス、  https://www.ericsson.com/en/blog/2024/11/5g-advanced-positioning-in-3gpp-release-18</li>
+        <li><span class="reference">[14]</span> arxiv.org, 3月 16, 2025にアクセス、  https://arxiv.org/pdf/2203.05634</li>
+        <li><span class="reference">[15]</span> The Emergence of NR Light in 3GPP Release 17: Redefining Mid-Tier NR Device Operations - 5G HUB TECHNOLOGIES, INC, 3月 16, 2025にアクセス、  https://5ghub.us/the-emergence-of-nr-light-in-3gpp-release-17-redefining-mid-tier-nr-device-operations/</li>
+        <li><span class="reference">[16]</span> Advancements in NR RedCap UE Complexity Reduction: Exploring ..., 3月 16, 2025にアクセス、  https://5ghub.us/advancements-in-nr-redcap-ue-complexity-reduction-exploring-techniques-and-impacts-in-3gpp-release-18/</li>
+        <li><span class="reference">[17]</span> Toward 5G Advanced: overview of 3GPP releases 17 & 18 - Ericsson, 3月 16, 2025にアクセス、  https://www.ericsson.com/en/reports-and-papers/ericsson-technology-review/articles/5g-evolution-toward-5g-advanced</li>
+        <li><span class="reference">[18]</span> A closer look at 5G Advanced Release 18 - Qualcomm, 3月 16, 2025にアクセス、  https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/a-closer-look-at-5g-advanced-release-18-web.pdf</li>
+        <li><span class="reference">[19]</span> RAN1, 5G-Advanced and Rel-18 Completion - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/technologies/ran1-rel18</li>
+        <li><span class="reference">[20]</span> 3GPP moves Release 18 freeze date to March 2024 | First Responder Network Authority, 3月 16, 2025にアクセス、  https://www.firstnet.gov/newsroom/blog/3gpp-moves-release-18-freeze-date-march-2024</li>
+        <li><span class="reference">[21]</span> What You Need to Know to Prepare Your IoT Deployment for 5G RedCap | Telit Cinterion, 3月 16, 2025にアクセス、  https://www.telit.com/resources/webinars/what-you-need-to-know-to-prepare-your-iot-deployment-for-5g-redcap/</li>
+        <li><span class="reference">[22]</span> Radisys Unveils Industry-First 3GPP Release 18 5G Software for Ubiquitous Multi-RAN Connectivity | Morningstar, 3月 16, 2025にアクセス、  https://www.morningstar.com/news/business-wire/20250227237955/radisys-unveils-industry-first-3gpp-release-18-5g-software-for-ubiquitous-multi-ran-connectivity</li>
+    </ul>
+</body>
+</html>
