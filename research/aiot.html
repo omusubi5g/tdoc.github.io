@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3GPP Ambient IoT Release 合意事項調査</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.4em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            font-size: 1em;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+        .note {
+            color: orange;
+            font-style: italic;
+        }
+        .reference {
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>3GPPにおけるAmbient IoTに関する各Releaseでの合意事項と議論内容</h1>
+
+    <h2>1. はじめに</h2>
+    <p>Ambient IoT（AIoT）は、3GPPによって提唱された概念であり、低コストかつ自己給電型のセンサーノードを用いたワイヤレスセンサーネットワークに多数のオブジェクトを接続するエコシステムを指します <span class="reference">[1]</span>。AIoTは、超低複雑性および超低消費電力を目指し、バッテリーレスまたは非常に低電力のデバイスを可能にすることを目的としています <span class="reference">[3]</span>。この技術は、従来のバッテリー駆動型IoTではメンテナンスや環境制約から実用的でなかったアプリケーションにおける大規模な展開を可能にする可能性を秘めています。</p>
+    <p>AIoTの潜在的なアプリケーションは広範囲に及び、スマートシティ、ヘルスケアモニタリング、産業自動化、スマート農業、エネルギー管理、コネクテッドカー、スマートホームなどが含まれます <span class="reference">[4]</span>。具体的なユースケースとしては、在庫管理、コマンド制御、資産追跡、環境モニタリングなどが想定されています <span class="reference">[3]</span>。さらに、AIoTはリアルタイムのデータ収集と分析を促進することで、インダストリー4.0の重要な要素となることが期待されています <span class="reference">[3]</span>。これらの広範なアプリケーションの可能性は、AIoTが特定のニッチ市場をターゲットとするのではなく、多様な分野における革新と効率化を推進する基盤技術となることを示唆しています。</p>
+    <p>本レポートの目的は、3GPPのSA（サービスおよびシステムアスペクト）、RAN（無線アクセスネットワーク）、CT（コアネットワークおよびターミナル）の各ワーキンググループにおける、さまざまなリリースでのAIoTに関する合意事項と議論内容を文書化することです。特に、リリース19に焦点を当て、公式の3GPPウェブサイトおよび関連する技術文書を主要な情報源として調査します。</p>
+
+    <h2>2. 3GPPワーキンググループとリリースの背景</h2>
+    <p>3GPPにおける標準化プロセスは、SA、RAN、CTといった複数のワーキンググループによって分担して進められています。SAワーキンググループは、サービス要件と全体的なシステムアーキテクチャの定義に重点を置いています。RANワーキンググループは、無線インターフェースの設計と無線関連の側面を担当します。CTワーキンググループは、コアネットワークアーキテクチャ、プロトコル、および端末仕様を取り扱います。これらのグループ間の連携により、AIoTの標準化は多角的に進められ、包括的な規格の策定が目指されています。</p>
+    <p>3GPPの仕様はリリースごとに開発され、各リリースで新しい機能と拡張機能が導入されます。リリース19はAIoTにとって重要なリリースであり、専用のスタディアイテムと進行中の作業が含まれています <span class="reference">[3]</span>。リリースサイクルは、モバイル技術の進化を追跡するための構造化されたフレームワークを提供します。さまざまなリリースに焦点を当てることで、AIoT標準化の進捗状況と成熟度を時系列で把握することができます。</p>
+
+    <h2>3. Ambient IoTに関するサービスおよびSAの議論</h2>
+    <h3>3.1. リリース19</h3>
+    <p>リリース19において、SAワーキンググループ1（SA1）はAIoTに関する調査を開始し、その結果はTR 22.840にまとめられました <span class="reference">[3]</span>。この調査では、AIoTのユースケース、トラフィックシナリオ、サービス要件、およびKPI（重要業績評価指標）が検討されました <span class="reference">[3]</span>。TR 22.840は、セキュリティ、ネットワーク選択、アクセス制御、課金、ポジショニング、およびデバイスライフサイクル管理を含む、潜在的なサービス要件を特定しました <span class="reference">[7]</span>。また、トラフィックシナリオ、デバイスの制約（消費電力など）、および潜在的なパフォーマンス要件とKPIも調査されました <span class="reference">[7]</span>。SA1のTR 22.840における作業は、サービス観点からAIoTが何を達成することを意図しているのかという基本的な理解を築き、他のワーキンググループにおける技術仕様策定の基礎を築きました。</p>
+    <p>TS 22.369は、Ambient power-enabled IoTの機能および性能に関するサービス要件を規定しています <span class="reference">[8]</span>。これには、通信、ポジショニング、管理、エクスポージャー、課金、セキュリティ、およびプライバシーなどの機能要件が含まれています <span class="reference">[8]</span>。また、インベントリ、センサー、トラッキング、およびアクチュエーターのユースケースに関するパフォーマンス要件も含まれており、遅延、可用性、信頼性、データレート、およびデバイス密度などの指標が指定されています <span class="reference">[8]</span>。この仕様は、エネルギーハーベスティング、低複雑性、および断続的な接続性など、AIoTデバイスの独自の特徴を認識しています <span class="reference">[8]</span>。TS 22.369は、TR 22.840からの高レベルの理解を、RANおよびCTにおける技術仕様の開発を導く具体的なサービス要件に変換します。特定のユースケースに対するパフォーマンス指標の包含は、実用的な実装に向けた動きを示しています。</p>
+    <p>TR 23.700-13は、TS 22.369の要件に基づいて、Ambient IoTデバイスのアーキテクチャサポートを調査しています <span class="reference">[6]</span>。この調査では、RANの調査で定義されたデバイスタイプ、トラフィックタイプ（DT、DO-DTT、および潜在的なDO-A）、および接続トポロジが考慮されています <span class="reference">[10]</span>。対処された主要な課題には、アーキテクチャサポート、デバイス識別、サブスクリプション、登録、および接続管理が含まれます <span class="reference">[10]</span>。この調査では、インベントリおよびコマンドサービスのためのソリューションが検討されており、Ambient IoT Function（AIOTF）の導入が含まれています <span class="reference">[16]</span>。TR 23.700-13は、サービス要件と基盤となるネットワークアーキテクチャの間のギャップを埋め、AIoTデバイスおよびサービスをサポートするために5Gシステムがどのように適応する必要があるかを概説しています。新しいネットワーク機能（AIOTF）の導入は、AIoTトラフィックの特別な処理の潜在的な必要性を強調しています。</p>
+    <p>他のSAワーキンググループも、セキュリティや課金などの側面に関与しています <span class="reference">[3]</span>。SAワーキンググループ3（SA3）はセキュリティ側面で調整を行っており、SAワーキンググループ5（SA WG5）は課金側面を調査します <span class="reference">[10]</span>。複数のSAワーキンググループの関与は、包括的な標準化アプローチを示しており、セキュリティや課金などの重要な側面が、サービスおよびアーキテクチャの検討と並行して対処されることを保証します。</p>
+
+    <h3>3.2. その他の関連リリース</h3>
+    <p>AIoTに関する議論はリリース18で開始され、リリース19でさらに研究されました <span class="reference">[6]</span>。リリース18での初期の議論から、リリース19での詳細な調査と仕様策定への進展は、3GPP内でのAIoTに対する関心と優先順位の高まりを示しています。</p>
+
+    <h2>4. Ambient IoTに関する無線アクセスネットワーク（RAN）の議論</h2>
+    <h3>4.1. リリース19</h3>
+    <p>リリース19におけるRANプレナリーの調査結果は、TR 38.848に文書化されており、AIoT展開の設計目標達成の実現可能性に焦点が当てられています <span class="reference">[3]</span>。RANプレナリーは、3GPPシステムにおけるAIoT展開の関連ユースケースの設計目標達成の実現可能性を検証するための調査を実施しました <span class="reference">[3]</span>。TR 38.848はこの実現可能性調査の結果をまとめたものです <span class="reference">[3]</span>。この調査では、展開シナリオ（屋内/屋外）と接続トポロジ（BS-デバイス間、BS-中間ノード-デバイス間）が検討されました <span class="reference">[6]</span>。RANの設計目標が策定され、TR 22.840の要件を補完しています <span class="reference">[18]</span>。予備的な実現可能性評価では、AIoTは実現可能で有益であると結論付けられ、ワーキンググループレベルでのさらなる調査が推奨されました <span class="reference">[18]</span>。TR 38.848は、RANワーキンググループにおけるその後の詳細な技術作業に情報を提供し、AIoTの無線レベルでの課題と機会に関する重要な評価を提供します。肯定的な実現可能性の結論は、規範的な仕様策定への道を開きました。</p>
+    <p>TR 38.769には、NRにおけるAmbient IoTのソリューションに関する進行中のRANワーキンググループレベルの調査が記録されており、これには無線インターフェースの設計と共存が含まれます <span class="reference">[3]</span>。TR 38.848に基づいて、RANワーキンググループはAIoTの無線インターフェース設計とそのNR技術との共存を研究しています <span class="reference">[3]</span>。TR 38.769は、NRにおけるAmbient IoTのソリューションに関する調査を文書化したものです <span class="reference">[19]</span>。この調査では、異なる消費電力レベル（例えば、約1 µWおよび数百 µW以下）のデバイスアーキテクチャが検討されています <span class="reference">[20]</span>。物理層の側面、プロトコルスタック、シグナリング手順、RANアーキテクチャへの影響、および既存技術との共存が検討されています <span class="reference">[20]</span>。この調査では、DO-DTTおよびDTトラフィックタイプを用いた屋内インベントリおよび屋内コマンドのユースケースに焦点が当てられています <span class="reference">[21]</span>。TR 38.769は、NRフレームワーク内の無線レベルでAIoTを可能にするための技術的な詳細を掘り下げています。異なるデバイス電力クラスの検討と共存への焦点は、実用的な展開にとって重要です。</p>
+    <p>RAN仕様に従い、屋内/屋外の展開シナリオ、BS-デバイス間およびBS-中間ノード-デバイス間の接続トポロジ、ならびにバックキャッタリングおよびアクティブ送信のデバイスタイプについて合意された事項が議論されました <span class="reference">[6]</span>。TR 38.848のリリース19の調査では、屋内デバイスと屋内BS、および屋内デバイスと屋外BSの2つの展開シナリオが定義されました <span class="reference">[6]</span>。直接的なBS-デバイス間の通信と、中間UEを介した通信の2つの主要な接続トポロジが研究されています <span class="reference">[6]</span>。機能に基づいて3つのデバイスタイプが定義されています。タイプ1（バックキャッタリング、1 µW）、タイプ2a（バックキャッタリング、数百 µW、UL/DL増幅）、およびタイプ2b（アクティブ送信、数百 µW、UL/DL増幅）です <span class="reference">[6]</span>。リリース19の規範段階では、シナリオ1、トポロジ1、およびデバイスタイプ1が合意されています <span class="reference">[6]</span>。シナリオ2、トポロジ2、およびその他のデバイスタイプは、リリース20で仕様化される予定です <span class="reference">[6]</span>。リリース19で特定の展開シナリオ、トポロジ、およびデバイスタイプについて合意されたことは、標準化に向けた具体的なステップを示しています。より複雑なシナリオがリリース20で計画されている段階的なアプローチにより、初期段階ではより単純な実装に焦点を当てることができます。</p>
+    <p>RANの調査からの主要な知見、結論、および推奨事項が強調されました <span class="reference">[6]</span>。TSG-RANレベルでの予備的な実現可能性分析では、Ambient IoTは実現可能で有益であると結論付けられました <span class="reference">[18]</span>。RANは、ワーキンググループレベルの調査のために、展開シナリオとスペクトルオプションをさらに絞り込むことが推奨されています <span class="reference">[18]</span>。RF、太陽光、圧電などのエネルギー源がエネルギーハーベスティングのために検討されています <span class="reference">[18]</span>。将来の課題には、スケーラビリティ、相互運用性、セキュリティ、およびエネルギー効率が含まれます <span class="reference">[6]</span>。RANの調査は、実現可能性を確立しただけでなく、将来の作業のための主要な課題を特定し、推奨事項を提供することで、進行中の標準化活動を導いています。</p>
+
+    <h2>5. Ambient IoTに関するCTの議論</h2>
+    <h3>5.1. リリース19</h3>
+    <p>リリース19におけるCTワーキンググループ内のAmbient IoTに関連する具体的な合意事項や議論に関する調査が行われました <span class="reference">[3]</span>。スニペットは、SAおよびRANほど詳細なCTワーキンググループの合意事項を明示的に提供していませんが、全体的な文脈はその関与を示唆しています。SAワーキンググループ2（SA2）は、Ambient IoTをサポートするためのアーキテクチャソリューションを調査する研究を進めており、これには本質的にコアネットワークの側面が含まれます <span class="reference">[27]</span>。SA2の議論には、アーキテクチャのアップデート、デバイス識別、登録、接続管理、サービス、課金、およびAIoTのセキュリティなどのトピックが含まれていました <span class="reference">[25]</span>。明示的に詳細が述べられているわけではありませんが、CTワーキンググループ、特にSA2は、サービス要件とRANの検討に基づいて、AIoTをサポートするために必要なコアネットワークの側面を定義することに積極的に関与しています。</p>
+    <p>AIoTの要件が、CTの観点から見たコアネットワークの機能、デバイス識別、サブスクリプション、登録、および接続管理にどのように影響するかについての分析が行われました <span class="reference">[6]</span>。機能が限られたAIoTデバイスは、従来のUICCや登録手順をサポートできない可能性があります。代替メカニズムが研究されています <span class="reference">[6]</span>。デバイス情報の第三者による静的なプロビジョニングが提案されているアプローチの1つです <span class="reference">[6]</span>。SA2は、AIoTデバイスの機能性を考慮して、サブスクリプション管理、登録管理、および接続管理が必要かどうか、また必要な場合はどのように行うかを研究しています <span class="reference">[27]</span>。AIoTデバイスの独自の特徴は、デバイス識別、認証、および管理のための従来のコアネットワーク手順の再評価を必要とします。これらのデバイスのリソース制約に対応するためには、軽量で効率的なソリューションが必要です。</p>
+    <p>CTドメインにおける関連するプロトコルに関する検討や機能拡張について議論されました。AIoTプロトコルスタックには、AIoT非アクセス層（NAS）プロトコルが含まれており、AIoT機能（AIOTF）がインベントリおよびコマンドメッセージを処理します <span class="reference">[12]</span>。軽量なセキュリティメカニズムも検討されています <span class="reference">[12]</span>。特定のAIoTプロトコルスタックの開発と軽量なセキュリティの検討は、CTワーキンググループがAIoTの通信およびセキュリティニーズを効率的にサポートするために、既存のプロトコルを適応させるか、新しいプロトコルを定義していることを示しています。</p>
+
+    <h3>5.2. その他の関連リリース</h3>
+    <p>リリース19におけるSA2のワークショップでは、さまざまなAIoTデバイスタイプをサポートするためのアーキテクチャのアップデートに焦点が当てられました <span class="reference">[25]</span>。SA2におけるアーキテクチャのアップデートへの初期の焦点は、堅牢なコアネットワークフレームワークをAIoTのために確立することが優先事項であったことを示唆しています。</p>
+
+    <h2>6. リリースおよびワーキンググループ全体の合意事項と議論の概要</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>リリース</th>
+                <th>ワーキンググループ</th>
+                <th>主要な合意事項/議論内容</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>18</td>
+                <td>SA</td>
+                <td>AIoTに関する初期議論開始</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>SA1</td>
+                <td>ユースケース、トラフィックシナリオ、サービス要件、KPIに関する調査（TR 22.840）</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>SA2</td>
+                <td>AIoTのアーキテクチャサポート、デバイス識別、サービスイネーブルメントに関する調査（TR 23.700-13）</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>SA</td>
+                <td>セキュリティおよび課金側面に関する他のSAワーキンググループの関与</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>RANプレナリー</td>
+                <td>AIoT展開の設計目標達成の実現可能性調査（TR 38.848）</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>RANワーキンググループ</td>
+                <td>NRにおけるAIoTソリューションに関する調査（TR 38.769）、無線インターフェース設計および共存</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>RAN</td>
+                <td>屋内/屋外展開シナリオ、BS-デバイス間/BS-中間ノード-デバイス間の接続トポロジ、バックキャッタリング/アクティブ送信のデバイスタイプに関する合意</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>RAN</td>
+                <td>リリース19の規範段階では、シナリオ1、トポロジ1、およびデバイスタイプ1に合意</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>CT（主にSA2）</td>
+                <td>AIoTをサポートするためのコアネットワークアーキテクチャ、デバイス識別、登録に関する議論</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>CT</td>
+                <td>AIoTプロトコルスタック（AIoT NAS、AIOTF）および軽量セキュリティメカニズムの検討</td>
+            </tr>
+            <tr>
+                <td>20（計画）</td>
+                <td>RAN</td>
+                <td>シナリオ2、トポロジ2、およびその他のデバイスタイプの仕様化</td>
+            </tr>
+            <tr>
+                <td>将来</td>
+                <td>SA/RAN/CT</td>
+                <td>さらなるユースケース、トポロジ、およびシナリオの追加</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>7. 未解決の課題、今後の方向性</h2>
+    <p>3GPPにおけるAmbient IoTの標準化には目覚ましい進展が見られる一方で、依然としていくつかの技術的および標準化上の課題が残っています <span class="reference">[6]</span>。大規模なデバイス数をサポートするためのスケーラビリティ <span class="reference">[6]</span>、多様なデバイスタイプとトポロジ間の相互運用性の確保 <span class="reference">[6]</span>、RRC状態に依存しないシステム設計 <span class="reference">[6]</span>、データ交換の増加に伴うセキュリティとプライバシーの維持 <span class="reference">[6]</span>、電力源が限られたデバイスのエネルギー効率の最適化 <span class="reference">[6]</span>、変動するサービス需要への適応 <span class="reference">[6]</span>、およびA-IoTデバイス情報を取得するための動的で適応可能なメカニズムの必要性 <span class="reference">[6]</span> などが挙げられます。これらの未解決の課題は、AIoTの広範な展開が実現する前に克服すべき重要な技術的ハードルを示しています。これらの課題は、今後の研究開発および標準化活動の焦点となるでしょう。</p>
+    <p>今後の3GPPリリース、特にリリース20では、AIoTの潜在的な将来の方向性と作業項目が議論されています <span class="reference">[6]</span>。シナリオ2、トポロジ2、およびその他のデバイスタイプの仕様化がリリース20で計画されています <span class="reference">[6]</span>。将来のリリースでは、さらに多くのユースケース、トポロジ、およびシナリオが追加される予定です <span class="reference">[6]</span>。将来のリリースに向けて計画されている作業は、3GPPエコシステム内でのAIoT機能の進化と拡張への継続的な取り組みを示しています。</p>
+
+    <h2>8. 結論</h2>
+    <p>本レポートでは、3GPPにおけるAmbient IoTの標準化に関する合意事項と議論内容を、SA、RAN、CTの各ワーキンググループに分けて、主にリリース19に焦点を当ててまとめました。リリース19では、ユースケース、サービス要件、アーキテクチャ、および無線インターフェース設計に関する重要な調査と仕様策定が進められています。これらの取り組みは、低電力、メンテナンスフリー、かつ大規模にスケーラブルなIoT展開の新時代を可能にする、IoTの将来にとって非常に重要です。残された課題に対処し、今後のリリースで計画されている作業を進めることで、Ambient IoTはさまざまな産業やアプリケーションにおいて、その可能性を最大限に発揮することが期待されます。</p>
+
+    <h2>引用文献</h2>
+    <ul>
+        <li><span class="reference">[1]</span> Ambient IoT - Wikipedia, 3月 16, 2025にアクセス、  https://en.wikipedia.org/wiki/Ambient_IoT</li>
+        <li><span class="reference">[2]</span> 5G Advanced and the rise of ambient IoT - Fierce Network, 3月 16, 2025にアクセス、  https://www.fierce-network.com/5g/5g-advanced-and-rise-ambient-iot</li>
+        <li><span class="reference">[3]</span> Ambient IoT: Redefining Wireless Communication for Industry 4.0 - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/technologies/anbient-iot-tsdsi</li>
+        <li><span class="reference">[4]</span> Navigating the Future: Ambient IoT 3GPP Standards - Matellio Inc, 3月 16, 2025にアクセス、  https://www.matellio.com/blog/ambient-iot-3gpp-standards/</li>
+        <li><span class="reference">[5]</span> Ambient IoT: A missing link in 3GPP IoT Devices Landscape - arXiv, 3月 16, 2025にアクセス、  https://arxiv.org/html/2312.06569v1</li>
+        <li><span class="reference">[6]</span> 3GPP Network Architecture Enhancement for Ambient IoT Service - arXiv, 3月 16, 2025にアクセス、  https://arxiv.org/html/2501.08990v1</li>
+        <li><span class="reference">[7]</span> TR 22.840 (4Q23/119 p.) – on Ambient power-enabled Internet of ..., 3月 16, 2025にアクセス、  https://www.tech-invite.com/3m22/tinv-3gpp-22-840.html</li>
+        <li><span class="reference">[8]</span> TS 22.369 (3Q24/18 p.) – Service reqs for Ambient power-enabled IoT - Tech-invite, 3月 16, 2025にアクセス、  https://www.tech-invite.com/3m22/tinv-3gpp-22-369.html</li>
+        <li><span class="reference">[9]</span> Specification # 22.369 - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/dynareport/22369.htm</li>
+        <li><span class="reference">[10]</span> 3GPP TR 23.700-13, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/tsg_sa/WG2_Arch/TSGS2_161_Athens_2024-02/INBOX/DRAFTS/FS_AmbientIoT/23700-13-020_rm_v1.docx</li>
+        <li><span class="reference">[11]</span> Specification # 23.700-13 - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/dynareport/23700-13.htm</li>
+        <li><span class="reference">[12]</span> The AIoT protocol stack as described in 3GPP TR 23.700-13 [1]. - ResearchGate, 3月 16, 2025にアクセス、  https://www.researchgate.net/figure/The-AIoT-protocol-stack-as-described-in-3GPP-TR-23700-13-1_fig1_388068114</li>
+        <li><span class="reference">[13]</span> draft_S2-2403139_was2260_23700_13_DO-A.docx - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/tsg_sa/WG2_Arch/TSGS2_161_Athens_2024-02/INBOX/DRAFTS/FS_AmbientIoT/draft_S2-2403139_was2260_23700_13_DO-A.docx</li>
+        <li><span class="reference">[14]</span> 3GPP Change Request, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/tsg_sa/WG2_Arch/TSGS2_161_Athens_2024-02/INBOX/DRAFTS/FS_AmbientIoT/S2-240xxxx_was2260_23700_13_DO-A.docx</li>
+        <li><span class="reference">[15]</span> Source: - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/tsg_sa/WG2_Arch/TSGS2_160_Chicago_2023-11/INBOX/DRAFTS/R19_Ambient%20IoT/S2-231xxxx_wasS2-2310033_new%20SI_Ambient_IoT_v4_from_CMCC.docx</li>
+        <li><span class="reference">[16]</span> S2-2403407_was02263_23700_13_KI2_New Soln_inventory.docx - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/tsg_sa/WG2_Arch/TSGS2_161_Athens_2024-02/INBOX/DRAFTS/FS_AmbientIoT/S2-2403407_was02263_23700_13_KI2_New%20Soln_inventory.docx</li>
+        <li><span class="reference">[17]</span> arxiv.org, 3月 16, 2025にアクセス、  https://arxiv.org/pdf/2501.08990</li>
+        <li><span class="reference">[18]</span> inside TR 38.848: Content Part, 5 out of 5 - Tech-invite, 3月 16, 2025にアクセス、  https://www.tech-invite.com/3m38/toc/tinv-3gpp-38-848_e.html</li>
+        <li><span class="reference">[19]</span> Specification # 38.769 - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/dynareport/38769.htm</li>
+        <li><span class="reference">[20]</span> TR 38.769 (4Q24/225 p.) – on solutions for Ambient IoT in NR, 3月 16, 2025にアクセス、  https://www.tech-invite.com/3m38/tinv-3gpp-38-769.html</li>
+        <li><span class="reference">[21]</span> Draft_R2-24x TP for TR 38.769_v01_Rapp.docx - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/Email_Discussions/RAN2/%5BRAN2%23126%5D/%5BPOST126%5D%5B021%5D%5BAIoT%5D%20TP%20(Huawei)/Draft_R2-24x%20TP%20for%20TR%2038.769_v01_Rapp.docx</li>
+        <li><span class="reference">[22]</span> Draft_R2-24x TP for TR 38.769_v13_Rapp_clean.docx - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/Email_Discussions/RAN2/%5BRAN2%23126%5D/%5BPOST126%5D%5B021%5D%5BAIoT%5D%20TP%20(Huawei)/Draft_R2-24x%20TP%20for%20TR%2038.769_v13_Rapp_clean.docx</li>
+        <li><span class="reference">[23]</span> R2-24xxx TP for TR 38.769 update_v01_Rapp.docx - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/Email_Discussions/RAN2/%5BRAN2%23127%5D/%5BPOST127%5D%5B022%5D%5BAIoT%5D%20TP%20for%20TR%20(Huawei)/R2-24xxx%20TP%20for%20TR%2038.769%20update_v01_Rapp.docx</li>
+        <li><span class="reference">[24]</span> Draft_R2-24x TP for TR 38.769_v07_ERI.docx - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/Email_Discussions/RAN2/%5BRAN2%23126%5D/%5BPOST126%5D%5B021%5D%5BAIoT%5D%20TP%20(Huawei)/Draft_R2-24x%20TP%20for%20TR%2038.769_v07_ERI.docx</li>
+        <li><span class="reference">[25]</span> 1 Introduction - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/tsg_sa/wg2_arch/TSGS2_158_Goteborg_2023-08/INBOX/DRAFTS/Rel-19_NWM_reports/SA2_Rel-19_23Q3_moderated_discussion_-_Ambient_IoT-v0.0.2.pdf</li>
+        <li><span class="reference">[26]</span> 3GPP Rel-19: Maturing 5G-Advanced - RIMEDO Labs, 3月 16, 2025にアクセス、  https://rimedolabs.com/blog/3gpp-rel-19-maturing-5g-advanced/</li>
+        <li><span class="reference">[27]</span> S2-2412516 was12128 R19 AIOT WID-r2.docx - 3GPP, 3月 16, 2025にアクセス、  https://www.3gpp.org/ftp/tsg_sa/WG2_Arch/TSGS2_166_Orlando_2024-11/INBOX/DRAFTS/Rel-19%20AmbientIoT/S2-2412516%20was12128%20R19%20AIOT%20WID-r2.docx</li>
+    </ul>
+</body>
+</html>
