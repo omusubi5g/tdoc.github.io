@@ -18,6 +18,7 @@
 # Research
 - [3GPPにおけるNTNに関する各Releaseでの合意事項と議論内容の概要：SA/RAN/CT](https://omusubi5g.github.io/tdoc.github.io/research/NTNmatome.html)
 - [3GPPにおけるRedCapに関する各Releaseでの合意事項と議論内容の概要：SA/RAN/CT](https://omusubi5g.github.io/tdoc.github.io/research/redcapmatome.html)
+- [3GPPにおけるAmbientIoTに関する各Releaseでの合意事項と議論内容の概要：SA/RAN/CT](https://omusubi5g.github.io/tdoc.github.io/research/aiotmatome.html)
 
 # 6G WS
 - [6GWS-250009 Ten tiny little things…that could make 6G worth(Bouygues Telecom)](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250009.html)
