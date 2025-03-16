@@ -2,6 +2,7 @@
 個人的に気になった寄書の要約を掲載しています。正確な内容は寄書本文を参照願います。
 [6G/NTNニュースアーカイブはこちら](https://omusubi5g.github.io/tdoc.github.io/news/news_archive.html)
 
+- [Research](#research)
 - [6G WS](#6g-ws)
 - [SA #106](#sa-106)
 - [RAN1 #119](#ran1-119)
@@ -13,6 +14,10 @@
 - [RAN2 #125bis](#ran2-125bis)
 - [RAN4 #110bis](#ran4-110bis)
 - [RAN #103](#ran-103)
+
+# Research
+- [3GPPにおけるNTNに関する各Releaseでの合意事項と議論内容の概要：SA/RAN/CT](https://omusubi5g.github.io/tdoc.github.io/research/NTNmatome.html)
+
 
 # 6G WS
 - [6GWS-250009 Ten tiny little things…that could make 6G worth(Bouygues Telecom)](https://omusubi5g.github.io/tdoc.github.io/6GWS/6GWS-250009.html)
